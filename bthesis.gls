@@ -1,0 +1,10 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{M}\relax \glsresetentrylist %
+\glossentry{mec}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{iv}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{2}}}\glsgroupskip
+\glsgroupheading{V}\relax \glsresetentrylist %
+\glossentry{vec}{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsignore{iv}}}%
+\end{theglossary}\glossarypostamble

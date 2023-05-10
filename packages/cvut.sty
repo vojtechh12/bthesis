@@ -1,0 +1,267 @@
+\ProvidesPackage{packages/cvut}
+
+% New conditions
+\newif\if@assignment
+\newif\if@statement
+
+% Default values
+\@assignmentfalse
+\@statementfalse
+
+% Package options
+\DeclareOption{assignment}{\@assignmenttrue}
+\DeclareOption{statement}{\@statementtrue}
+\ProcessOptions
+
+\def\argument#1#2{%
+  \expandafter\def\csname #1\endcsname{#2}%
+}
+
+% Paper border settings
+\usepackage[top=25mm, bottom=25mm, left=30mm, right=20mm]{geometry}
+\usepackage{changepage}
+\usepackage{pdflscape}
+
+\usepackage{afterpage}
+\newcommand\myemptypage{
+	\null
+	\thispagestyle{empty}
+	\addtocounter{page}{-1}
+	\newpage
+}
+
+% General
+%\usepackage{hyperref}
+\usepackage{indentfirst}
+
+\def\sectionautorefname{Section}
+\def\subsectionautorefname{Section}
+%\def\chapterautorefname{Chapter}
+\providecommand*{\algorithmautorefname}{Algorithm} 
+
+
+
+
+
+
+
+
+% Floats
+% \usepackage[section]{placeins}
+
+% % Source: http://mintaka.sdsu.edu/GF/bibliog/latex/floats.html
+% % See p.105 of "TeX Unbound" for suggested values.
+% % See pp. 199-200 of Lamport's "LaTeX" book for details.
+% %   General parameters, for ALL pages:
+% \renewcommand{\topfraction}{0.9}	% max fraction of floats at top
+% \renewcommand{\bottomfraction}{0.8}	% max fraction of floats at bottom
+% 
+% %   Parameters for TEXT pages (not float pages):
+% \setcounter{topnumber}{2}
+% \setcounter{bottomnumber}{2}
+% \setcounter{totalnumber}{4}     % 2 may work better
+% \setcounter{dbltopnumber}{2}    % for 2-column pages
+% \renewcommand{\dbltopfraction}{0.9}	% fit big float above 2-col. text
+% \renewcommand{\textfraction}{0.07}	% allow minimal text w. figs
+% 
+% %   Parameters for FLOAT pages (not text pages):
+% \renewcommand{\floatpagefraction}{0.7}	% require fuller float pages
+% % N.B.: floatpagefraction MUST be less than topfraction !!
+% \renewcommand{\dblfloatpagefraction}{0.7}	% require fuller float pages
+
+
+% Pseudocode
+%\usepackage[chapter]{algorithm}
+%\usepackage{algpseudocode}
+%\algrenewcommand\algorithmicforall{\textbf{foreach}}
+%\newcommand{\FunctionCall}[1]{\text{\textsc{#1}}}
+%\newcommand{\Continue}{\State \textbf{continue}}
+%\algnotext{EndFunction}
+%\algnotext{EndWhile}
+%\algnotext{EndFor}
+%\algnotext{EndIf}
+
+% British English & Czech language settings
+\usepackage[USenglish]{babel}
+%\usepackage{ae}
+\usepackage[utf8x]{inputenc}
+%\addto\captionsenglish{\def\abstractname{Abstrakt}}
+%\addto\captionsbritish{\def\abstractname{Anotation}}
+\brokenpenalty=1000
+\clubpenalty=1000
+\widowpenalty=1000
+
+% Header & Footer settings
+\usepackage{fancyhdr}
+\setlength{\headheight}{27.2pt} % was 15.2
+\pagestyle{fancyplain}
+\setlength{\footskip }{45pt}
+
+\renewcommand{\footrulewidth}{0pt}
+
+\fancyhf{}
+\rhead{\fancyplain{}{\rightmark}}
+\cfoot{\fancyplain{\thepage}{\thepage}}
+
+
+\def\IEEEkeywords{\normalfont
+	\if@twocolumn
+	\@IEEEabskeysecsize\bfseries\textit{\IEEEkeywordsname}---\relax
+	\else
+	\bgroup\par\addvspace{0.5\baselineskip}\centering\@IEEEabskeysecsize\textbf{\IEEEkeywordsname}\par\addvspace{0.5\baselineskip}\egroup\quotation\@IEEEabskeysecsize
+	\fi\@IEEEgobbleleadPARNLSP}
+\def\endIEEEkeywords{\relax\ifCLASSOPTIONtechnote\vspace{1.34ex}\else\vspace{0.67ex}\fi
+	\par\if@twocolumn\else\endquotation\fi%
+	\normalfont\normalsize}
+
+
+
+\newenvironment{acknowledgments}
+{\clearpage \thispagestyle{empty}  \Huge \bfseries  \section*{Acknowledgments}}{}
+%{\clearpage \thispagestyle{empty} \vspace*{\stretch{1}} \section*{Acknowledgments}}{}
+
+%\renewenvironment{abstract}
+%{\clearpage \thispagestyle{empty} \Huge \bfseries  \abstractname \\  }{} %\vspace*{\stretch{1}}
+
+%\newenvironment{abstrakt}
+
+%\newenvironment{abstrakt}{\vspace*{\stretch{1}} \begin{center} \bfseries \abstractname \end{center}}{\vspace*{\stretch{1}}}
+% Renew maketitle command to create tite for the thesis
+\newcommand{\makefolder}{
+\begin{titlepage}
+	 \thispagestyle{empty}
+   \begin{adjustwidth}{0mm}{0mm}
+   \begin{center}
+   \textbf{{\Large Czech Technical University in Prague}} \\[0.75cm]
+      \textbf{{\Large Faculty of Electrical Engineering}}
+  
+   \vspace{\stretch{2}}
+  
+%   \includegraphics[width=200px, keepaspectratio=true]{./images/cvut.png} \\[0.75cm]
+%   \includegraphics[]{./images/cvut.png}
+  % cvut.png: 1476x1112 pixel, 10300dpi, 0.36x0.27 cm, bb=0 0 10 8
+   \uppercase{\Huge \bfseries Doctoral thesis}
+  \end{center}
+%\thispagestyle{empty}
+  \vspace{\stretch{3}}
+
+  {\Large \datemonth~\dateyear \hfill \@author}
+  \end{adjustwidth}
+\end{titlepage}
+}
+
+\renewcommand{\maketitle}{
+\begin{titlepage}
+ \begin{center}
+  {\LARGE Czech Technical University in Prague} \\[0.75cm]
+  {\LARGE Faculty of Electrical Engineering} \\[0.75cm]
+  {\LARGE \department } \\[0.75cm]
+   
+   \includegraphics[width=200px, keepaspectratio=true]{./images/ctulogo} \\[0.75cm]
+%   \includegraphics[]{./images/cvut.png}
+  \vspace*{\stretch{0.5}}
+  \thispagestyle{empty}
+  {\LARGE \bfseries  \@title }	\\[0.75cm]
+  { \bfseries \LARGE Bachelor Thesis } \\[0.1cm]
+    \vspace*{\stretch{1}}
+  {\LARGE  \bfseries  \@author} \\
+    \vspace*{\stretch{1}}
+  \location,~\datemonth~\dateyear \\
+  \vspace*{\stretch{3}}
+%   \@location \@datemonth~\dateyear \\
+
+%   \begin{tabular}{rl}
+%   	\centering
+%    Ph.D. Programme: & \programme	\\
+%    Branch of study: & \specialization  \\ 
+%  
+%   \end{tabular} 
+ \end{center}
+
+
+\begin{center}
+Bachelor Programme:  \programme	\\
+% Branch of study:  \specialization  \\ 
+\end{center}
+
+ \vspace*{\stretch{1}}
+ \begin{center}
+    {\bfseries Supervisor:}  { \bfseries \supervisor} \\
+    %{\bfseries Supervisor-Specialist:}  { \bfseries \cosupervisor}
+ \end{center}
+ 
+% \begin{minipage}{0.35 \textwidth}
+%  {\LARGE \@date}
+% \end{minipage}
+% \begin{minipage}{0.65 \textwidth}
+%  \begin{flushright}
+%   \begin{tabular}{rl}
+%%    {\LARGE Author:} 	& {\LARGE \@author} 	\\[0.1cm]
+%    {\LARGE Supervisor:} & {\LARGE \supervisor}   
+%   \end{tabular}   
+%  \end{flushright}
+% \end{minipage}
+
+\end{titlepage}
+}
+
+\newcommand{\makestatement}{
+%\includepdf{statement/statement.pdf}
+\if@statement
+ 
+\else
+ \newpage
+
+ \thispagestyle{empty}
+ \vspace*{\stretch{1}}
+I hereby declare I have written this bachelor thesis independently and quoted all the sources of information used in accordance with methodological instructions on ethical principles for writing an academic thesis. Moreover, I state that this thesis has neither been submitted nor accepted for any other degree. \\[0.5cm]
+
+ Prague, \fulldate
+
+ \begin{flushright}
+  \begin{tabular}{c}
+   \ldots \ldots \ldots \ldots \ldots \ldots \ldots \ldots \ldots \\
+   Signature
+  \end{tabular}   
+ \end{flushright}
+
+\newpage
+\thispagestyle{empty}
+\vspace*{\stretch{1}}
+Prohlašuji, že jsem předloženou pr\'aci vypracoval samostatně a že jsem uvedl vešker\'e použit\'e informačn\'i zdroje v souladu s Metodick\'ym pokynem o dodržov\'an\'i etick\'ych principů při př\'ipravě vysokoškolsk\'ych z\'avěrečn\'ych prac\'i. \\[0.5cm]
+
+ V Praze dne \fulldatecz
+
+ \begin{flushright}
+  \begin{tabular}{c}
+   \ldots \ldots \ldots \ldots \ldots \ldots \ldots \ldots \ldots \\
+   Podpis
+  \end{tabular}   
+ \end{flushright}
+
+\pagebreak
+\fi
+%\myemptypage
+}
+
+\newcommand{\makeassignment}{
+\if@assignment
+ \includepdf{assignment/assignment_eng.pdf}
+ 
+\else
+ \newpage
+ \thispagestyle{empty}
+ \vspace*{\stretch{1}}
+ \emph{Insert assignment in English}
+ \vspace*{\stretch{1}}
+ \pagebreak
+
+% \thispagestyle{empty}
+% \vspace*{\stretch{1}}
+% \emph{Insert assignment in Czech}
+% \vspace*{\stretch{1}}
+
+%\includepdf{assignment/assignment_cz.pdf}
+ \pagebreak
+\fi
+}

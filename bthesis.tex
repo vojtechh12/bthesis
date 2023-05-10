@@ -1,0 +1,614 @@
+\documentclass[12pt,a4paper,twoside]{report}
+
+% link to wordpage source \href{https://campuscvut-my.sharepoint.com/:w:/g/personal/hasplvoj_cvut_cz/EY8pybo8CfdNmaBXNMXVtx0BKKOaEe7kFf99Fhh3AoGY8Q?e=3V3gST}{\color{blue}{wordpage}}
+
+\usepackage{packages/cvut}
+% Graphics
+\usepackage[colorlinks=true,linkcolor=black,anchorcolor=black,citecolor=black,filecolor=black,menucolor=black,runcolor=black,urlcolor=black]{hyperref}
+\usepackage[labelsep=period]{caption}
+%\usepackage{subcaption}
+\usepackage{graphicx}
+\usepackage{pdfpages}
+\usepackage{subfig}
+\usepackage{float}
+
+% Math
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+
+% Lists
+\usepackage{enumerate}
+\usepackage{paralist}
+\usepackage{acronym}
+\usepackage[nonumberlist]{glossaries} % troubleshooting
+
+% Tables
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{etoolbox}
+
+% Algorithms
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+
+% Title etc.
+\usepackage{chngcntr}
+\usepackage{cite}
+\usepackage{titlesec}
+
+% etc.
+\usepackage{setspace}
+\usepackage{color}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage[nottoc]{tocbibind} 
+\usepackage[toc]{appendix}
+%\usepackage[resetlabels,labeled]{multibib}
+%\usepackage[T1]{fontenc}
+%\usepackage{chngcntr}
+%\counterwithin{Figure}{chapter}
+
+
+% TODO pridat article jako zdroj globaldata do INTRA
+
+\setlength{\parindent}{0pt}                 % creates normal paragrapsh separation
+\setlength{\parskip}{10pt}                  % creates normal paragraph separation
+
+\graphicspath{ {./images/} }                % where to look for images in \includegraphics{xxx.png} command
+
+\setacronymstyle{long-sc-short}
+% \usepackage{subfigure}
+ \setacronymstyle{long-short}
+
+%\counterwithout{figure}{chapter}
+%\counterwithout{equation}{section} % undo numbering system provided by phstyle.cls
+%\counterwithout{equation}{chapter} % implement desired numbering system
+
+ \newtheorem{my_theorem}{Theorem} 
+ \newtheorem{Assumption}{\bf AS}
+ \newtheorem{my_lemma}{Lemma}
+ \newtheorem{my_prep}{Proposition}
+ \newtheorem{my_remark}{Remark}
+ \newtheorem{my_corr}{Corollary}
+ 
+ \DeclareMathOperator*{\argmin}{\arg\!\min}
+ \DeclareMathOperator*{\argmax}{\arg\!\max}
+ 
+ 
+ \definecolor{GreenTable}{cmyk}{0.59,0,0.88,0.27}
+ 
+ 	\providecommand{\keywords}[1]{\vspace{4pt}\textbf{\textit{Keywords: }} #1}
+ 	\providecommand{\keywordscz}[1]{\vspace{4pt}\textbf{\textit{Klíčová slova: }} #1}
+ 	
+\pdfminorversion=7
+\makeatletter
+\def\bstctlcite{\@ifnextchar[{\@bstctlcite}{\@bstctlcite[@auxout]}}
+\def\@bstctlcite[#1]#2{\@bsphack
+	
+	\@for\@citeb:=#2\do{%
+		\edef\@citeb{\expandafter\@firstofone\@citeb}%
+		\if@filesw\immediate\write\csname
+		#1\endcsname{\string\citation{\@citeb}}\fi}%
+	\@esphack}
+\makeatother
+
+\DeclareRobustCommand{\ttfamily}{\fontencoding{T1}\fontfamily{lmtt}\selectfont}
+
+%\usepackage{titlesec}
+% defines things like author and date or field of study for titlepage
+\DeclareMathOperator*{\argmaxA}{arg\,max}
+\DeclareMathOperator*{\argminA}{arg\,min} 
+\title {Development of Testbed for Vehicular Edge Computing}
+\author{Vojtěch Hašpl}
+
+
+\date{My 2023}
+
+\argument{supervisor}{Ing. Jan Plachý, Ph.D.}
+\argument{cosupervisor}{}
+\argument{department}{Department of Telecommunication Engineering}
+\argument{programme}{Electronics and Communications}
+\argument{specialization}{-}
+\argument{dateyear}{2023}
+\argument{datemonth}{May}
+\argument{location}{Prague}
+\argument{fulldate}{May,~2023}
+\argument{fulldatecz}{25. května~2023}
+ \renewcommand{\chaptername}{}
+
+%\addto\captionsczech{\renewcommand{\keywordsname}{Klíčová slova}} 
+ \makeatletter
+ 	
+% \def\@makechapterhead#1{%
+% \vspace*{20\p@}%
+% {\parindent \z@ \raggedright \normalfont
+% %\ifnum \c@secnumdepth >\m@ne
+% % \huge\bfseries \@chapapp\space \thechapter
+% % \par\nobreak
+% % \vskip 20\p@
+% %\fi
+% \interlinepenalty\@M
+% \Huge \bfseries \thechapter. \Huge \bfseries #1\par\nobreak
+% \vskip 40\p@
+% }}
+\titleformat{\chapter}{\huge\bfseries}{\thechapter.}{20pt}{\huge\bfseries}
+ \makeatother
+% \renewcommand{\bibname}{References}
+ 
+
+ \newenvironment{spodnitext}[1]{
+ 	\cleardoublepage
+ 	\null
+ 	\vfill
+ 	\section*{#1}
+ 	}{
+ 	\vspace{10mm}
+ 	}
+ 	
+ 
+% 	\renewcommand{\bibname}{References} 
+ 
+ 
+ \AtBeginDocument{\renewcommand{\bibname}{References}}	
+ \def\@makechapterhead#1{%
+ 	%%%%\vspace*{50\p@}% %%% removed!
+ 	{\parindent \z@ \raggedright \normalfont
+ 		\ifnum \c@secnumdepth >\m@ne
+ 		\huge\bfseries \@chapapp\space \thechapter
+ 		\par\nobreak
+ 		\vskip 20\p@
+ 		\fi
+ 		\interlinepenalty\@M
+ 		\Huge \bfseries #1\par\nobreak
+ 		\vskip 20\p@
+ 	}}
+ 	\def\@makeschapterhead#1{%
+ 		%%%%%\vspace*{50\p@}% %%% removed!
+ 		{\parindent \z@ \raggedright
+ 			\normalfont
+ 			\interlinepenalty\@M
+ 			\Huge \bfseries #1\par\nobreak
+ 			\vskip 1\p@
+ 		}}
+
+\renewcommand*{\glsgroupskip}{}
+
+
+% 	
+\bibliographystyle{IEEEtran}
+%\bibliography{IEEEabrv,minimum}
+%\bibliographystyle{ieeetr}	
+%\makenoidxglossaries
+
+% ---------------------
+%   Listing Acronyms
+% ---------------------
+\newacronym{iot}{IoT}{ }
+\newacronym{sdo}{SDO}{ }
+\newacronym{3gpp}{3GPP}{ }
+\newacronym{etsi}{ETSI}{ }
+\newacronym{o-ran}{O-RAN}{ }
+\newacronym{sms}{SMS}{ }
+\newacronym{vr}{VR}{ }
+\newacronym{ran}{RAN}{ }
+\newacronym{nr}{NR}{ }
+\newacronym{sba}{SBA}{ }
+\newacronym{ec}{EC}{ }
+\newacronym{cc}{CC}{ }
+\newacronym{avs}{AVs}{ }
+\newacronym{mec}{MEC}{ }
+\newacronym{isg}{ISG}{ }
+\newacronym{vec}{VEC}{ }
+\newacronym{b2b}{B2B}{ }
+\newacronym{embb}{eMBB}{ }
+\newacronym{mmtc}{mMTC}{ }
+\newacronym{urllc}{URLLC}{ }
+\newacronym{nfv}{NFV}{ }
+\newacronym{sdn}{SDN}{ }
+\newacronym{cups}{CUPS}{ }
+\newacronym{epc}{EPC}{ }
+\newacronym{nfs}{NFs}{ }
+\newacronym{apis}{APIs}{ }
+\newacronym{http}{HTTP}{ }
+\newacronym{rest}{REST}{ }
+\newacronym{ue}{UE}{ }
+\newacronym{upf}{UPF}{ }
+\newacronym{dn}{DN}{ }
+\newacronym{cn}{CN}{ }
+\newacronym{nssf}{NSSF}{ }
+\newacronym{nef}{NEF}{ }
+\newacronym{ausf}{AUSF}{ }
+\newacronym{nrf}{NRF}{ }
+\newacronym{amf}{AMF}{ }
+\newacronym{pcf}{PCF}{ }
+\newacronym{smf}{SMF}{ }
+\newacronym{udm}{UDM}{ }
+\newacronym{af}{AF}{ }
+\newacronym{pdu}{PDU}{ }
+\newacronym{qos}{QoS}{ }
+\newacronym{rrc}{RRC}{ }
+\newacronym{ul cl}{UL CL}{ }
+\newacronym{fes}{FEs}{ }
+\newacronym{mec apps}{MEC apps}{ }
+\newacronym{mp}{Mp}{ }
+\newacronym{mm}{Mm}{ }
+\newacronym{mx}{Mx}{ }
+\newacronym{oss}{OSS}{ }
+\newacronym{ualcmp}{UALCMP}{ }
+\newacronym{meo}{MEO}{ }
+\newacronym{mepm}{MEPM}{ }
+\newacronym{vim}{VIM}{ }
+\newacronym{vm}{VM}{ }
+\newacronym{k8s}{k8s}{ }
+\newacronym{cvb}{CVB}{ }
+\newacronym{ealtedge}{EALTEdge}{ }
+\newacronym{pcei}{PCEI}{ }
+\newacronym{openness}{OpenNESS}{ }
+\newacronym{oai}{OAI}{ }
+\newacronym{osa}{OSA}{ }
+\newacronym{ll-mec}{LL-MEC}{ }
+\newacronym{mep}{MEP}{ }
+\newacronym{rnis}{RNIS}{ }
+\newacronym{enb}{eNB}{ }
+\newacronym{gnb}{gNB}{ }
+\newacronym{tcp}{TCP}{ }
+\newacronym{ip}{IP}{ }
+\newacronym{sdap}{SDAP}{ }
+\newacronym{pdcp}{PDCP}{ }
+\newacronym{rlc}{RLC}{ }
+\newacronym{mac}{MAC}{ }
+\newacronym{phy}{PHY}{ }
+\newacronym{nas}{NAS}{ }
+\newacronym{rtt}{RTT}{ }
+\newacronym{tdd}{TDD}{ }
+\newacronym{fdd}{FDD}{ }
+\newacronym{nfapi}{nFAPI}{ }
+\newacronym{cots}{COTS}{ }
+\newacronym{udr}{UDR}{ }
+\newacronym{flexric}{FlexRIC}{ }
+\newacronym{flexcn}{FlexCN}{ }
+
+\makeglossaries
+
+% capton setup
+%\captionsetup[figure]{name=Figure}
+
+\setstretch{1.15}
+
+% -----------------------
+% THE BEGIN DOCUMENT HERE
+% -----------------------
+\begin{document}
+
+% -----------------------
+%        Titlepage
+% -----------------------
+\maketitle
+
+% -----------------------
+%      Assignment
+% -----------------------
+\includepdf{assignment/assignment_eng.pdf}
+
+
+% -----------------------
+%      Statement
+% -----------------------
+\makestatement
+
+
+%\pagestyle{empty}
+\pagenumbering{roman}
+
+
+% -----------------------
+%    Acknowledgement
+% -----------------------
+\chapter*{Acknowledgements}
+	% \addcontentsline{toc}{chapter}{Acknowledgments}
+	Diky mam se fajn nic mi nechybi.
+
+
+% -----------------------
+%        Abstracts
+% -----------------------
+\chapter*{Abstract}
+	% \addcontentsline{toc}{chapter}{Abstract}	% comment to omit abstract from toc
+	% ABSTRACT	
+\keywords{mobile networks, multi-access edge computing, vehicular edge computing, task offloading, autonomous vehicles}
+%
+%fill in abstract
+%
+\newpage
+
+\chapter*{Abstrakt}
+	% \addcontentsline{toc}{chapter}{Abstrakt}	% comment to omit abstract from toc
+\keywordscz{mobilní sítě, multi-access edge computing, vehicular edge computing, přesun výpočtů, autonomn\'i vozidla}
+%
+%fill in abstract
+%
+\newpage
+
+% -----------------------
+%        TOC
+% -----------------------
+\tableofcontents			
+
+% -----------------------
+%  GLOSSARIES (ABBREV)
+% -----------------------
+\glsaddallunused
+\printglossary[type=\acronymtype,title={List of Abbreviations}]	% under development 
+
+% -----------------------
+%   List of Figures- WIP
+% -----------------------
+
+
+%\newpage
+%\thispagestyle{empty}
+%\mbox{}
+\newpage
+
+\setcounter{page}{1}
+%\end{otherlanguage}
+\pagenumbering{arabic}
+
+\setstretch{1.15}
+\chapter{Introduction}
+Mobile networks are seen as a key enabler for emerging services and applications in internet of things (IoT) or vehicular sector, whose requirements on data rate and latency are ever increasing. This drives the need for innovation and development. The development of mobile networks follows standards defined by multiple standard defining organizations (SDO). Third Generation Partnership Project (3GPP) is a consortium of several regional institutions that define exact standards for all aspects of mobile networks such as architecture, protocols, interfaces, modulation techniques etc. The European SDO taking part in 3GPP is European Telecommunications Standard Institution (ETSI). 
+
+The development of mobile networks started in 1980s with the first generation of mobile networks (1G) and focused on analog communication only and enabled voice calls \cite{sauter2017history}. The 1G was followed by 2G which switched from analog to digital communication and introduced short messages service (SMS) \cite{sauter2017history}. 3G mainly focused on enhancing data rates to enable multimedia applications such as video streaming \cite{sauter2017history}. 4G then disrupted mobile networks design by switching to fully IP based architecture and further enhancing data rates and decreasing latency \cite{sauter2017history,dahlman20134g}. 
+
+The deployment of 5G started in 2019 and is still ongoing. Evolving from 4G, 5G was tasked with providing support for not only fast internet access, but also massive machine-type communication and mission critical communication \cite{dahlman20205g}. The goal of these requirements was to develop a flexible mobile network, capable of supporting novel applications such as virtual reality (VR), IoT or connected vehicles. The result is a redesigned 5G core network (CN) that serves as a flexible platform, capable of integrating novel applications and techniques like edge computing \cite{sabella-mec-sw-dev}. 
+
+Edge computing (EC) can be described as an extension of cloud computing to the network edge \cite{sabella-mec-sw-dev}. Cloud computing (CC) is a computing paradigm that enables access to a pool of resources, e.g. (storage, computing, applications and services) via a network \cite{mell2011nistCC}. By bringing the resources closer to the user, to the network edge, EC can offer services with minimal latency, which is critical for applications such as autonomous vehicles (AVs). A specific standardized implementation of edge computing is called multi-access edge computing (MEC). MEC is an access agnostic EC model, which addresses user mobility through wireless access technologies. The leading international SDO regarding MEC is ETSI MEC, whose aim is to create an open standardized environment allowing for seamless integration of applications from vendors, service providers as well as third parties \cite{etsi-web}.  In this thesis, standards developed by ETSI MEC will be exploited. 
+
+MEC would benefit various use cases such as IoT, augmented reality, location services or AVs \cite{etsi-web}. AVs require processing large amounts of data in order to recognize the surrounding environment and decide the best next action (slow down, speed up, turn etc.). This is a computationally demanding process, and the vehicles computation capacity is limited, compared to cloud. As shown in recent research \cite{zhao2019towards}, the computation required for level-4 and level-5 AVs requires server grade hardware. That is where MEC could be leveraged to offload some of the data processing to the network edge. This would drive down the vehicles’ cost and power consumption, while keeping the communication latency low. The utilization of MEC for vehicular applications is referred to as vehicular edge computing (VEC). 
+
+As of today, VEC is still a work in progress. To provide a sufficient computation offloading from vehicles, algorithms for allocation of computation and communication resources need to be developed and evaluated. Therefore, this thesis focuses on developing a functional testbed for VEC. First, integration of MEC in 5G networks is explained. Then, in chapter 3, some existing open source platforms for emulating network edge are evaluated. Chapters 4 and 5 provide a more detailed description of the chosen platforms for emulation of edge and mobile network. Chapter 6 explains the integration of both platforms to form a functional testbed. Chapter 7 provides testbed evaluation and measurements. Finally, in last chapter, the thesis is concluded and future work outlined. 
+
+TESTING References
+\cite{ETSI:GS:MEC003,ETSI:WP:28,ETSI:WP:24}
+
+\chapter{MEC \& 5G}
+The aim of this chapter is to provide a detailed description of integration of MEC into 5G mobile networks. Although 5G is not a prerequisite for MEC deployment, with ETSI describing MEC and 4G integration in [h], 5G is the superior radio access technology for MEC. Contrary to 4G, 5G was designed to enable seamless integration of MEC [i] and works with lower latency [a], which is a crucial parameter for edge applications such as AVs.  In this chapter, both 5G  and MEC system architectures are described, before the final section of this chapter provides a framework for integration of MEC system into 5G CN.
+
+\section{Key concepts in 5G}
+The evolution from 4G to 5G has not focused only on providing improved experience for end users through enhancing communication data rates and decreasing latency. One of the main goals of 5G development has been to introduce industry businesses as new customers to mobile networks’ vendors [k]. To achieve that, two new industry oriented usage scenarios have been introduced to complement the end user oriented one – Enhanced Mobile Broadband (eMBB). The newly introduced usage scenarios are Massive Machine-Type Communication (mMTC) and Ultra-Reliable Low Latency Communication (URLLC) [k]. All three mentioned service grades are illustrated in Figure [1].
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{./images/usage-scenarios.png}
+	\caption{My PNG image}
+  \end{figure}
+
+As illustrated in Figure [1], the three usage scenarios for 5G are largely varying in their requirements. Trying to cater for all three at the same time would be very inefficient. This leads to the concept of network slicing, i.e., creating multiple logical end-to-end networks on the same physical infrastructure [l]. Each of these logical networks can then be orchestrated individually, according to the specific service requirements [l]. In the context of AVs, this would allow for operation of AVs oriented network slice, which would leverage multiple techniques, even MEC, for achieving low latency. 
+
+The concept of network slicing requires new approaches for managing network resources. The technologies identified as enablers for network slicing are Network Function Virtualization (NFV) and Software Defined Networking (SDN) [l]. NFV aims to leverage virtualization techniques to improve mobile networks’ flexibility, agility and scalability [l]. SDN, on the other hand, aims to provide programmability to mobile networks’ services [l]. 
+  
+Another important concept, although not new in 5G, is Control and User Plane Separation (CUPS). CUPS allows for distributed CN deployments, where e. g. user plane can be deployed closer to the end user for reduced latency and backbone network traffic. While the user plane solution for both 5G CN and Evolved Packet Core (EPC), the 4G CN, is still quite similar, the control plane underwent a revolution through introduction of Service-Based Architecture (SBA) [k]. The 5G CN Network Functions (NFs) are not connected with point-to-point interfaces, but instead provide Application Programmable Interfaces (APIs) for exposing services to other NFs [k]. In practice, this can be achieved through exposing HTTP REST APIs [d, k]. HTTP (Hyper Text Transfer Protocol) is a request response communication model protocol, while REST (Representational State Transfer) is an architecture style for creating flexible systems that can communicate with each other, using HTTP methods GET, POST, PUT and DELETE. 
+
+\section{5G system architecture}
+This section aims to introduce and describe the 5G system architecture with focus on some key NFs, that play role in MEC integration. As described earlier, 5G CN control plane NFs utilize SBA, which means that they are all logically interconnected. The user plane, however, is still connected to the rest of the network using point-to-point interfaces. The 5G system architecture depicted in Figure [2] is described in [m].
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{./images/5G-CN.png}
+	\caption{My PNG image}
+\end{figure}
+
+The user plane consists of User Equipment (UE), Radio Access Network (RAN), User Plane Function (UPF) and Data Networks Function (DN). The brackets around ‘R’ in RAN in Figure [2] indicate that 5G CN is not designed exclusively for radio access technologies, but instead aims to be access agnostic. UE is connected to RAN via the Uu interface, while RAN itself is connected to the UPF via the N2 interface. The main role of UPF is to process and forward user data. It also connects UEs with IP networks. UPF can be deployed closer to end users, which improves communication latency. This is crucial for MEC deployment, because UPF can be deployed at the network edge with the edge server and steer traffic towards it. [k] 
+
+The control plane consists of Network Slice Selection Function (NSSF), Network Exposure Function (NEF), Authentication Server Function (AUSF), Network Repository Function (NRF), Access and Mobility Management Function (AMF), Policy Control Function (PCF), Session Management Function (SMF), Unified Data Management (UDM) and Application Function (AF). The control plane NFs directly interacting with user plane are AMF and SMF. These NFs together are largely responsible for Packet Data Unit (PDU) session management, initial attach of UE, mobility management or setting up radio bearers. [k] 
+  
+The AMF deserves special notice, since it is the NF, which acts as a gateway between CN on one side and RAN and UEs on the other. It relays all control signaling messages from other CN NFs towards RAN and UE via the N2 and N1 interfaces. AMF allows UEs to register, authenticate themselves and, in coordination with RAN and other NFs, ensures smooth handover between cells [k]. Although RAN is not extensively discussed in this thesis, it is beneficial to establish how RAN and CN interact to set up communication channels. AMF provides the RAN with Quality of Service (QoS) parameters, which are used by the Radio Resource Control (RRC) protocol to set up appropriate radio bearers, i.e., logical radio connections between UEs and RAN [a]. 
+  
+An important workflow, key to understanding how MEC can be integrated to 5G system, is PDU session management of 5G system, which  provides connectivity between UEs and DNs, mostly the Internet. To set up this connection, UE sends a PDU session establishment request to AMF, which instructs SMF. What follows is a series of control plane signaling messages between SMF and various other NFs to properly register the PDU session, set up (R)AN and create a UPF tunnel towards the DN. The simplified PDU session establishment process is illustrated in Figure [3]. 5G system architecture allows for the UE to be to be connected to multiple DNs at a time. One PDU session can connect the UE to the Internet, while another one can be set up to connect it with, e.g., local edge server. To determine the correct endpoint DN for a given traffic, UPF uses an Uplink Classifier (Ul CL), which enables steering traffic towards appropriate DNs based on, e.g., uplink IP address. Crucially, configuring UL CL can be requested by AF as a SMF service. [k] 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{./images/PDU-sesh-est.png}
+	\caption{My PNG image}
+\end{figure}
+
+The PDU session management was slightly innovated, compared to 4G. 5G system, however, introduces completely new workflows: service registration \& discovery and capabilities exposure. These workflows are crucial for understanding how 5G system interacts with external applications such as MEC. Service registration \& discovery, illustrated in Figure [4], describes how individual NFs within 5G system utilize the SBA to provide and consume services. Put simply, every Service Producer needs to register its services with NRF. When a Service Consumer wants to request services of a particular NF, it first requests NRF for a list of available NFs offering those services. The other workflow, capabilities exposure, describes specifically how external applications can interact with and influence 5G system. The NFs crucial for this workflow are AF, which basically represents the external application, and NEF, which acts as a gateway between external applications and 5G system. Provided the external application is properly registered, NEF can e.g. allow AF to influence traffic steering, managed by SMF, to forward traffic to a specific DN. This is of particular interest to MEC integration, since this workflow can allow MEC to influence traffic steering from UE to edge server. This flow is illustrated in Figure [5].
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{./images/service-reg-disc.png}
+	\caption{My PNG image}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=15cm]{./images/NEF-callflow.png}
+	\caption{My PNG image}
+\end{figure}
+
+\section{MEC system concept and architecture}
+Previous sections of this chapter focused on providing a general overview of the 5G system, as well as identifying individual workflows supporting MEC integration. This section switches the focus to the MEC system itself and aims to, again, provide a general overview before selecting key functional entities (FEs) and workflows that play a role in connecting the MEC system to a 5G mobile network. 
+
+The general idea of MEC is to bring CC capabilities to the network edge and thus provide a low latency environment for improved experience in existing applications and for enabling emerging applications in industrial IoT or automotive sectors [n]. This would open the 5G ecosystem to new vertical sectors and enable exploitation of new business opportunities [d]. However, having multiple stakeholders in the development chain of end-to-end MEC solutions implies the need for standardization [n]. MEC standards play an important role in creating a common platform for Mobile Network Operators (MNOs) and MEC application developers from various verticals to aid the development of end-to-end MEC solutions. This section presents and describes the MEC system framework and reference architecture developed by ETSI ISG MEC, the leading standardization body in MEC. 
+
+The MEC framework, defined in [j], is illustrated in Figure [6], which shows the general entities involved and groups them into system level, host level and network level FEs. The network level entities ensure connectivity to local area networks, cellular networks and external networks, e.g., the Internet. The host level, constituted by MEC host and its management, is the core of MEC system, because it represents the IT infrastructure on which MEC applications (MEC apps) are run. The MEC host can be further dissected into MEC platform, virtualization infrastructure and MEC applications [j]. The system level is responsible for management and orchestration of the whole MEC system, which is typically comprised of multiple MEC hosts [j, d].
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{./images/MEC-framework.png}
+	\caption{My PNG image}
+\end{figure}
+
+The reference architecture, illustrated in Figure [7], offers a more detailed insight into the general framework from Figure [6] and identifies reference points for connecting individual FEs of the MEC system. The reference points can be divided into three groups based on [j]: 
+\begin{itemize}
+	\item MEC platform functionality reference points (Mp) 
+	\item Management reference points (Mm)
+	\item Reference points connecting to external entities (Mx)
+\end{itemize}
+Not all the illustrated reference points are specified by ETSI ISG MEC [j]. An example of a specified interface is the Mp1, connecting MEC Platform and MEC apps. This is desirable since it is expected that MEC platform and MEC apps will be developed by different parties. An example of a closed interface is the Mm5, connecting MEC platform and its management entity, which are both expected to be developed by the same organization and are therefore left as an implementation choice [j, d].
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{./images/MEC-ref-arch.png}
+	\caption{My PNG image}
+\end{figure}
+
+The MEC platform is a crucial MEC system FE, as it acts as an intermediary between MEC apps and the system level management. Through the Mp1 interface, MEC platform offers an environment where MEC apps may discover, advertise, consume and offer MEC services [o]. This is very similar to the SBA based workflows in 5G system. MEC platform offers the MEC apps similar functionality to what NEF and NRF offer to the 5G system. On top of that, the MEC platform has another very important responsibility. Upon request from a MEC app, MEC platform can activate, deactivate or update traffic rules and then configure the data plane accordingly [j]. This in turn is analogous to AF functionality within 5G system. These analogies are elaborated upon in the next section focusing on integration of MEC system to 5G mobile network. 
+
+Another important part of the MEC system is its management, split into host level and system level, which is illustrated in Figure [6]. The individual FEs taking part in MEC management are illustrated in Figure [7]. System level management is comprised of Operations Support System (OSS), User Application Life Cycle Management Proxy (UALCMP) and MEC orchestrator (MEO). MEO is a key FE overseeing the whole MEC system in terms of deployed MEC hosts, available resources and services etc. It also plays a key role in application onboarding or mobility handling. Host level management responsibilities are shared between two entities: MEC Platform Manager (MEPM) and Virtualization Infrastructure Manager (VIM). MEPM manages lifecycle of applications and can inform MEO about MEC app related events, while VIM prepares the virtualized resources of the virtualization infrastructure. [j] 
+
+Thus far, it has been described how MEC apps and MEC platform interact with each other to provide and consume services and how the whole MEC system is managed on both system and host levels. The last important workflow to be described is how the MEC system interacts with the UE, so that the UE can discover and exploit available MEC servers.  There are two recognized approaches for edge discovery from the UE perspective: DNS based and device based [n]. The first option is called edge unaware, since the client application, i.e., the application instance in UE communicating with MEC app, has no information about the edge server location. Instead, the client application is connected to the MEC app via a DNS server, whose queries may be enriched by the 5G CN with the device location information [n, p]. The second approach, edge aware, requires a new entity on the client side, the device application, to communicate with the MEC system to receive the MEC application address and offer it to client applications [p]. The edge aware approach is more suited for highly distributed edge cloud exposed to UE mobility, because it allows for informing the device application about change of edge server [n]. In stateful applications, this requires the MEO to trigger context migration to another server [j, n].
+
+\section{Integration of MEC into 5G system}
+The previous sections of this chapter provided a brief overview of both 5G system and MEC system respectively with focus on techniques and concepts that can be used for their seamless integration. This section aims to deliver an end-to-end framework for MEC and 5G integration based on standards by 3GPP and ETSI MEC. This is of vital importance for the rest of the thesis, but it can also be valuable for developers of MEC solutions. 
+
+The lifecycle of a MEC app can be divided into four stages, based on [p]:
+\begin{itemize}
+	\item MEC app packaging and onboarding
+	\item MEC app instantiation 
+	\item Client-side app and MEC app communication 
+	\item Usage of the MEC platform and services 
+\end{itemize}
+MEC apps are expected to be packaged in Virtual Machines (VMs) or containers and to run on the virtualized infrastructure of a MEC host. The onboarding of MEC apps is left as an implementation choice for the MEC operator [p]. The second stage of a MEC app lifecycle describes how it is instantiated on a MEC system and how it is made available to clients. There are two options for a MEC app initialization and, eventually, for establishment of communication between the client-side app and the MEC app. One option is via a communication between the device application and the MEC system through a UALCMP, and the other is via the OSS without the need for any client-side action. The first option is related to edge-aware discovery, described in previous section. Device application contacts the UALCMP via the Mx2 interface and informs it which MEC app it would like to instantiate, the UALCMP then informs the MEO, which is responsible for choosing the appropriate MEC host and configuring the MEPM to initialize the given application. In response to successful instantiation, the device app receives the IP address of a running MEC app instance [p]. In the other option, the initialization is done without the client-side being required to participate in the process. For the client app, to utilize MEC, it simply accesses the required application via its domain name and the 5G system DNS is responsible for connecting the client to the nearest running MEC app instance [n, p]. Once instantiated, MEC apps can leverage SBA within the MEC system, consuming services provided by the MEC platform or other applications and also offering their services to other applications. 
+
+Thus far, it has been hinted that EC can be exploited in two varying ways, both of which end in the UE accessing the desired application in an edge server to experience low latency. The simpler option, relying on DNS servers connecting clients to the nearest edge server, requires less effort to implement but it has several limitations. It is less suited for highly mobile scenarios and highly distributed cloud [n]. The second option relies on tight integration of the MEC system and the underlying mobile network. As a result, it offers better support for highly mobile scenarios, even allowing for context migration between MEC app instances in stateful applications. On top of that, MEC offers a framework for MEC apps, through which they can feed traffic rules to the mobile network to help satisfy QoS requirements. This is achieved through establishment of a dedicated PDU session steering traffic from the client app to the MEC host. 
+
+The resulting framework, utilizing edge aware app initialization and dedicated PDU session establishment is as follows: 
+\begin{enumerate}
+	\item Device app requests initialization of a MEC app from UALCMP
+	\item MEO chooses the optimal MEC host and sends traffic rules to the selected MEC platform
+	\item MEC platform, acting as an AF, requests traffic rules control from SMF, via NEF/PCF 
+	\item SMF configures the UPF with UL CL to steer desired traffic to MEC host
+\end{enumerate}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{./images/MEC-5G-integration-flowchart.png}
+	\caption{My PNG image}
+\end{figure}
+
+\chapter{Open-source MEC Solutions}
+This chapter introduces the rich and growing ecosystem of open-source MEC solutions with the goal of eventually choosing the most suitable project to leverage in the development of VEC testbed. The world of open-source MEC solutions has developed from the need to accelerate the development process of MEC applications and to support the adoption of MEC as a key technology within 5G mobile networks. The resulting environment comprises of various MEC projects, developed by a range of stakeholders, addressing different challenges within MEC. This chapter intends to describe the open-source MEC ecosystem by introducing the main bodies taking part in MEC development, their respective projects and the challenges these projects aim to address. 
+
+The main criteria studied in evaluated MEC projects are which part of the ETSI MEC system they aim to constitute and what underlying technologies they use. Another important factor is interoperability support, i.e., which interfaces are provided in the project to enable communication with modules developed by different stakeholders. An end-to-end MEC solution is expected to be developed by three stakeholders: MEC app developer, mobile network operator and MEC operator. The evaluated open-source projects play the role of a MEC operator. Therefore, it is crucial that they provide means of integrating it with both MEC apps and mobile networks. Furthermore, all the evaluated projects are a work in progress, they may not yet provide all the desired functionality or may not be fully operational. Therefore, some promising projects were tested and their state of operationality will be discussed. 
+
+Before evaluating the individual projects, it is desirable to mention the most often used software techniques leveraged in these projects. The most important one is virtualization. In the previous chapter, it was described how the architecture of both 5G network and MEC system consists of several building blocks called NEs or FEs. These building blocks are not implemented by specific hardware parts, instead, the trend is moving towards virtualization, i.e., managing multiple separated software-defined entities on general hardware. The way in which the separation is achieved sets apart different virtualization techniques. One way is to introduce a new abstraction layer on top of the hardware – the hypervisor, then the separation is created by having multiple Virtual Machines (VMs) with their own operating system running on top of the hypervisor. Another way is to package the desired application and all of its dependencies in blocks called containers. All running containers share the same underlying operating system and are thus a significantly more lightweight solution than VMs. 
+
+Some popular hypervisors are VirtualBox or VMware and the most common platform for container virtualization is Docker. Orchestrating multiple containers on a single node is often handled by Kubernetes (k8s), a popular open-source container orchestration tool. Another key software, Open vSwitch, provides virtual networking layer for VMs or containers and enables their connectivity to each other and to data networks.
+
+\section{Akraino projects}
+The leader in development of open-source edge software is LF Edge, a Linux Foundation umbrella organization, which aims to unite industry leaders to introduce edge computing framework. LF Edge identifies three levels of maturity within their projects. Only two projects are, at the time of writing, listed in the top category: Akraino and EdgeX Foundry [q]. The latter, EdgeX Foundry, has established itself as the leading open-source industrial IoT edge framework. Akraino, on the other hand, spans over a broad variety of use cases, including but not limited to MEC. Akraino is not one common platform, but rather a whole set of edge stack solutions, called blueprints. Furthermore, in 2019 LF Edge signed a cooperation agreement with ETSI, which lead to an increasing number of Akraino blueprints tightly following ETSI ISG MEC specifications [d]. Under the newest – sixth release, Akraino constitutes of over 30 blueprints, such as: Connected Vehicles Blueprint (CVB), Enterprise Applications on Lightweight 5G Telco Edge (EALTEdge) or Public Cloud Edge Interface (PCEI) [q].
+\subsection{Connected Vehicles Blueprint}
+The CVB blueprint is developed by Tencent, Arm, Intel and Nokia. It aims to create a MEC platform offering services to connected vehicles. Some applications running on top of the provided platform include traffic situation monitoring, road event perception or high precision positioning. It references the ETSI MEC Mp1 and Mm5 interfaces, which are supposed to handle communication between MEC platform, MEC platform management and MEC apps. It is not uncommon among MEC solutions to leverage some related open-source software, CVB uses StarlingX as a virtualization platform, TARS as a microservices management tool and OpenNESS toolkit for managing and onboarding edge services. The setup of CVB requires three nodes: Jenkins master, TARS master and TARS node with the vehicle applications. An illustration of the scope of CVB is shown in Figure 9. [r]
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=\textwidth]{./images/akraino-cvb.png}
+	\caption{My PNG image}
+\end{figure}
+
+\subsection{Enterprise Applications on Lightweight 5G Telco Edge}
+EALTEdge is a blueprint under 5G/MEC system blueprint family within the Akraino project. It is intended to play the role of a MEC operator through offering MEC platform as well as its management and orchestration to host enterprise applications on lightweight 5G telco edge. EALTEdge uses EdgeGallery as its upstream project, which provides edge platform, application management and platform for application developers. On top of EdgeGallery, EALTEdge intends to integrate other Akraino blueprints, such as EdgeConnector and EdgeGateway, to create a richer environment with even more capabilities. EdgeGallery provides several ETSI MEC APIs such as application enablement API as defined in ETSI MEC 011, it is also one of the projects listed in [s] as relevant MEC solutions. The general architecture of EALTEdge project, leveraging EdgeGallery is provided in Figure 10, while Figure 11 shows the entire EALTEdge software stack. [t]
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=13cm]{./images/akraino-ealtedge.png} % CHANGE THIS FIGURE
+	\caption{My PNG image}
+\end{figure}
+
+The deployment of EALTEdge is quite flexible, allowing to deploy everything as containers in one node (bare metal or virtual) or it can be deployed in multiple, typically two nodes. Furthermore, the deployment is managed through provided ansible playbooks to simplify the whole process. 
+
+Because EALTEdge provides a general MEC system, which closely follows ETSI MEC specifications and also offers a development environment for MEC apps, it seems like an ideal platform for the testbed development. However, upon testing in lab environment, it was discovered that EdgeGallery servers forbid requests of downloading the tarballs containing the software. Therefore, while EALTEdge or even EdgeGallery alone seem like very promising projects, they could not be leveraged in testbed development.
+
+\section{Intel Edge Projects}
+Beside the Akraino project, another primary mover within edge software development is Intel. Intel develops commercial end-to-end edge solutions for their customers, but they also offer open-source variants for developers to prototype on. The range of edge-oriented products currently offered by Intel and the licenses under which they are released are shown in Figure 12. A successful open-source solution by Intel was Open Network Edge Services Software (OpenNESS), which at some point gained a lot of momentum within MEC open-source community, it is heavily reference in [d] and moreover, several Akraino blueprints reference OpeNESS as a platform they were initially built on [r, u]. However, the OpeNESS project was shut down and transitioned towards Smart Edge Open. Both platforms will be introduced in the following two subsections.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=13cm]{./images/intel-solu.png} 
+	\caption{My PNG image}
+\end{figure}
+
+\subsection{OpenNESS}
+OpenNESS is a software toolkit that enables building custom platforms for edge computing use cases, including MEC, capable of onboarding and managing applications. Although OpenNESS did not strictly follow the ETSI MEC specifications, it was inspired by them and also references 3GPP and O-RAN specifications that were used to develop APIs for integration with 5G mobile networks [d]. It should be noted that Intel offered its own solution for 5G CN emulation, which was probably compatible with OpenNESS, though that was not part of the open-source package and was offered as a commercial product. [v] 
+
+OpenNESS was built on top of Kubernetes and highly optimized for edge computing. A typical deployment consists of an OpenNESS Kubernetes Edge Node and an OpenNESS Kubernetes Control plane, as shown in Figure 13. [v]
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=13cm]{./images/openness.png} 
+	\caption{My PNG image}
+\end{figure}
+
+\subsection{Smart Edge Open}
+Smart Edge Open (SEO) is a result of Intel’s efforts to unify development of its open-source and commercial products. SEO follows the basics of OpenNESS architecture, as it is also built on top of Kubernetes and the basic deployment model consists of a control node and an edge node. [w] The resulting architecture is shown in Figure 14. Even though SEO development initially started as a rebranding of OpenNESS, the documentation of SEO is not as rich and it further distances itself from the ETSI MEC architecture. Eventually, while the transition from OpenNESS to SEO may have improved the platform’s integration into Intel ecosystem, it distances itself from open-source MEC community, where strict following of standardized architecture is necessary to ensure interoperability between individual projects. 
+
+Even though it was argued that due to its distancing from strict ETSI MEC reference architecture, SEO is not an optimal solution for testbed development, it was still tested in our lab environment. However, the deployment of the platform was unsuccessful. SEO uses Intel’s own provisioning software and while it should simplify the deployment, it makes the process of troubleshooting unfeasible, when an issue is encountered.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=13cm]{./images/intel-seo.png} 
+	\caption{My PNG image}
+\end{figure}
+
+\section{EURECOM and OpenAirInterface Projects}
+The two following projects have been developed by EURECOM and are closely related to OpenAirInterface (OAI), the mobile network emulation platform that is now maintained by OAI Software Alliance (OSA). EURECOM though continues to be involved in the development OAI and plays a key role in expanding the scope of OAI to network slicing or MEC.
+\subsection{LL-MEC}
+Low latency MEC (LL-MEC) was introduced in 2018 as the first open-source low latency MEC platform, enabling mobile network monitoring, control and programmability [y]. While it was developed in compliance with 3GPP and ETSI specifications, these specifications are not related to 5G MEC integration referenced in chapter 2, since LL-MEC was developed as a 4G MEC solution. One possible deployment of LL-MEC is shown in Figure 15, which also demonstrates that LL-MEC uses Open vSwitch for user plane. Since this thesis puts main focus on integrating MEC in 5G mobile networks, the LL-MEC has not been chosen as the platform for testbed development.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=13cm]{./images/ll-mec.png} 
+	\caption{My PNG image}
+\end{figure}
+
+\subsection{MEC platform by EURECOM}
+This MEC Platform (MEP) has been only recently developed by EURECOM and is closely integrated with OAI emulated 5G network. At the time of writing, the MEP is very much a work in progress as it only implements a MEP environment for registry and discovery of MEC services and offers its own implementation of Radio Network Information Service (RNIS) [x]. However, it has several traits that make it a very viable candidate for VEC testbed development. Its integration with the OAI would significantly reduce the integration implementation overhead. Moreover, it promises to follow ETSI MEC as well as O-RAN specifications. And finally, the developers have already outlined that it is intended to implement traffic rules control via communicating with PCF in 5G CN. This would mean that the project is aiming for a MEC implementation very close to the standardized approach extensively described in chapter 2. The components thus far developed are shown in Figure 16.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=13cm]{./images/OAI-MEP.png}
+	\caption{My PNG image}
+\end{figure}
+
+\section{Other MEC projects}
+\subsection{AdvantEDGE}
+AdvantEDGE is a mobile edge emulation platform running on Docker and Kubernetes. Its main ambition is to help MEC app developers decide where in the network edge their application should run and how different network characteristics such as latency, packet loss or jitter impact their application’s QoS. This is achieved through emulation of mobile network with the possibility to test the application with different network characteristics settings and different deployment models (how close to the user the app is run). On top of that, the platform enables triggering of mobility events and application relocation even for stateful applications. The platform is not intended to emulate any part of the ETSI MEC reference architecture, but it implements various ETSI MEC APIs, such as RNIS, Location Service or App Enablement Service. The high-level overview of AdvantEDGE micro-service based architecture is shown in Figure 17.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=13cm]{./images/advatnedge.png} 
+	\caption{My PNG image}
+\end{figure}
+
+AdvantEDGE was successfully deployed in our lab setup, however, it was deemed not suitable for the purposes of the testbed development, which puts a strong emphasis on the platform architecture and the underlying mobile network.
+
+% -----------------------
+%     BIBLIOGRAPHY
+% -----------------------
+%\bibliographystyle{IEEEtran}
+%\addcontentsline{toc}{chapter}{References}
+\bibliography{thesis}
+
+
+\clearpage
+%\bibliographystyleNew{IEEEtran}
+
+%
+%\begin{appendices}
+% \chapter{TPS project requirements}
+% This project also requires the use of an equation and a graph. I decided to append that to the end of this work, since I could not think of any suitable equation or graph for the project.
+% Graph \ref{only-Graph} shows a sine function with added gaussian noise. Equation \ref{Eq:Shan-H} is a Shanon Hartley theorem.
+
+%\captionsetup[figure]{name=Graph}
+%\begin{figure}[h]
+%	\includegraphics[width=\textwidth]{fig1.pdf}
+%	\caption{Sine function with gaussian noise}
+%	\label{only-Graph}	
+%\end{figure}
+%
+%Shanon-Hartley theorem:
+%\begin{equation}
+%	C = B \log_2 \left(1 + \frac{S}{N}\right)
+%	\label{Eq:Shan-H}
+%\end{equation}
+%$C$ is the capacity in bits per second, $B$ is bandwith in Hz, $S$ and $N$ are powers of a signal and noise respectively.
+%
+%\end{appendices}
+	
+	
+\end{document}

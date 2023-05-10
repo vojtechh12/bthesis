@@ -1,0 +1,7 @@
+This is makeindex, version 2.15 [TeX Live 2022/dev] (kpathsea + Thai support).
+Scanning style file ./bthesis.ist.............................done (29 attributes redefined, 0 ignored).
+Scanning input file bthesis.glo....done (3 entries accepted, 0 rejected).
+Sorting entries....done (5 comparisons).
+Generating output file bthesis.gls....done (10 lines written, 0 warnings).
+Output written in bthesis.gls.
+Transcript written in bthesis.glg.
