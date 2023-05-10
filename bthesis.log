@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.10.5)  9 MAY 2023 20:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.10.5)  10 MAY 2023 10:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -918,10 +918,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 \tf@toc=\write6
 \openout6 = `bthesis.toc'.
 
- (./bthesis.gls [5]) [6
+ (./bthesis.gls [5] [6
 
 
-]
+] [7] [8]) [9]
 Chapter 1.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -940,7 +940,7 @@ File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 l.377 \chapter
               {MEC \& 5G} [2]
 Chapter 2.
-<./images/usage-scenarios.png, id=233, 679.8198pt x 476.5002pt>
+<./images/usage-scenarios.png, id=329, 679.8198pt x 476.5002pt>
 File: ./images/usage-scenarios.png Graphic file (type png)
 <use ./images/usage-scenarios.png>
 Package pdftex.def Info: ./images/usage-scenarios.png  used on input line 384.
@@ -962,35 +962,35 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has b
                    \relax 
 l.396 
        [4 <./images/usage-scenarios.png>]
-<./images/5G-CN.png, id=244, 740.7675pt x 398.9304pt>
+<./images/5G-CN.png, id=339, 825.3234pt x 398.9304pt>
 File: ./images/5G-CN.png Graphic file (type png)
 <use ./images/5G-CN.png>
 Package pdftex.def Info: ./images/5G-CN.png  used on input line 399.
-(pdftex.def)             Requested size: 455.24411pt x 245.16725pt.
+(pdftex.def)             Requested size: 455.24411pt x 220.04546pt.
  [5 <./images/5G-CN.png>]
-<./images/PDU-sesh-est.png, id=251, 798.5835pt x 418.2024pt>
+<./images/PDU-sesh-est.png, id=346, 798.5835pt x 418.2024pt>
 File: ./images/PDU-sesh-est.png Graphic file (type png)
 <use ./images/PDU-sesh-est.png>
 Package pdftex.def Info: ./images/PDU-sesh-est.png  used on input line 413.
 (pdftex.def)             Requested size: 455.24411pt x 238.40337pt.
  [6 <./images/PDU-sesh-est.png>]
-<./images/service-reg-disc.png, id=258, 952.55875pt x 356.33125pt>
+<./images/service-reg-disc.png, id=354, 952.55875pt x 356.33125pt>
 File: ./images/service-reg-disc.png Graphic file (type png)
 <use ./images/service-reg-disc.png>
 Package pdftex.def Info: ./images/service-reg-disc.png  used on input line 421.
 (pdftex.def)             Requested size: 455.24411pt x 170.29759pt.
-<./images/NEF-callflow.png, id=259, 954.56625pt x 283.0575pt>
+<./images/NEF-callflow.png, id=355, 954.56625pt x 283.0575pt>
 File: ./images/NEF-callflow.png Graphic file (type png)
 <use ./images/NEF-callflow.png>
 Package pdftex.def Info: ./images/NEF-callflow.png  used on input line 427.
 (pdftex.def)             Requested size: 426.79134pt x 126.55406pt.
  [7 <./images/service-reg-disc.png> <./images/NEF-callflow.png>]
-<./images/MEC-framework.png, id=266, 1001.7425pt x 864.22874pt>
+<./images/MEC-framework.png, id=362, 1001.7425pt x 864.22874pt>
 File: ./images/MEC-framework.png Graphic file (type png)
 <use ./images/MEC-framework.png>
 Package pdftex.def Info: ./images/MEC-framework.png  used on input line 440.
 (pdftex.def)             Requested size: 455.24411pt x 392.74995pt.
-<./images/MEC-ref-arch.png, id=267, 1127.21124pt x 774.895pt>
+<./images/MEC-ref-arch.png, id=363, 1127.21124pt x 774.895pt>
 File: ./images/MEC-ref-arch.png Graphic file (type png)
 <use ./images/MEC-ref-arch.png>
 Package pdftex.def Info: ./images/MEC-ref-arch.png  used on input line 454.
@@ -1006,7 +1006,7 @@ Overfull \hbox (10.18176pt too wide) in paragraph at lines 482--483
 []\OT1/cmr/m/n/12 MEC plat-form, act-ing as an AF, re-quests traf-fic rules con-trol from SMF, via NEF/PCF 
  []
 
-<./images/MEC-5G-integration-flowchart.png, id=288, 894.4617pt x 516.7305pt>
+<./images/MEC-5G-integration-flowchart.png, id=383, 894.4617pt x 516.7305pt>
 File: ./images/MEC-5G-integration-flowchart.png Graphic file (type png)
 <use ./images/MEC-5G-integration-flowchart.png>
 Package pdftex.def Info: ./images/MEC-5G-integration-flowchart.png  used on input line 488.
@@ -1019,12 +1019,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [13
 
 ]
-<./images/akraino-cvb.png, id=303, 1706.375pt x 941.5175pt>
+<./images/akraino-cvb.png, id=399, 1706.375pt x 941.5175pt>
 File: ./images/akraino-cvb.png Graphic file (type png)
 <use ./images/akraino-cvb.png>
 Package pdftex.def Info: ./images/akraino-cvb.png  used on input line 507.
 (pdftex.def)             Requested size: 455.24411pt x 251.18181pt.
-<./images/akraino-ealtedge.png, id=304, 1027.84pt x 893.3375pt>
+<./images/akraino-ealtedge.png, id=400, 1027.84pt x 893.3375pt>
 File: ./images/akraino-ealtedge.png Graphic file (type png)
 <use ./images/akraino-ealtedge.png>
 Package pdftex.def Info: ./images/akraino-ealtedge.png  used on input line 515.
@@ -1033,35 +1033,35 @@ Package pdftex.def Info: ./images/akraino-ealtedge.png  used on input line 515.
 Underfull \vbox (badness 3354) has occurred while \output is active []
 
  [14]
-<./images/intel-solu.png, id=310, 1805.74625pt x 883.3pt>
+<./images/intel-solu.png, id=405, 1805.74625pt x 883.3pt>
 File: ./images/intel-solu.png Graphic file (type png)
 <use ./images/intel-solu.png>
 Package pdftex.def Info: ./images/intel-solu.png  used on input line 527.
 (pdftex.def)             Requested size: 369.88582pt x 180.92941pt.
  [15 <./images/akraino-cvb.png>] [16 <./images/akraino-ealtedge.png>]
-<./images/openness.png, id=322, 1525.7pt x 781.92125pt>
+<./images/openness.png, id=417, 1525.7pt x 781.92125pt>
 File: ./images/openness.png Graphic file (type png)
 <use ./images/openness.png>
 Package pdftex.def Info: ./images/openness.png  used on input line 537.
 (pdftex.def)             Requested size: 369.88582pt x 189.56198pt.
  [17 <./images/intel-solu.png> <./images/openness.png>]
-<./images/intel-seo.png, id=329, 1474.50874pt x 653.44125pt>
+<./images/intel-seo.png, id=424, 1474.50874pt x 653.44125pt>
 File: ./images/intel-seo.png Graphic file (type png)
 <use ./images/intel-seo.png>
 Package pdftex.def Info: ./images/intel-seo.png  used on input line 547.
 (pdftex.def)             Requested size: 369.88582pt x 163.91826pt.
-<./images/ll-mec.png, id=330, 1765.59625pt x 1170.3725pt>
+<./images/ll-mec.png, id=425, 1765.59625pt x 1170.3725pt>
 File: ./images/ll-mec.png Graphic file (type png)
 <use ./images/ll-mec.png>
 Package pdftex.def Info: ./images/ll-mec.png  used on input line 557.
 (pdftex.def)             Requested size: 369.88582pt x 245.17828pt.
  [18 <./images/intel-seo.png>]
-<./images/OAI-MEP.png, id=336, 1029.8475pt x 533.1117pt>
+<./images/OAI-MEP.png, id=432, 1039.0017pt x 533.1117pt>
 File: ./images/OAI-MEP.png Graphic file (type png)
 <use ./images/OAI-MEP.png>
 Package pdftex.def Info: ./images/OAI-MEP.png  used on input line 565.
-(pdftex.def)             Requested size: 369.88582pt x 191.47266pt.
-<./images/advatnedge.png, id=337, 1329.96875pt x 1051.93pt>
+(pdftex.def)             Requested size: 369.88582pt x 189.78879pt.
+<./images/advatnedge.png, id=433, 1329.96875pt x 1051.93pt>
 File: ./images/advatnedge.png Graphic file (type png)
 <use ./images/advatnedge.png>
 Package pdftex.def Info: ./images/advatnedge.png  used on input line 574.
@@ -1081,18 +1081,18 @@ Package rerunfilecheck Info: File `bthesis.out' has not changed.
 (rerunfilecheck)             Checksum: 5367E814B0C61CA8B228A3A80D002DE2;3138.
  ) 
 Here is how much of TeX's memory you used:
- 27017 strings out of 480171
- 454234 string characters out of 5894489
- 771319 words of memory out of 5000000
+ 27102 strings out of 480171
+ 454877 string characters out of 5894489
+ 779665 words of memory out of 5000000
  44421 multiletter control sequences out of 15000+600000
  477677 words of font info for 58 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 91i,17n,91p,1751b,625s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 91i,17n,91p,1751b,674s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/vojtechh/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb>
-Output written on bthesis.pdf (32 pages, 3199511 bytes).
+Output written on bthesis.pdf (35 pages, 3225879 bytes).
 PDF statistics:
- 417 PDF objects out of 1000 (max. 8388607)
- 331 compressed objects within 4 object streams
- 86 named destinations out of 1000 (max. 500000)
+ 528 PDF objects out of 1000 (max. 8388607)
+ 438 compressed objects within 5 object streams
+ 171 named destinations out of 1000 (max. 500000)
  258 words of extra memory for PDF output out of 10000 (max. 10000000)
 
