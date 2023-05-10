@@ -2,4 +2,4 @@
 </img>
 
 # Bachelor's Thesis LaTeX Project
-This mainly serves as a backup for me
+This mainly serves as a backup for me.
