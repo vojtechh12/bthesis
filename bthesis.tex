@@ -46,6 +46,7 @@
 \usepackage{afterpage}
 \usepackage[nottoc]{tocbibind} 
 \usepackage[toc]{appendix}
+\usepackage{listings}
 %\usepackage[resetlabels,labeled]{multibib}
 %\usepackage[T1]{fontenc}
 %\usepackage{chngcntr}
@@ -176,6 +177,28 @@
 
 \renewcommand*{\glsgroupskip}{}
 
+% -----------------------
+%  listings definitions
+% -----------------------
+\lstnewenvironment{flask}[1][]
+{
+    \lstset{
+        language=Python,
+        frame=single,
+        basicstyle=\small\ttfamily,
+        keywordstyle=\bfseries\color{blue},
+        stringstyle=\color{red},
+        commentstyle=\color{green},
+        showstringspaces=false,
+		tabsize=4,
+        captionpos=b,
+        numbers=left,
+        numbersep=5pt,
+        #1,
+		breaklines,
+		float
+    }
+}{}
 
 % 	
 \bibliographystyle{IEEEtran}
@@ -708,7 +731,64 @@ To verify that the RNIS works properly, it should be possible to access its serv
 \end{verbatim}
 
 \section{VEC application blueprint}
-\subsection{Service registry}
+This stage is split into two subsections, with the first one covering the service registration and the second one demonstrating implementation of a MEC app consuming services offered by the OAI MEP.
+\subsection{Service registration}
+The registration and discovery service of OAI MEP can be accessed via its Graphical User Interface (GUI) on the host 192.168.70.5 or via the MEP Gateway: \\ \verb |http://oai-mep.org/service_registry/v1/ui|. It should be noted that for the latter to work, the oai-mep.org domain needs to be added to the local machine DNS, which is documented in [gg]. The GUI offers the services mentioned in the previous section. After a successful deployment, the discovery of available services should yield the following results, as only the RNIS is registered:
+\begin{verbatim}
+	lab@lab-HP-Z4-G4-7-Workstation:~/blueprints/mep/examples$ curl /
+	http://oai-mep.org/service_registry/v1/discover 
+	[
+	{
+		"description": "The service allows other app or services to consume
+						network and radio information",
+		"endpoints": [
+		{
+			"method": "GET",
+			"name": "rab_info",
+			"path": "/queries/rab_info"
+		},
+		...
+		],
+		"host": "oai-mep.org",
+		"name": "rnis",
+		"path": "/rnis/v2",
+		"port": "80",
+		"sid": "6458bfb3aab751de1b2ba9f0",
+		"type": "RadioNetworkInformation"
+  },
+
+\end{verbatim}
+To demonstrate the service registry and discovery function of OAI MEP, a sample hello-world flask application has been created. This application runs on the localhost interface of the host machine and displays a simple line of text, the goal is to be able to route this application via the MEP Gateway.
+\begin{flask}[caption={Sample flask app in python}]
+	from flask import Flask
+
+	app = Flask(__name__)
+
+	@app.route('/')
+	def root():
+		return "<h1>VEC testbed root page</h1>"
+
+	@app.route('/hello')
+	def hello():
+		return '<h1>Hello world page</h1>'
+
+	if __name__ == '__main__':
+		app.run(debug=True, host='0.0.0.0', port=5000, use_reloader=False)
+\end{flask}
+To register the flask application, the GUI of the registry and discovery service has been leveraged. While the GUI provides a sample input for the register service, it does not include any uid, which confuses the underlying database of OAI MEP and results in unsuccessful registration. For a successful registration, the input shown below has been used.
+\begin{verbatim}
+{
+	"description": "testing registration with sample flask",
+	"endpoints": [],
+	"host": "tstbed-app.org",
+	"name": "tstbed-app",
+	"path": "/",
+	"port": 5000,
+	"sid": "sid",
+	"uid": "tstbedUID",
+	"type": "Traffic"
+	}
+\end{verbatim}	
 \subsection{Implementation of a MEC app}
 
 \section{Evaluation of VEC testbed}
