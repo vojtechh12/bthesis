@@ -17,10 +17,14 @@
 \contentsline {subsection}{\numberline {3.3.2}MEC platform by EURECOM}{20}{subsection.3.3.2}%
 \contentsline {section}{\numberline {3.4}Other MEC projects}{21}{section.3.4}%
 \contentsline {subsection}{\numberline {3.4.1}AdvantEDGE}{21}{subsection.3.4.1}%
-\contentsline {chapter}{\numberline {4}Mobile network emulation: \\OpenAirInterface}{23}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Mobile network emulation: \\ \mbox {OpenAirInterface}}{23}{chapter.4}%
 \contentsline {section}{\numberline {4.1}OAI RAN}{23}{section.4.1}%
 \contentsline {section}{\numberline {4.2}OAI CN}{25}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Mosaic5G}{26}{section.4.3}%
 \contentsline {chapter}{\numberline {5}VEC testbed}{27}{chapter.5}%
 \contentsline {section}{\numberline {5.1}VEC testbed design}{27}{section.5.1}%
-\contentsline {chapter}{References}{31}{chapter*.26}%
+\contentsline {section}{\numberline {5.2}VEC application blueprint}{30}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Service registry}{30}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}Implementation of a MEC app}{30}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Evaluation of VEC testbed}{30}{section.5.3}%
+\contentsline {chapter}{References}{32}{chapter*.29}%

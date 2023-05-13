@@ -578,7 +578,7 @@ AdvantEDGE is a mobile edge emulation platform running on Docker and Kubernetes.
 
 AdvantEDGE was successfully deployed in our lab setup, however, it was deemed not suitable for the purposes of the testbed development, which puts a strong emphasis on the platform architecture and the underlying mobile network.
 
-\chapter{Mobile network emulation: \\OpenAirInterface}
+\chapter{Mobile network emulation: \texorpdfstring{\\ \mbox{OpenAirInterface}}{OpenAirInterface}}
 The goal of this chapter is to provide an overview of an open-source mobile network emulation platform OpenAirInterface (OAI). OAI has the ambition to democratize the research and development of wireless access technologies through delivering a 3GPP compliant software stack for both RAN and CN. The OAI software offers different levels of mobile networks simulation or emulation in flexible deployment scenarios and is intended to run on general purpose hardware [z]. OAI was originally founded by EURECOM, and its development is overseen by OSA, which has the goal of promoting the adoption of OAI across both academia and industry. 
 
 OAI development is split into different projects. The two biggest ones are focused on developing the solutions for RAN and CN. While those are definitely the core of OAI, its focus spans further and exploits smart solutions regarding mobile networks’ orchestration and programmability under Mosaic5G project. The following sections offer a brief introduction to all of these projects and discuss how they are going to be leveraged in OAI based VEC testbed.
@@ -704,21 +704,46 @@ To verify that the RNIS works properly, it should be possible to access its serv
 			"timestamp": 1683903896587163,
 			"unit": null,
 			"value": 5.605193857299268e-45
-		},
-		"bler_ul": {
-			"kpi": "bler_ul",
-			"labels": {
-			"amf_ue_ngap_id": 1
-			},
-			"source": "RAN",
-			"timestamp": 1683903896587163,
-			"unit": null,
-			"value": 5.605193857299268e-45
-		},
 	...
 \end{verbatim}
 
+\section{VEC application blueprint}
+\subsection{Service registry}
+\subsection{Implementation of a MEC app}
 
+\section{Evaluation of VEC testbed}
+Here is the table:
+\begin{table}[!ht]
+	\caption{RTT measurement}
+    \centering
+    \begin{tabular}{|l|l|l|}
+    \hline
+        & \textbf{Edge} & \textbf{Cloud} \\ \hline
+        1:00 & 5.810 & 13.137 \\ \hline
+        3:00 & 5.848 & 13.531 \\ \hline
+        5:00 & 5.694 & 13.559 \\ \hline
+        7:00 & 5.545 & 14.311 \\ \hline
+        9:00 & 5.311 & 13.079 \\ \hline
+        11:00 & 5.969 & 13.380 \\ \hline
+        13:00 & 5.809 & 13.623 \\ \hline
+        15:00 & 5.066 & 13.458 \\ \hline
+        17:00 & 5.792 & 13.589 \\ \hline
+        19:00 & 5.333 & 13.403 \\ \hline
+        21:00 & 5.507 & 13.410 \\ \hline
+        23:00 & 5.335 & 13.868 \\ \hline
+    \end{tabular}
+\end{table}
+There are two ways to visualize this:
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=13cm]{./images/RTT-comparison.png} 
+	\caption{My PNG image}
+\end{figure}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=13cm]{./images/RTT_comp_box.png} 
+	\caption{My PNG image}
+\end{figure}
 % -----------------------
 %     BIBLIOGRAPHY
 % -----------------------
