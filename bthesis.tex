@@ -391,6 +391,9 @@
 \pagenumbering{arabic}
 
 \setstretch{1.15}
+%-----------------------
+%  Ch1- Introduction
+%-----------------------
 \chapter{Introduction}
 Mobile networks are seen as a key enabler for emerging services and applications in internet of things (IoT) or vehicular sector, whose requirements on data rate and latency are ever increasing. This drives the need for innovation and development. The development of mobile networks follows standards defined by multiple standard defining organizations (SDO). Third Generation Partnership Project (3GPP) is a consortium of several regional institutions that define exact standards for all aspects of mobile networks such as architecture, protocols, interfaces, modulation techniques etc. The European SDO taking part in 3GPP is European Telecommunications Standard Institution (ETSI). 
 
@@ -407,6 +410,9 @@ As of today, VEC is still a work in progress. To provide a sufficient computatio
 TESTING References
 \cite{ETSI:GS:MEC003,ETSI:WP:28,ETSI:WP:24}
 
+%-----------------------
+%  Ch2- MEC & 5G
+%-----------------------
 \chapter{MEC \& 5G}
 The aim of this chapter is to provide a detailed description of integration of MEC into 5G mobile networks. Although 5G is not a prerequisite for MEC deployment, with ETSI describing MEC and 4G integration in [h], 5G is the superior radio access technology for MEC. Contrary to 4G, 5G was designed to enable seamless integration of MEC [i] and works with lower latency [a], which is a crucial parameter for edge applications such as AVs.  In this chapter, both 5G  and MEC system architectures are described, before the final section of this chapter provides a framework for integration of MEC system into 5G CN.
 
@@ -523,7 +529,7 @@ The resulting framework, utilizing edge aware app initialization and dedicated P
 \end{figure}
 
 %-----------------------
-%  CH3 OS MEC projects
+%  Ch3- OS MEC projects
 %-----------------------
 \chapter{Open-source MEC Solutions}
 \label{ch:o-sMEC}
@@ -630,7 +636,9 @@ The following table sumamarizes the overview of examined open-source MEC project
         AdvantEDGE & MEC APIs (RNIS) & yes & yes \\ \hline
     \end{tabular}
 \end{table}
-
+%-------------------------
+%  Ch4- OpenAirInterface
+%-------------------------
 \chapter{Mobile network emulation: \texorpdfstring{\\ \mbox{OpenAirInterface}}{OpenAirInterface}}
 The goal of this chapter is to provide an overview of an open-source mobile network emulation platform OpenAirInterface (OAI). OAI has the ambition to democratize the research and development of wireless access technologies through delivering a 3GPP compliant software stack for both RAN and CN. The OAI software offers different levels of mobile networks simulation or emulation in flexible deployment scenarios and is intended to run on general purpose hardware [z]. OAI was originally founded by EURECOM, and its development is overseen by OSA, which has the goal of promoting the adoption of OAI across both academia and industry. 
 
@@ -687,6 +695,9 @@ Mosaic5G is a project group within OAI focused on transforming the underlying OA
 	\item Higher layer RAN and CN operator – Tirematics
 \end{itemize}
 Currently, most of the Mosaic5G project group’s work is centered around FlexRIC and its integration with the rest of the OAI software [dd]. In fact, the OAI MEP discussed in previous chapter also utilizes FlexRIC as a key component [x]. 
+%-------------------------
+%   Ch5 - VEC testbed
+%-------------------------
 \chapter{VEC testbed}
 The final chapter describes the implementation of testbed for VEC as the primary goal of the thesis. The structure of the following text is as follows: below, the whole task is dissected into three key stages, then each stage is examined in individual subsequent sections.
 \begin{itemize}
@@ -726,14 +737,15 @@ The OAI MEP blueprint delivers docker-compose scripts for the deployment of all 
 
 After a successful deployment, it should be possible to ping the internet from the UE container via its \verb |oaitun_ue1| interface. In our setup, it looks like this:
 \begin{verbatim}
-	root@9929963b00c2:/opt/oai-nr-ue# ping -c 3 -I oaitun_ue1 comtel.fel.cvut.cz
-	PING glumhosting.fel.cvut.cz (147.32.210.146) from 12.1.1.2 oaitun_ue1:\
+	root@9929963b00c2:/opt/oai-nr-ue# \
+	ping -c 3 -I oaitun_ue1 comtel.fel.cvut.cz \
+	PING glumhosting.fel.cvut.cz (147.32.210.146) from 12.1.1.2 oaitun_ue1:
 	56(84) bytes of data.
-	64 bytes from glum-146.feld.cvut.cz (147.32.210.146):\
+	64 bytes from glum-146.feld.cvut.cz (147.32.210.146):
 	icmp_seq=1 ttl=59 time=8.64 ms
-	64 bytes from glum-146.feld.cvut.cz (147.32.210.146):\
+	64 bytes from glum-146.feld.cvut.cz (147.32.210.146):
 	icmp_seq=2 ttl=59 time=5.43 ms
-	64 bytes from glum-146.feld.cvut.cz (147.32.210.146):\
+	64 bytes from glum-146.feld.cvut.cz (147.32.210.146):
 	icmp_seq=3 ttl=59 time=5.06 ms
 
 	--- glumhosting.fel.cvut.cz ping statistics ---
@@ -743,8 +755,9 @@ After a successful deployment, it should be possible to ping the internet from t
 
 To verify that the RNIS works properly, it should be possible to access its service with the HTTP GET method from the Command Line Interface (CLI). This is the result achieved in our setup:
 \begin{verbatim}
-	lab@lab-HP-Z4-G4-7-Workstation:~/blueprints/mep/examples$ curl -X 'GET'\
-	'http://oai-mep.org/rnis/v2/queries/layer2_meas' -H 'accept: application/json'
+	lab@lab-HP-Z4-G4-7-Workstation:~/blueprints/mep/examples$ curl -X \
+	'GET' 'http://oai-mep.org/rnis/v2/queries/layer2_meas' -H \
+	'accept: application/json'
 	[
 	{
 		"KPIs": {

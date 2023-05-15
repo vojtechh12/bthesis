@@ -23,8 +23,8 @@
 \contentsline {section}{\numberline {4.3}Mosaic5G}{26}{section.4.3}%
 \contentsline {chapter}{\numberline {5}VEC testbed}{27}{chapter.5}%
 \contentsline {section}{\numberline {5.1}VEC testbed design}{27}{section.5.1}%
-\contentsline {section}{\numberline {5.2}VEC application blueprint}{29}{section.5.2}%
+\contentsline {section}{\numberline {5.2}VEC application blueprint}{30}{section.5.2}%
 \contentsline {subsection}{\numberline {5.2.1}Service registration}{30}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}MEC app consuming services}{31}{subsection.5.2.2}%
+\contentsline {subsection}{\numberline {5.2.2}MEC app consuming services}{32}{subsection.5.2.2}%
 \contentsline {section}{\numberline {5.3}Evaluation of VEC testbed}{32}{section.5.3}%
 \contentsline {chapter}{References}{36}{chapter*.34}%
