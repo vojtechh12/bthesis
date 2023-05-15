@@ -47,10 +47,19 @@
 \usepackage[nottoc]{tocbibind} 
 \usepackage[toc]{appendix}
 \usepackage{listings}
+\usepackage{xcolor}
+\usepackage[usestackEOL]{stackengine}
+
 %\usepackage[resetlabels,labeled]{multibib}
 %\usepackage[T1]{fontenc}
 %\usepackage{chngcntr}
 %\counterwithin{Figure}{chapter}
+
+%------------------
+%  define COLOR
+%------------------
+\definecolor{darkgreen}{rgb}{0,0.4,0}
+\definecolor{darkorange}{RGB}{211, 84, 0}
 
 
 % TODO pridat article jako zdroj globaldata do INTRA
@@ -187,8 +196,8 @@
         frame=single,
         basicstyle=\small\ttfamily,
         keywordstyle=\bfseries\color{blue},
-        stringstyle=\color{red},
-        commentstyle=\color{green},
+        stringstyle=\color{darkorange},
+        commentstyle=\color{darkgreen},
         showstringspaces=false,
 		tabsize=4,
         captionpos=b,
@@ -209,6 +218,7 @@
 % ---------------------
 %   Listing Acronyms
 % ---------------------
+
 \newacronym{iot}{IoT}{Internet of Things}
 \newacronym{sdo}{SDO}{Standard Defining Organization}
 \newacronym{3gpp}{3GPP}{Third Generation Partnership Project}
@@ -512,6 +522,9 @@ The resulting framework, utilizing edge aware app initialization and dedicated P
 	\caption{My PNG image}
 \end{figure}
 
+%-----------------------
+%  CH3 OS MEC projects
+%-----------------------
 \chapter{Open-source MEC Solutions}
 \label{ch:o-sMEC}
 This chapter introduces the rich and growing ecosystem of open-source MEC solutions with the goal of eventually choosing the most suitable project to leverage in the development of VEC testbed. The world of open-source MEC solutions has developed from the need to accelerate the development process of MEC applications and to support the adoption of MEC as a key technology within 5G mobile networks. The resulting environment comprises of various MEC projects, developed by a range of stakeholders, addressing different challenges within MEC. This chapter intends to describe the open-source MEC ecosystem by introducing the main bodies taking part in MEC development, their respective projects and the challenges these projects aim to address. 
@@ -600,6 +613,23 @@ AdvantEDGE is a mobile edge emulation platform running on Docker and Kubernetes.
 \end{figure}
 
 AdvantEDGE was successfully deployed in our lab setup, however, it was deemed not suitable for the purposes of the testbed development, which puts a strong emphasis on the platform architecture and the underlying mobile network.
+
+The following table sumamarizes the overview of examined open-source MEC projects.
+\begin{table}[!ht]
+    \centering
+	\caption{Evaluation of examined open-source projects}
+    \begin{tabular}{|l|l|l|l|}
+    \hline
+        & ETSI MEC reference & open-source & \Longunderstack{successfully\\deployed} \\ \hline
+        CVB & MEC platfrom & yes & no \\ \hline
+        EALTEdge & MEC system & yes & no \\ \hline
+        OpenNESS & MEC plaform + platform management & partially & no \\ \hline
+        SEO & edge server and management & partially & no \\ \hline
+        LL-MEC & 4G MEC solution & yes & no \\ \hline
+        OAI MEP & MEC platform & yes & yes \\ \hline
+        AdvantEDGE & MEC APIs (RNIS) & yes & yes \\ \hline
+    \end{tabular}
+\end{table}
 
 \chapter{Mobile network emulation: \texorpdfstring{\\ \mbox{OpenAirInterface}}{OpenAirInterface}}
 The goal of this chapter is to provide an overview of an open-source mobile network emulation platform OpenAirInterface (OAI). OAI has the ambition to democratize the research and development of wireless access technologies through delivering a 3GPP compliant software stack for both RAN and CN. The OAI software offers different levels of mobile networks simulation or emulation in flexible deployment scenarios and is intended to run on general purpose hardware [z]. OAI was originally founded by EURECOM, and its development is overseen by OSA, which has the goal of promoting the adoption of OAI across both academia and industry. 
@@ -731,7 +761,7 @@ To verify that the RNIS works properly, it should be possible to access its serv
 \end{verbatim}
 
 \section{VEC application blueprint}
-This stage is split into two subsections, with the first one covering the service registration and the second one demonstrating implementation of a MEC app consuming services offered by the OAI MEP.
+This stage aims to deliver a blueprint for development of VEC applications running on the OAI MEP and consuming its services. It is split into two subsections, with the first one covering the service registration and the second one demonstrating implementation of a MEC app consuming services offered by the OAI MEP.
 \subsection{Service registration}
 The registration and discovery service of OAI MEP can be accessed via its Graphical User Interface (GUI) on the host 192.168.70.5 or via the MEP Gateway: \\ \verb |http://oai-mep.org/service_registry/v1/ui|. It should be noted that for the latter to work, the oai-mep.org domain needs to be added to the local machine DNS, which is documented in [gg]. The GUI offers the services mentioned in the previous section. After a successful deployment, the discovery of available services should yield the following results, as only the RNIS is registered:
 \begin{verbatim}
@@ -775,6 +805,7 @@ To demonstrate the service registry and discovery function of OAI MEP, a sample 
 	if __name__ == '__main__':
 		app.run(debug=True, host='0.0.0.0', port=5000, use_reloader=False)
 \end{flask}
+
 To register the flask application, the GUI of the registry and discovery service has been leveraged. While the GUI provides a sample input for the register service, it does not include any uid, which confuses the underlying database of OAI MEP and results in unsuccessful registration. For a successful registration, the input shown below has been used.
 \begin{verbatim}
 {
@@ -788,17 +819,69 @@ To register the flask application, the GUI of the registry and discovery service
 	"uid": "tstbedUID",
 	"type": "Traffic"
 	}
-\end{verbatim}	
-\subsection{Implementation of a MEC app}
+\end{verbatim}
+Successful registration is indicated by the code 201 and a response with json data about the newly registered service, then sample flask application can be routed via the MEP Gateway, as demonstrated below.
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=13cm]{./images/flask-demo.png} 
+	\caption{My PNG image}
+\end{figure}
+\subsection{MEC app consuming services}
+This subsection demonstrates how to create an application that would consume the services offered by OAI MEP based on an example app provided in [gg]. The example app is a flask application that subscribes to RNIS and shows the received data. The core of the application with minor changes from the version in [gg] is shown in Listing 5.2.
+\begin{flask}[caption={example-app.py}]
+	...
+	# create a subscription for receiving l2 measurements
+	sub_endpoint = "http://oai-mep.org/rnis/v2/subscriptions"
+	sub_body ={
+	"callbackReference": f"http://{ip_addr}:{port}/subscriptions/l2meas-200",
+	"filterCriteriaNrMrs": {},
+	"subscriptionType": "NrMeasRepUeSubscription",
+	"expiryDeadline": {
+		"nanoSeconds": 12133423,
+		"seconds": 20
+	}
+	}
+	requests.post(url =sub_endpoint, json=sub_body)
+	...
+	# collect received data
+	@app.route('/subscriptions/l2meas-200', methods=[ 'POST'])
+	def receive_notification():
+		if request.method == 'POST':
+			content = request.get_json(force=True)
+			print(content)
+			kpis = content["Report"]
+			for aid in content["AssociateId"]:
+				if aid not in collected_data:
+					collected_data[aid] = {}
+				for kpi_name, kpi_data in kpis.items():
+					collected_data[aid][kpi_name] = kpi_data['value']
+		return "OK"
+
+	# show kpis
+	@app.route('/dashboard', methods=['GET'])
+	def dashboard():
+		return "<h1> Network Monitoring Dashboard</h1> " + json.dumps(collected_data)
+	...
+\end{flask}
+
+It is noteworthy that the example app uses the reverse proxy OAI MEP Gateway to subscribe to RNIS as shown on line 3:  \\\verb |sub_endpoint = http://oai-mep.org/rnis/v2/subscriptions|. Then in \verb|sub_body|, an endpoint for receiving the data from RNIS is provided, and finally, under that endpoint, the \verb|receive_notification()| function handles the received data and puts them into \verb|collected_data| dictionary.
+
 
 \section{Evaluation of VEC testbed}
-Here is the table:
+To evaluate the VEC testbed, an experiment has been conducted, measuring the RTT between the UE and the OAI MEP host, against the RTT between the UE and a cloud. The diagram illustrating the experiment is shown in Figure 5.3. It does not account for the UE and gNB modules also being hosted on the edge server, although the experiment could be scaled with using radio heads and both UE and gNB modules in standalone machines. The deployment in our lab setup follows the deployment model collocating edge server (MEC host) with UPF [i].
+\begin{figure}[!ht]
+	\centering
+	\includegraphics[width=\textwidth]{./images/experiment.png} 
+	\caption{My PNG image}
+\end{figure}
+
+The experiment consisted of running ping from UE’s \verb|oaitun_ue1| interface to both the edge and cloud. The measurement was issued every two hours throughout one day and the results are shown in Table 5.1 and visualized in Graph 5.1. 
 \begin{table}[!ht]
-	\caption{RTT measurement}
     \centering
-    \begin{tabular}{|l|l|l|}
+	\caption{RTT measurement}
+    \begin{tabular}{|l|c|c|}
     \hline
-        & \textbf{Edge} & \textbf{Cloud} \\ \hline
+        & \textbf{Edge [ms]} & \textbf{Cloud [ms]} \\ \hline
         1:00 & 5.810 & 13.137 \\ \hline
         3:00 & 5.848 & 13.531 \\ \hline
         5:00 & 5.694 & 13.559 \\ \hline
@@ -813,7 +896,7 @@ Here is the table:
         23:00 & 5.335 & 13.868 \\ \hline
     \end{tabular}
 \end{table}
-There are two ways to visualize this:
+
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=13cm]{./images/RTT-comparison.png} 
@@ -824,6 +907,8 @@ There are two ways to visualize this:
 	\includegraphics[width=13cm]{./images/RTT_comp_box.png} 
 	\caption{My PNG image}
 \end{figure}
+
+The data show that the average RTT difference between edge and cloud is 7.94 ms. This follows the expectation and demonstrates the feasibility of using OAI MEP setup for VEC testbed.
 % -----------------------
 %     BIBLIOGRAPHY
 % -----------------------

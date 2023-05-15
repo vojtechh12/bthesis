@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.10.5)  13 MAY 2023 15:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.10.5)  15 MAY 2023 10:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -738,43 +738,64 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
-\c@my_theorem=\count371
-\c@Assumption=\count372
-\c@my_lemma=\count373
-\c@my_prep=\count374
-\c@my_remark=\count375
-\c@my_corr=\count376
-LaTeX Info: Redefining \ttfamily on input line 99.
+ (/usr/share/texlive/texmf-dist/tex/latex/stackengine/stackengine.sty
+Package: stackengine 2021/07/22 v4.11\ Stacking text and objects in convenient ways
+ (/usr/share/texlive/texmf-dist/tex/generic/listofitems/listofitems.sty (/usr/share/texlive/texmf-dist/tex/generic/listofitems/listofitems.tex
+\loi_cnt_foreach_nest=\count371
+\loi_nestcnt=\count372
+)
+Package: listofitems 2019/08/21 v1.63 Grab items in lists using user-specified sep char (CT)
+)
+\c@@stackindex=\count373
+\@boxshift=\skip101
+\stack@tmplength=\skip102
+\temp@stkl=\skip103
+\@stackedboxwidth=\skip104
+\@addedbox=\box114
+\@anchorbox=\box115
+\@insetbox=\box116
+\se@backgroundbox=\box117
+\stackedbox=\box118
+\@centerbox=\box119
+\c@ROWcellindex@=\count374
+)
+\c@my_theorem=\count375
+\c@Assumption=\count376
+\c@my_lemma=\count377
+\c@my_prep=\count378
+\c@my_remark=\count379
+\c@my_corr=\count380
+LaTeX Info: Redefining \ttfamily on input line 108.
 \glswrite=\write3
 \glo@main@file=\write4
 \openout4 = `bthesis.glo'.
 
-Package glossaries Info: Writing glossary file bthesis.glo on input line 297.
+Package glossaries Info: Writing glossary file bthesis.glo on input line 307.
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2022-01-12 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count377
-\l__pdf_internal_box=\box114
+\l__color_backend_stack_int=\count381
+\l__pdf_internal_box=\box120
 ) (./bthesis.aux)
 \openout1 = `bthesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 307.
-LaTeX Font Info:    ... okay on input line 307.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 317.
+LaTeX Font Info:    ... okay on input line 317.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -812,26 +833,32 @@ LaTeX Font Info:    ... okay on input line 307.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count378
+\scratchcounter=\count382
 \scratchdimen=\dimen286
-\scratchbox=\box115
-\nofMPsegments=\count379
-\nofMParguments=\count380
+\scratchbox=\box121
+\nofMPsegments=\count383
+\nofMParguments=\count384
 \everyMPshowfont=\toks58
-\MPscratchCnt=\count381
+\MPscratchCnt=\count385
 \MPscratchDim=\dimen287
-\MPnumerator=\count382
-\makeMPintoPDFobject=\count383
+\MPnumerator=\count386
+\makeMPintoPDFobject=\count387
 \everyMPtoPDFconversion=\toks59
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+ (/usr/share/texlive/texmf-dist/tex/latex/grfext/grfext.sty
+Package: grfext 2019/12/03 v1.3 Manage graphics extensions (HO)
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPEG,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 504.
  (/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) (/usr/share/texlive/texmf-dist/tex/latex/ucs/ucsencs.def
 File: ucsencs.def 2011/01/21 Fixes to fontencodings LGR, T3
 )
-Package hyperref Info: Link coloring ON on input line 307.
+Package hyperref Info: Link coloring ON on input line 317.
  (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2021-04-02 v2.47 Cross-referencing by name of section
  (/usr/share/texlive/texmf-dist/tex/latex/refcount/refcount.sty
@@ -839,11 +866,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count384
+\c@section@level=\count388
 )
-LaTeX Info: Redefining \ref on input line 307.
-LaTeX Info: Redefining \pageref on input line 307.
-LaTeX Info: Redefining \nameref on input line 307.
+LaTeX Info: Redefining \ref on input line 317.
+LaTeX Info: Redefining \pageref on input line 317.
+LaTeX Info: Redefining \nameref on input line 317.
  (./bthesis.out) (./bthesis.out)
 \@outlinefile=\write5
 \openout5 = `bthesis.out'.
@@ -858,11 +885,11 @@ Package: ltcaption 2020/05/30 v1.4b longtable captions (AR)
 )
 Package caption Info: supertabular package is loaded.
 Package caption Info: End \AtBeginDocument code.
-\c@lstlisting=\count385
+\c@lstlisting=\count389
 <./images/ctulogo.pdf, id=120, 126.78566pt x 96.54268pt>
 File: ./images/ctulogo.pdf Graphic file (type pdf)
 <use ./images/ctulogo.pdf>
-Package pdftex.def Info: ./images/ctulogo.pdf  used on input line 313.
+Package pdftex.def Info: ./images/ctulogo.pdf  used on input line 323.
 (pdftex.def)             Requested size: 200.75073pt x 152.86867pt.
  (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-1.def
 File: uni-1.def 2013/05/13 UCS: Unicode data U+0100..U+01FF
@@ -876,47 +903,47 @@ File: uni-0.def 2013/05/13 UCS: Unicode data U+0000..U+00FF
 <assignment/assignment_eng.pdf, id=131, 597.50829pt x 845.0471pt>
 File: assignment/assignment_eng.pdf Graphic file (type pdf)
 <use assignment/assignment_eng.pdf>
-Package pdftex.def Info: assignment/assignment_eng.pdf  used on input line 317.
+Package pdftex.def Info: assignment/assignment_eng.pdf  used on input line 327.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: assignment/assignment_eng.pdf Graphic file (type pdf)
 <use assignment/assignment_eng.pdf>
-Package pdftex.def Info: assignment/assignment_eng.pdf  used on input line 317.
+Package pdftex.def Info: assignment/assignment_eng.pdf  used on input line 327.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 <assignment/assignment_eng.pdf, id=134, page=1, 597.50829pt x 845.0471pt>
 File: assignment/assignment_eng.pdf Graphic file (type pdf)
 <use assignment/assignment_eng.pdf, page 1>
-Package pdftex.def Info: assignment/assignment_eng.pdf , page1 used on input line 317.
+Package pdftex.def Info: assignment/assignment_eng.pdf , page1 used on input line 327.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: assignment/assignment_eng.pdf Graphic file (type pdf)
 <use assignment/assignment_eng.pdf, page 1>
-Package pdftex.def Info: assignment/assignment_eng.pdf , page1 used on input line 317.
+Package pdftex.def Info: assignment/assignment_eng.pdf , page1 used on input line 327.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: assignment/assignment_eng.pdf Graphic file (type pdf)
 <use assignment/assignment_eng.pdf, page 1>
-Package pdftex.def Info: assignment/assignment_eng.pdf , page1 used on input line 317.
+Package pdftex.def Info: assignment/assignment_eng.pdf , page1 used on input line 327.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: assignment/assignment_eng.pdf Graphic file (type pdf)
 <use assignment/assignment_eng.pdf, page 1>
-Package pdftex.def Info: assignment/assignment_eng.pdf , page1 used on input line 317.
+Package pdftex.def Info: assignment/assignment_eng.pdf , page1 used on input line 327.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: assignment/assignment_eng.pdf Graphic file (type pdf)
 <use assignment/assignment_eng.pdf, page 1>
-Package pdftex.def Info: assignment/assignment_eng.pdf , page1 used on input line 317.
+Package pdftex.def Info: assignment/assignment_eng.pdf , page1 used on input line 327.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [2 <./assignment/assignment_eng.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 323--323
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
 
  []
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 323.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 333.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 323.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 333.
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [3]
-Underfull \hbox (badness 10000) in paragraph at lines 323--323
+Underfull \hbox (badness 10000) in paragraph at lines 333--333
 
  []
 
@@ -946,7 +973,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.392 
+l.402 
        [1
 
 ] (/usr/share/texlive/texmf-dist/tex/latex/ucs/data/uni-32.def
@@ -954,13 +981,13 @@ File: uni-32.def 2013/05/13 UCS: Unicode data U+2000..U+20FF
 )pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.400 \chapter
+l.410 \chapter
               {MEC \& 5G} [2]
 Chapter 2.
 <./images/usage-scenarios.png, id=380, 679.8198pt x 476.5002pt>
 File: ./images/usage-scenarios.png Graphic file (type png)
 <use ./images/usage-scenarios.png>
-Package pdftex.def Info: ./images/usage-scenarios.png  used on input line 407.
+Package pdftex.def Info: ./images/usage-scenarios.png  used on input line 417.
 (pdftex.def)             Requested size: 455.24411pt x 319.08624pt.
 
 Underfull \vbox (badness 1264) has occurred while \output is active []
@@ -968,7 +995,7 @@ Underfull \vbox (badness 1264) has occurred while \output is active []
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.414 
+l.424 
        [3
 
 ]
@@ -977,41 +1004,41 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.419 
+l.429 
        [4 <./images/usage-scenarios.png>]
 <./images/5G-CN.png, id=390, 825.3234pt x 398.9304pt>
 File: ./images/5G-CN.png Graphic file (type png)
 <use ./images/5G-CN.png>
-Package pdftex.def Info: ./images/5G-CN.png  used on input line 422.
+Package pdftex.def Info: ./images/5G-CN.png  used on input line 432.
 (pdftex.def)             Requested size: 455.24411pt x 220.04546pt.
  [5 <./images/5G-CN.png>]
 <./images/PDU-sesh-est.png, id=397, 798.5835pt x 418.2024pt>
 File: ./images/PDU-sesh-est.png Graphic file (type png)
 <use ./images/PDU-sesh-est.png>
-Package pdftex.def Info: ./images/PDU-sesh-est.png  used on input line 436.
+Package pdftex.def Info: ./images/PDU-sesh-est.png  used on input line 446.
 (pdftex.def)             Requested size: 455.24411pt x 238.40337pt.
  [6 <./images/PDU-sesh-est.png>]
 <./images/5G-reg-disc.png, id=405, 632.3625pt x 361.35pt>
 File: ./images/5G-reg-disc.png Graphic file (type png)
 <use ./images/5G-reg-disc.png>
-Package pdftex.def Info: ./images/5G-reg-disc.png  used on input line 444.
+Package pdftex.def Info: ./images/5G-reg-disc.png  used on input line 454.
 (pdftex.def)             Requested size: 455.24411pt x 260.14423pt.
 <./images/traffic-control.png, id=406, 542.025pt x 162.6075pt>
 File: ./images/traffic-control.png Graphic file (type png)
 <use ./images/traffic-control.png>
-Package pdftex.def Info: ./images/traffic-control.png  used on input line 450.
+Package pdftex.def Info: ./images/traffic-control.png  used on input line 460.
 (pdftex.def)             Requested size: 426.79134pt x 128.04167pt.
  [7 <./images/5G-reg-disc.png> <./images/traffic-control.png>]
 <./images/MEC-framework.png, id=415, 1001.7425pt x 864.22874pt>
 File: ./images/MEC-framework.png Graphic file (type png)
 <use ./images/MEC-framework.png>
-Package pdftex.def Info: ./images/MEC-framework.png  used on input line 463.
+Package pdftex.def Info: ./images/MEC-framework.png  used on input line 473.
 (pdftex.def)             Requested size: 455.24411pt x 392.74995pt.
  [8]
 <./images/MEC-ref-arch.png, id=421, 1127.21124pt x 774.895pt>
 File: ./images/MEC-ref-arch.png Graphic file (type png)
 <use ./images/MEC-ref-arch.png>
-Package pdftex.def Info: ./images/MEC-ref-arch.png  used on input line 477.
+Package pdftex.def Info: ./images/MEC-ref-arch.png  used on input line 487.
 (pdftex.def)             Requested size: 455.24411pt x 312.95578pt.
  [9 <./images/MEC-framework.png>]
 Underfull \vbox (badness 3428) has occurred while \output is active []
@@ -1020,7 +1047,7 @@ Underfull \vbox (badness 3428) has occurred while \output is active []
 <./images/MEC-5G-integration-flowchart.png, id=437, 894.4617pt x 516.7305pt>
 File: ./images/MEC-5G-integration-flowchart.png Graphic file (type png)
 <use ./images/MEC-5G-integration-flowchart.png>
-Package pdftex.def Info: ./images/MEC-5G-integration-flowchart.png  used on input line 511.
+Package pdftex.def Info: ./images/MEC-5G-integration-flowchart.png  used on input line 521.
 (pdftex.def)             Requested size: 455.24411pt x 263.0008pt.
  [12] [13 <./images/MEC-5G-integration-flowchart.png>]
 Chapter 3.
@@ -1033,12 +1060,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <./images/akraino-cvb.png, id=457, 1706.375pt x 941.5175pt>
 File: ./images/akraino-cvb.png Graphic file (type png)
 <use ./images/akraino-cvb.png>
-Package pdftex.def Info: ./images/akraino-cvb.png  used on input line 531.
+Package pdftex.def Info: ./images/akraino-cvb.png  used on input line 544.
 (pdftex.def)             Requested size: 455.24411pt x 251.18181pt.
 <./images/akraino-ealtedge.png, id=458, 1027.84pt x 893.3375pt>
 File: ./images/akraino-ealtedge.png Graphic file (type png)
 <use ./images/akraino-ealtedge.png>
-Package pdftex.def Info: ./images/akraino-ealtedge.png  used on input line 539.
+Package pdftex.def Info: ./images/akraino-ealtedge.png  used on input line 552.
 (pdftex.def)             Requested size: 369.88582pt x 321.47856pt.
 
 Underfull \vbox (badness 3354) has occurred while \output is active []
@@ -1047,116 +1074,130 @@ Underfull \vbox (badness 3354) has occurred while \output is active []
 <./images/intel-solu.png, id=463, 1805.74625pt x 883.3pt>
 File: ./images/intel-solu.png Graphic file (type png)
 <use ./images/intel-solu.png>
-Package pdftex.def Info: ./images/intel-solu.png  used on input line 551.
+Package pdftex.def Info: ./images/intel-solu.png  used on input line 564.
 (pdftex.def)             Requested size: 369.88582pt x 180.92941pt.
  [16 <./images/akraino-cvb.png>] [17 <./images/akraino-ealtedge.png>]
 <./images/openness.png, id=474, 1525.7pt x 781.92125pt>
 File: ./images/openness.png Graphic file (type png)
 <use ./images/openness.png>
-Package pdftex.def Info: ./images/openness.png  used on input line 561.
+Package pdftex.def Info: ./images/openness.png  used on input line 574.
 (pdftex.def)             Requested size: 369.88582pt x 189.56198pt.
  [18 <./images/intel-solu.png> <./images/openness.png>]
 <./images/intel-seo.png, id=482, 1474.50874pt x 653.44125pt>
 File: ./images/intel-seo.png Graphic file (type png)
 <use ./images/intel-seo.png>
-Package pdftex.def Info: ./images/intel-seo.png  used on input line 571.
+Package pdftex.def Info: ./images/intel-seo.png  used on input line 584.
 (pdftex.def)             Requested size: 369.88582pt x 163.91826pt.
 <./images/ll-mec.png, id=483, 1765.59625pt x 1170.3725pt>
 File: ./images/ll-mec.png Graphic file (type png)
 <use ./images/ll-mec.png>
-Package pdftex.def Info: ./images/ll-mec.png  used on input line 581.
+Package pdftex.def Info: ./images/ll-mec.png  used on input line 594.
 (pdftex.def)             Requested size: 369.88582pt x 245.17828pt.
  [19 <./images/intel-seo.png>]
 <./images/OAI-MEP.png, id=489, 1039.0017pt x 533.1117pt>
 File: ./images/OAI-MEP.png Graphic file (type png)
 <use ./images/OAI-MEP.png>
-Package pdftex.def Info: ./images/OAI-MEP.png  used on input line 589.
+Package pdftex.def Info: ./images/OAI-MEP.png  used on input line 602.
 (pdftex.def)             Requested size: 369.88582pt x 189.78879pt.
 <./images/advatnedge.png, id=490, 1329.96875pt x 1051.93pt>
 File: ./images/advatnedge.png Graphic file (type png)
 <use ./images/advatnedge.png>
-Package pdftex.def Info: ./images/advatnedge.png  used on input line 598.
+Package pdftex.def Info: ./images/advatnedge.png  used on input line 611.
 (pdftex.def)             Requested size: 369.88582pt x 292.5641pt.
 
 Underfull \vbox (badness 3049) has occurred while \output is active []
 
  [20 <./images/ll-mec.png>] [21 <./images/OAI-MEP.png>] [22 <./images/advatnedge.png>]
 Chapter 4.
-<./images/5G-NR-protstack.png, id=507, 632.3625pt x 289.08pt>
+<./images/5G-NR-protstack.png, id=508, 632.3625pt x 289.08pt>
 File: ./images/5G-NR-protstack.png Graphic file (type png)
 <use ./images/5G-NR-protstack.png>
-Package pdftex.def Info: ./images/5G-NR-protstack.png  used on input line 614.
+Package pdftex.def Info: ./images/5G-NR-protstack.png  used on input line 644.
 (pdftex.def)             Requested size: 369.88582pt x 169.09126pt.
 [23
 
 ] [24 <./images/5G-NR-protstack.png>]
-<./images/OAI-CN-soa.png, id=519, 1402.23875pt x 839.135pt>
+<./images/OAI-CN-soa.png, id=520, 1402.23875pt x 839.135pt>
 File: ./images/OAI-CN-soa.png Graphic file (type png)
 <use ./images/OAI-CN-soa.png>
-Package pdftex.def Info: ./images/OAI-CN-soa.png  used on input line 643.
+Package pdftex.def Info: ./images/OAI-CN-soa.png  used on input line 673.
 (pdftex.def)             Requested size: 369.88582pt x 221.34538pt.
  [25 <./images/OAI-CN-soa.png>] [26]
 Chapter 5.
-<./images/OAI-MEP-parts.png, id=530, 1047.915pt x 533.1117pt>
+<./images/OAI-MEP-parts.png, id=531, 1047.915pt x 533.1117pt>
 File: ./images/OAI-MEP-parts.png Graphic file (type png)
 <use ./images/OAI-MEP-parts.png>
-Package pdftex.def Info: ./images/OAI-MEP-parts.png  used on input line 681.
+Package pdftex.def Info: ./images/OAI-MEP-parts.png  used on input line 711.
 (pdftex.def)             Requested size: 369.88582pt x 188.17pt.
 [27
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 697.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 727.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [28 <./images/OAI-MEP-parts.png>]
-Overfull \hbox (14.0211pt too wide) in paragraph at lines 712--712
+Overfull \hbox (14.0211pt too wide) in paragraph at lines 742--742
 []\T1/lmtt/m/n/12 root@9929963b00c2:/opt/oai-nr-ue# ping -c 3 -I oaitun_ue1 comtel.fel.cvut.cz[] 
  []
 
 
-Overfull \hbox (26.40613pt too wide) in paragraph at lines 731--731
+Overfull \hbox (26.40613pt too wide) in paragraph at lines 761--761
 []\T1/lmtt/m/n/12 'http://oai-mep.org/rnis/v2/queries/layer2_meas' -H 'accept: application/json'[] 
  []
 
 [29] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 762.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 792.
  [30]
-<./images/RTT-comparison.png, id=552, 1068.1506pt x 774.0117pt>
+<./images/flask-demo.png, id=553, 1483.5425pt x 457.71pt>
+File: ./images/flask-demo.png Graphic file (type png)
+<use ./images/flask-demo.png>
+Package pdftex.def Info: ./images/flask-demo.png  used on input line 826.
+(pdftex.def)             Requested size: 369.88582pt x 114.11293pt.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 834.
+ (/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
+File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
+) [31]
+<./images/experiment.png, id=577, 756.1851pt x 325.6968pt>
+File: ./images/experiment.png Graphic file (type png)
+<use ./images/experiment.png>
+Package pdftex.def Info: ./images/experiment.png  used on input line 874.
+(pdftex.def)             Requested size: 455.24411pt x 196.08055pt.
+<./images/RTT-comparison.png, id=578, 912.7701pt x 693.0693pt>
 File: ./images/RTT-comparison.png Graphic file (type png)
 <use ./images/RTT-comparison.png>
-Package pdftex.def Info: ./images/RTT-comparison.png  used on input line 819.
-(pdftex.def)             Requested size: 369.88582pt x 268.0264pt.
-<./images/RTT_comp_box.png, id=553, 878.8032pt x 679.338pt>
+Package pdftex.def Info: ./images/RTT-comparison.png  used on input line 902.
+(pdftex.def)             Requested size: 369.88582pt x 280.86073pt.
+<./images/RTT_comp_box.png, id=579, 878.8032pt x 679.338pt>
 File: ./images/RTT_comp_box.png Graphic file (type png)
 <use ./images/RTT_comp_box.png>
-Package pdftex.def Info: ./images/RTT_comp_box.png  used on input line 824.
+Package pdftex.def Info: ./images/RTT_comp_box.png  used on input line 907.
 (pdftex.def)             Requested size: 369.88582pt x 285.9316pt.
- (./bthesis.bbl [31] [32 <./images/RTT-comparison.png>] [33 <./images/RTT_comp_box.png>]
+ (./bthesis.bbl [32 <./images/flask-demo.png>] [33] [34 <./images/experiment.png>] [35 <./images/RTT-comparison.png> <./images/RTT_comp_box.png>]
 Underfull \hbox (badness 10000) in paragraph at lines 42--46
 \OT1/cmr/m/it/12 https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf\OT1/cmr/m/n/12 ,
  []
 
-) [34
+) [36
 
 ] (./bthesis.aux)
 Package rerunfilecheck Info: File `bthesis.out' has not changed.
-(rerunfilecheck)             Checksum: BB02681C8F99E60CDA688EFF38144C95;4679.
+(rerunfilecheck)             Checksum: 0B626FE71046B6861E2EA427224A9B3B;4671.
  ) 
 Here is how much of TeX's memory you used:
- 28990 strings out of 480171
- 479823 string characters out of 5894489
- 1053771 words of memory out of 5000000
- 46241 multiletter control sequences out of 15000+600000
- 478932 words of font info for 62 fonts, out of 8000000 for 9000
+ 29469 strings out of 480171
+ 488017 string characters out of 5894489
+ 1188823 words of memory out of 5000000
+ 46660 multiletter control sequences out of 15000+600000
+ 479237 words of font info for 63 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
- 91i,17n,91p,1751b,1498s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc} </home/vojtechh/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on bthesis.pdf (47 pages, 3623487 bytes).
+ 91i,17n,91p,1751b,1619s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc} </home/vojtechh/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
+Output written on bthesis.pdf (49 pages, 3815098 bytes).
 PDF statistics:
- 695 PDF objects out of 1000 (max. 8388607)
- 573 compressed objects within 6 object streams
- 215 named destinations out of 1000 (max. 500000)
- 363 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 761 PDF objects out of 1000 (max. 8388607)
+ 632 compressed objects within 7 object streams
+ 255 named destinations out of 1000 (max. 500000)
+ 373 words of extra memory for PDF output out of 10000 (max. 10000000)
 
