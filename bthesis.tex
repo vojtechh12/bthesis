@@ -349,9 +349,9 @@
 %        Abstracts
 % -----------------------
 \chapter*{Abstract}
-	% \addcontentsline{toc}{chapter}{Abstract}	% comment to omit abstract from toc
-	% ABSTRACT	
-\keywords{mobile networks, multi-access edge computing, vehicular edge computing, task offloading, autonomous vehicles}
+Recent advancements in Autonomous Vehicles (AVs) research are bringing AVs closer to widespread adoption. However, the computational requirements of AVs demand robust hardware resources, resulting in substantial power consumption for the vehicles. This has led to the emergence of Vehicular Edge Computing (VEC), a research area focused on utilization of processing resources at mobile networks’ edge for offloading computationally demanding tasks from vehicles at low latency. To enable authentic simulation for evaluating VEC algorithms, a testbed leveraging Multi-Access Edge Computing (MEC) is proposed in this thesis. The set up testbed is based on MEC platform by OpenAirInterface (OAI) and the underlying OAI 5G mobile network, which facilitates accurate and scalable simulations. In evaluation against cloud deployed 400 kilometers away, the testbed achieves approximately 59 \% lower Round Trip Time (RTT) demonstrating its viability for realistic evaluation of VEC algorithms.
+	
+\keywords{vehicular edge computing, multi-access edge computing, mobile networks, 5G, task offloading, autonomous vehicles}
 %
 %fill in abstract
 %
@@ -359,7 +359,7 @@
 
 \chapter*{Abstrakt}
 	% \addcontentsline{toc}{chapter}{Abstrakt}	% comment to omit abstract from toc
-\keywordscz{mobilní sítě, multi-access edge computing, vehicular edge computing, přesun výpočtů, autonomn\'i vozidla}
+\keywordscz{vehicular edge computing, multi-access edge computing, mobilní sítě, 5G, přesun výpočtů, autonomn\'i vozidla}
 %
 %fill in abstract
 %
@@ -671,6 +671,7 @@ For a better understanding of current OAI 5G NR capabilities, some general featu
 % ---------------------
 % add a table with basic features for OAI NR
 % ---------------------
+
 OAI is designed to serve as a development tool for accurate mobile networks simulations and emulations. For this purpose, OAI enables different simulation models: RFsimulator, L2 nFAPI simulator and running with true radio heads. RFsimulator replaces the radio heads and allows connecting the UE to eNB or gNB via network interfaces. It is the optimal model to start testing OAI as it significantly decreases the deployment overhead. L2 nFAPI simulator allows connecting the UEs and eNB or gNB via nFAPI (Network Functional API), thus shortcutting the PHY layer. Finally, OAI is designed to operate with true radio interface, using Customer-Off-The-Shelf (COTS) hardware, such as USRP (Universal Software Radio Peripheral) for the e/gNB and regular COTS UE. [aa] 
 
 The development of OAI 5G CN is an ongoing process, while evolution from LTE in 4G to NR in 5G seems to be complete with OAI enabling standalone 5G deployment, OSA defined the short-term goals of OAI as performance improvement or integration with smart RAN solutions developed within the Mosaic5G group. [dd]
@@ -922,6 +923,31 @@ The experiment consisted of running ping from UE’s \verb|oaitun_ue1| interface
 \end{figure}
 
 The data show that the average RTT difference between edge and cloud is 7.94 ms. This follows the expectation and demonstrates the feasibility of using OAI MEP setup for VEC testbed.
+
+The second experiment evaluated the network performance and available bandwidth with iperf. This experiment deserves two special comments. First, as mentioned in Chapter 4, the total achievable network throughput in RFsimulator mode depends on the underlying hardware, the actual numbers are, therefore irrelevant, as they scale with the hardware. Second, in evaluating two deployments, where the OAI emulated part of the network is the same, the only factors influencing the different results are the rest of the network between UPF and cloud, distance and possibly node performance. Because of the resulting numbers (under 10 Mb/s for both edge and cloud), neither network nor node performance are expected to have a major impact. The difference between both achieved throughputs is therefore probably achieved because of the higher communication latency between UE and cloud.
+\begin{table}[!ht]
+    \centering
+    \caption{Throughput measurement}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+        \multicolumn{2}{|c|}{Edge} & \multicolumn{2}{c|}{Cloud} \\ \hline
+        Downlink [Mbps] & Uplink [Mbps] & Downlink [Mbps] & Uplink [Mbps] \\ \hline
+        9,09 & 7,18 & 9,01 & 7,195 \\ \hline
+    \end{tabular}
+    \label{T:throughput}
+\end{table}
+% -----------------------
+%     Conclusion
+% -----------------------
+\chapter{Conclusion}
+The thesis’s objective was to set up a functional testbed for future research on VEC based on standards developed for MEC. To facilitate these objectives, the standards regarding MEC and 5G have been examined and a framework for their integration has been proposed. Then, existing open-source solutions for MEC or VEC have been evaluated with the purpose of selecting the most suitable platform for leveraging in VEC testbed. The selected platform has been thoroughly examined, tested and evaluated against realistic cloud deployment scenario. 
+
+The set up testbed leverages the OAI MEP project. It is built on OAI 5G RAN and CN with additional components that ensure exposing underlying mobile network information to implemented RNIS. The MEP itself acts as a gateway for MEC apps to consume MEP registered services. The 5G NFs and MEC FEs in OAI MEP run as Docker containers in RFsimulator simulation model with the possibility of extending the simulation to use COTS hardware for the radio interface. To enable seamless extension of the testbed and future work, the stable OAI MEP code has been forked to a new VEC testbed repository and a framework for registering new MEC service and consuming registered services has been provided. 
+
+The testbed has been evaluated against cloud deployment to assess the achieved reduction in communication latency. The edge deployment model employed in our lab has the edge server collocated with UPF, emulating a common approach. The evaluation results clearly demonstrate a significant decrease in RTT, approximately 59 \% when utilizing an edge deployment compared to the cloud alternative. This establishes the testbed’s viability as a research tool to evaluate future VEC applications. 
+
+In future, the testbed should be updated with future releases of the underlying OAI MEP, which promises to further increase the mobile network programmability through MEP inflicted traffic control via PCF. Furthermore, the testbed could be expanded to work with real radio interface to provide even more accurate evaluations. The platform now enables development of VEC applications leveraging task offloading for various use cases such as remote image processing for AVs. [TOWARDS 6G] 
+
 % -----------------------
 %     BIBLIOGRAPHY
 % -----------------------

@@ -27,4 +27,5 @@
 \contentsline {subsection}{\numberline {5.2.1}Service registration}{30}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}MEC app consuming services}{32}{subsection.5.2.2}%
 \contentsline {section}{\numberline {5.3}Evaluation of VEC testbed}{32}{section.5.3}%
-\contentsline {chapter}{References}{36}{chapter*.34}%
+\contentsline {chapter}{\numberline {6}Conclusion}{37}{chapter.6}%
+\contentsline {chapter}{References}{38}{chapter*.35}%
