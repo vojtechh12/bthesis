@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.10.5)  18 MAY 2023 14:48
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.10.5)  18 MAY 2023 16:12
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -970,6 +970,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 ] [7] [8]) [9]
 Chapter 1.
 
+LaTeX Warning: Citation `o-ran-web' on page 1 undefined on input line 403.
+
+
+LaTeX Warning: Citation `mec-etsi-web' on page 1 undefined on input line 409.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
@@ -978,16 +984,20 @@ pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has b
 l.410 
        [1
 
-]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
+]
+
+LaTeX Warning: Citation `mec-etsi-web' on page 2 undefined on input line 411.
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.417 \chapter
+l.418 \chapter
               {MEC \& 5G} [2]
 Chapter 2.
-<./images/usage-scenarios.png, id=387, 679.8198pt x 476.5002pt>
+<./images/usage-scenarios.png, id=384, 679.8198pt x 476.5002pt>
 File: ./images/usage-scenarios.png Graphic file (type png)
 <use ./images/usage-scenarios.png>
-Package pdftex.def Info: ./images/usage-scenarios.png  used on input line 424.
+Package pdftex.def Info: ./images/usage-scenarios.png  used on input line 425.
 (pdftex.def)             Requested size: 455.24411pt x 319.08624pt.
 
 Underfull \vbox (badness 6125) has occurred while \output is active []
@@ -995,7 +1005,7 @@ Underfull \vbox (badness 6125) has occurred while \output is active []
 pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.432 
+l.433 
        [3
 
 ]
@@ -1004,41 +1014,41 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.437 
+l.438 
        [4 <./images/usage-scenarios.png>]
-<./images/5G-CN.png, id=416, 825.3234pt x 398.9304pt>
+<./images/5G-CN.png, id=413, 825.3234pt x 398.9304pt>
 File: ./images/5G-CN.png Graphic file (type png)
 <use ./images/5G-CN.png>
-Package pdftex.def Info: ./images/5G-CN.png  used on input line 440.
+Package pdftex.def Info: ./images/5G-CN.png  used on input line 441.
 (pdftex.def)             Requested size: 455.24411pt x 220.04546pt.
  [5 <./images/5G-CN.png>]
-<./images/PDU-sesh-est.png, id=434, 798.5835pt x 418.2024pt>
+<./images/PDU-sesh-est.png, id=431, 798.5835pt x 418.2024pt>
 File: ./images/PDU-sesh-est.png Graphic file (type png)
 <use ./images/PDU-sesh-est.png>
-Package pdftex.def Info: ./images/PDU-sesh-est.png  used on input line 455.
+Package pdftex.def Info: ./images/PDU-sesh-est.png  used on input line 456.
 (pdftex.def)             Requested size: 455.24411pt x 238.40337pt.
  [6 <./images/PDU-sesh-est.png>]
-<./images/5G-reg-disc.png, id=447, 632.3625pt x 361.35pt>
+<./images/5G-reg-disc.png, id=444, 632.3625pt x 361.35pt>
 File: ./images/5G-reg-disc.png Graphic file (type png)
 <use ./images/5G-reg-disc.png>
-Package pdftex.def Info: ./images/5G-reg-disc.png  used on input line 464.
+Package pdftex.def Info: ./images/5G-reg-disc.png  used on input line 465.
 (pdftex.def)             Requested size: 455.24411pt x 260.14423pt.
-<./images/traffic-control.png, id=450, 542.025pt x 162.6075pt>
+<./images/traffic-control.png, id=447, 542.025pt x 162.6075pt>
 File: ./images/traffic-control.png Graphic file (type png)
 <use ./images/traffic-control.png>
-Package pdftex.def Info: ./images/traffic-control.png  used on input line 471.
+Package pdftex.def Info: ./images/traffic-control.png  used on input line 472.
 (pdftex.def)             Requested size: 426.79134pt x 128.04167pt.
  [7 <./images/5G-reg-disc.png> <./images/traffic-control.png>]
-<./images/MEC-framework.png, id=469, 560.0925pt x 487.8225pt>
+<./images/MEC-framework.png, id=466, 560.0925pt x 487.8225pt>
 File: ./images/MEC-framework.png Graphic file (type png)
 <use ./images/MEC-framework.png>
-Package pdftex.def Info: ./images/MEC-framework.png  used on input line 485.
+Package pdftex.def Info: ./images/MEC-framework.png  used on input line 486.
 (pdftex.def)             Requested size: 455.24411pt x 396.51855pt.
  [8]
-<./images/MEC-ref-arch.pdf, id=487, 745.28438pt x 444.4605pt>
+<./images/MEC-ref-arch.pdf, id=484, 745.28438pt x 444.4605pt>
 File: ./images/MEC-ref-arch.pdf Graphic file (type pdf)
 <use ./images/MEC-ref-arch.pdf>
-Package pdftex.def Info: ./images/MEC-ref-arch.pdf  used on input line 500.
+Package pdftex.def Info: ./images/MEC-ref-arch.pdf  used on input line 501.
 (pdftex.def)             Requested size: 455.24411pt x 271.48672pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -1047,10 +1057,10 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [10 <./images/MEC-ref-arch.pdf>] [11]
-<./images/MEC-5G-integration-flowchart.png, id=590, 894.4617pt x 516.7305pt>
+<./images/MEC-5G-integration-flowchart.png, id=587, 894.4617pt x 516.7305pt>
 File: ./images/MEC-5G-integration-flowchart.png Graphic file (type png)
 <use ./images/MEC-5G-integration-flowchart.png>
-Package pdftex.def Info: ./images/MEC-5G-integration-flowchart.png  used on input line 535.
+Package pdftex.def Info: ./images/MEC-5G-integration-flowchart.png  used on input line 536.
 (pdftex.def)             Requested size: 455.24411pt x 263.0008pt.
  [12] [13 <./images/MEC-5G-integration-flowchart.png>]
 Chapter 3.
@@ -1061,114 +1071,120 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 ]
 
-LaTeX Warning: Citation `lf-edge-web' on page 15 undefined on input line 554.
+LaTeX Warning: Citation `lf-edge-web' on page 15 undefined on input line 555.
 
 
-LaTeX Warning: Citation `lf-edge-web' on page 15 undefined on input line 554.
+LaTeX Warning: Citation `lf-edge-web' on page 15 undefined on input line 555.
 
 
-LaTeX Warning: Citation `cvb-docu' on page 15 undefined on input line 556.
+LaTeX Warning: Citation `cvb-docu' on page 15 undefined on input line 557.
 
-<./images/akraino-cvb.png, id=612, 1706.375pt x 941.5175pt>
+<./images/akraino-cvb.png, id=609, 1706.375pt x 941.5175pt>
 File: ./images/akraino-cvb.png Graphic file (type png)
 <use ./images/akraino-cvb.png>
-Package pdftex.def Info: ./images/akraino-cvb.png  used on input line 559.
+Package pdftex.def Info: ./images/akraino-cvb.png  used on input line 560.
 (pdftex.def)             Requested size: 455.24411pt x 251.18181pt.
 
-LaTeX Warning: Citation `cvb-docu' on page 15 undefined on input line 560.
+LaTeX Warning: Citation `cvb-docu' on page 15 undefined on input line 561.
 
 
-LaTeX Warning: Citation `cvb-docu' on page 15 undefined on input line 560.
+LaTeX Warning: Citation `cvb-docu' on page 15 undefined on input line 561.
 
 
-LaTeX Warning: Reference `ealtedge' on page 15 undefined on input line 565.
+LaTeX Warning: Reference `ealtedge' on page 15 undefined on input line 566.
 
 
-LaTeX Warning: Citation `ealtedge-docu' on page 15 undefined on input line 565.
+LaTeX Warning: Citation `ealtedge-docu' on page 15 undefined on input line 566.
 
-<./images/akraino-ealtedge.png, id=613, 1340.00626pt x 746.79pt>
+<./images/akraino-ealtedge.png, id=610, 1340.00626pt x 746.79pt>
 File: ./images/akraino-ealtedge.png Graphic file (type png)
 <use ./images/akraino-ealtedge.png>
-Package pdftex.def Info: ./images/akraino-ealtedge.png  used on input line 568.
+Package pdftex.def Info: ./images/akraino-ealtedge.png  used on input line 569.
 (pdftex.def)             Requested size: 369.88582pt x 206.13704pt.
 
-LaTeX Warning: Citation `ealtedge-docu' on page 15 undefined on input line 569.
+LaTeX Warning: Citation `ealtedge-docu' on page 15 undefined on input line 570.
 
 
-LaTeX Warning: Citation `ealtedge-docu' on page 15 undefined on input line 569.
+LaTeX Warning: Citation `ealtedge-docu' on page 15 undefined on input line 570.
 
 
 Underfull \vbox (badness 3354) has occurred while \output is active []
 
  [15]
 
-LaTeX Warning: Citation `cvb-docu' on page 16 undefined on input line 578.
+LaTeX Warning: Citation `cvb-docu' on page 16 undefined on input line 579.
 
 
-LaTeX Warning: Citation `akraino-mec-slice-docu' on page 16 undefined on input line 578.
+LaTeX Warning: Citation `akraino-mec-slice-docu' on page 16 undefined on input line 579.
 
-<./images/intel-solu.png, id=621, 1805.74625pt x 883.3pt>
+<./images/intel-solu.png, id=618, 1805.74625pt x 883.3pt>
 File: ./images/intel-solu.png Graphic file (type png)
 <use ./images/intel-solu.png>
-Package pdftex.def Info: ./images/intel-solu.png  used on input line 581.
+Package pdftex.def Info: ./images/intel-solu.png  used on input line 582.
 (pdftex.def)             Requested size: 369.88582pt x 180.92941pt.
+
+LaTeX Warning: Citation `seo-overview' on page 16 undefined on input line 583.
+
+
+LaTeX Warning: Citation `seo-overview' on page 16 undefined on input line 583.
+
 [16 <./images/akraino-cvb.png>] [17 <./images/akraino-ealtedge.png> <./images/intel-solu.png>]
-<./images/openness.png, id=632, 1525.7pt x 781.92125pt>
+<./images/openness.png, id=629, 1525.7pt x 781.92125pt>
 File: ./images/openness.png Graphic file (type png)
 <use ./images/openness.png>
-Package pdftex.def Info: ./images/openness.png  used on input line 592.
+Package pdftex.def Info: ./images/openness.png  used on input line 594.
 (pdftex.def)             Requested size: 369.88582pt x 189.56198pt.
-<./images/intel-seo.png, id=633, 1474.50874pt x 653.44125pt>
+<./images/intel-seo.png, id=630, 1474.50874pt x 653.44125pt>
 File: ./images/intel-seo.png Graphic file (type png)
 <use ./images/intel-seo.png>
-Package pdftex.def Info: ./images/intel-seo.png  used on input line 602.
+Package pdftex.def Info: ./images/intel-seo.png  used on input line 604.
 (pdftex.def)             Requested size: 369.88582pt x 163.91826pt.
  [18 <./images/openness.png>]
-<./images/ll-mec.png, id=640, 1765.59625pt x 1170.3725pt>
+<./images/ll-mec.png, id=637, 1765.59625pt x 1170.3725pt>
 File: ./images/ll-mec.png Graphic file (type png)
 <use ./images/ll-mec.png>
-Package pdftex.def Info: ./images/ll-mec.png  used on input line 612.
+Package pdftex.def Info: ./images/ll-mec.png  used on input line 614.
 (pdftex.def)             Requested size: 369.88582pt x 245.17828pt.
-<./images/OAI-MEP.png, id=641, 1039.0017pt x 533.1117pt>
+<./images/OAI-MEP.png, id=638, 1039.0017pt x 533.1117pt>
 File: ./images/OAI-MEP.png Graphic file (type png)
 <use ./images/OAI-MEP.png>
-Package pdftex.def Info: ./images/OAI-MEP.png  used on input line 620.
+Package pdftex.def Info: ./images/OAI-MEP.png  used on input line 622.
 (pdftex.def)             Requested size: 369.88582pt x 189.78879pt.
 
 Underfull \vbox (badness 1502) has occurred while \output is active []
 
  [19 <./images/intel-seo.png>]
-<./images/advatnedge.png, id=647, 1329.96875pt x 1051.93pt>
+<./images/advatnedge.png, id=644, 1329.96875pt x 1051.93pt>
 File: ./images/advatnedge.png Graphic file (type png)
 <use ./images/advatnedge.png>
-Package pdftex.def Info: ./images/advatnedge.png  used on input line 629.
+Package pdftex.def Info: ./images/advatnedge.png  used on input line 631.
 (pdftex.def)             Requested size: 369.88582pt x 292.5641pt.
  [20 <./images/ll-mec.png>] [21 <./images/OAI-MEP.png>] [22 <./images/advatnedge.png>]
 Chapter 4.
-<./images/5G-NR-protstack.png, id=666, 632.3625pt x 289.08pt>
+<./images/5G-NR-protstack.png, id=663, 632.3625pt x 289.08pt>
 File: ./images/5G-NR-protstack.png Graphic file (type png)
 <use ./images/5G-NR-protstack.png>
-Package pdftex.def Info: ./images/5G-NR-protstack.png  used on input line 664.
+Package pdftex.def Info: ./images/5G-NR-protstack.png  used on input line 666.
 (pdftex.def)             Requested size: 369.88582pt x 169.09126pt.
 [23
 
 ] [24 <./images/5G-NR-protstack.png>]
-<./images/OAI-CN-soa.png, id=680, 1402.23875pt x 839.135pt>
+<./images/OAI-CN-soa.png, id=677, 1402.23875pt x 839.135pt>
 File: ./images/OAI-CN-soa.png Graphic file (type png)
 <use ./images/OAI-CN-soa.png>
-Package pdftex.def Info: ./images/OAI-CN-soa.png  used on input line 712.
+Package pdftex.def Info: ./images/OAI-CN-soa.png  used on input line 714.
 (pdftex.def)             Requested size: 369.88582pt x 221.34538pt.
  [25] [26 <./images/OAI-CN-soa.png>]
 Chapter 5.
-<./images/OAI-MEP-parts.png, id=691, 1047.915pt x 533.1117pt>
+<./images/OAI-MEP-parts.png, id=688, 1047.915pt x 533.1117pt>
 File: ./images/OAI-MEP-parts.png Graphic file (type png)
 <use ./images/OAI-MEP-parts.png>
-Package pdftex.def Info: ./images/OAI-MEP-parts.png  used on input line 753.
+Package pdftex.def Info: ./images/OAI-MEP-parts.png  used on input line 755.
 (pdftex.def)             Requested size: 369.88582pt x 188.17pt.
 [27
 
 ]
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 769.
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 771.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [28 <./images/OAI-MEP-parts.png>]
@@ -1177,34 +1193,34 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [29] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 836.
+Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 838.
 
 Underfull \vbox (badness 1490) has occurred while \output is active []
 
  [30]
-<./images/flask-demo.png, id=712, 1483.5425pt x 457.71pt>
+<./images/flask-demo.png, id=709, 1483.5425pt x 457.71pt>
 File: ./images/flask-demo.png Graphic file (type png)
 <use ./images/flask-demo.png>
-Package pdftex.def Info: ./images/flask-demo.png  used on input line 870.
+Package pdftex.def Info: ./images/flask-demo.png  used on input line 872.
 (pdftex.def)             Requested size: 369.88582pt x 114.11293pt.
-LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 878.
+LaTeX Font Info:    Trying to load font information for TS1+lmtt on input line 880.
  (/usr/share/texmf/tex/latex/lm/ts1lmtt.fd
 File: ts1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [31]
-<./images/experiment.png, id=736, 756.1851pt x 325.6968pt>
+<./images/experiment.png, id=733, 756.1851pt x 325.6968pt>
 File: ./images/experiment.png Graphic file (type png)
 <use ./images/experiment.png>
-Package pdftex.def Info: ./images/experiment.png  used on input line 918.
+Package pdftex.def Info: ./images/experiment.png  used on input line 920.
 (pdftex.def)             Requested size: 455.24411pt x 196.08055pt.
-<./images/RTT-comparison.png, id=737, 912.7701pt x 693.0693pt>
+<./images/RTT-comparison.png, id=734, 912.7701pt x 693.0693pt>
 File: ./images/RTT-comparison.png Graphic file (type png)
 <use ./images/RTT-comparison.png>
-Package pdftex.def Info: ./images/RTT-comparison.png  used on input line 946.
+Package pdftex.def Info: ./images/RTT-comparison.png  used on input line 948.
 (pdftex.def)             Requested size: 369.88582pt x 280.86073pt.
-<./images/RTT_comp_box.png, id=738, 878.8032pt x 679.338pt>
+<./images/RTT_comp_box.png, id=735, 878.8032pt x 679.338pt>
 File: ./images/RTT_comp_box.png Graphic file (type png)
 <use ./images/RTT_comp_box.png>
-Package pdftex.def Info: ./images/RTT_comp_box.png  used on input line 951.
+Package pdftex.def Info: ./images/RTT_comp_box.png  used on input line 953.
 (pdftex.def)             Requested size: 369.88582pt x 285.9316pt.
 
 Underfull \vbox (badness 1571) has occurred while \output is active []
@@ -1228,18 +1244,18 @@ Package rerunfilecheck Info: File `bthesis.out' has not changed.
 (rerunfilecheck)             Checksum: 098696CF0AF9376AEDC7218D8137FA39;4765.
  ) 
 Here is how much of TeX's memory you used:
- 29625 strings out of 480171
- 490356 string characters out of 5894489
- 1193479 words of memory out of 5000000
- 46805 multiletter control sequences out of 15000+600000
+ 29628 strings out of 480171
+ 490395 string characters out of 5894489
+ 1193503 words of memory out of 5000000
+ 46808 multiletter control sequences out of 15000+600000
  479237 words of font info for 63 fonts, out of 8000000 for 9000
  59 hyphenation exceptions out of 8191
  91i,17n,91p,1793b,1619s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc} </home/vojtechh/.texlive2021/texmf-var/fonts/pk/ljfour/jknappen/ec/tcrm1200.600pk></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf/fonts/type1/public/lm/lmtk10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt12.pfb>
-Output written on bthesis.pdf (51 pages, 3212667 bytes).
+Output written on bthesis.pdf (51 pages, 3213600 bytes).
 PDF statistics:
- 930 PDF objects out of 1000 (max. 8388607)
- 789 compressed objects within 8 object streams
+ 928 PDF objects out of 1000 (max. 8388607)
+ 787 compressed objects within 8 object streams
  266 named destinations out of 1000 (max. 500000)
  381 words of extra memory for PDF output out of 10000 (max. 10000000)
 
