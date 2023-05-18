@@ -26,11 +26,11 @@ M.~Sauter, \emph{From GSM to LTE-Advanced Pro and 5G: An Introduction to Mobile
   Networks and Mobile Broadband}.\hskip 1em plus 0.5em minus 0.4em\relax John
   Wiley \& Sons, Incorporated, 2017.
 
-\bibitem{dahlman20134g}
+\bibitem{dahlman-2013-4g}
 E.~Dahlman, S.~Parkvall, and J.~Skold, \emph{4G: LTE/LTE-advanced for mobile
   broadband}.\hskip 1em plus 0.5em minus 0.4em\relax Academic press, 2013.
 
-\bibitem{dahlman20205g}
+\bibitem{dahlman-2020-5g}
 ------, \emph{5G NR: The next generation wireless access technology}.\hskip 1em
   plus 0.5em minus 0.4em\relax Academic Press, 2020.
 
@@ -56,6 +56,39 @@ H.~Zhao, Y.~Zhang, P.~Meng, H.~Shi, L.~E. Li, T.~Lou, and J.~Zhao, ``Towards
   safety-aware computing system design in autonomous vehicles,'' \emph{arXiv
   preprint arXiv:1905.08453}, 2019.
 
+\bibitem{ETSI:wp24}
+F.~Giust, G.~Verin, K.~Antevski, J.~Chou, Y.~Fang, W.~Featherstone, F.~Fontes,
+  D.~Frydman, A.~Li, A.~Manzalini \emph{et~al.}, ``Mec deployments in 4g and
+  evolution towards 5g,'' \emph{ETSI White paper}, vol.~24, no. 2018, pp.
+  1--24, 2018.
+
+\bibitem{ETSI:wp28}
+S.~Kekki, W.~Featherstone, Y.~Fang, P.~Kuure, A.~Li, A.~Ranjan, D.~Purkayastha,
+  F.~Jiangping, D.~Frydman, G.~Verin \emph{et~al.}, ``Mec in 5g networks,''
+  \emph{ETSI white paper}, vol.~28, no. 2018, pp. 1--28, 2018.
+
+\bibitem{rommer20195g}
+S.~Rommer, P.~Hedman, M.~Olsson, L.~Frid, S.~Sultana, and C.~Mulligan, \emph{5G
+  Core Networks: Powering Digitalization}.\hskip 1em plus 0.5em minus
+  0.4em\relax Academic Press, 2019.
+
+\bibitem{yousaf2017nfv}
+F.~Z. Yousaf, M.~Bredel, S.~Schaller, and F.~Schneider, ``Nfv and sdn—key
+  technology enablers for 5g networks,'' \emph{IEEE Journal on Selected Areas
+  in Communications}, vol.~35, no.~11, pp. 2468--2478, 2017.
+
+\bibitem{ETSI:TS:5G}
+\BIBentryALTinterwordspacing
+``{ETSI TS 123 501 V15.2.0, ``5G; System Architecture for the 5G System''},''
+  ETSI, 2018. [Online]. Available:
+  \url{https://www.etsi.org/deliver/etsi_ts/123500_123599/123501/15.02.00_60/ts_123501v150200p.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ETSI:wp36}
+N.~Sprecher \emph{et~al.}, ``Harmonizing standards for edge computing-a
+  synergized architecture leveraging etsi isg mec and 3gpp specifications,''
+  \emph{ETSI White paper}, no.~36, 2020.
+
 \bibitem{ETSI:GS:MEC003}
 \BIBentryALTinterwordspacing
 ``{ETSI GS MEC 003 V3.1.1, ``Mobile Edge Computing (MEC); Framework and
@@ -63,18 +96,17 @@ H.~Zhao, Y.~Zhang, P.~Meng, H.~Shi, L.~E. Li, T.~Lou, and J.~Zhao, ``Towards
   \url{https://www.etsi.org/deliver/etsi_gs/MEC/001_099/003/03.01.01_60/gs_MEC003v030101p.pdf}
 \BIBentrySTDinterwordspacing
 
-\bibitem{ETSI:WP:28}
+\bibitem{ETSI:GS:app-ena}
 \BIBentryALTinterwordspacing
-``{ETSI White Paper No. 28, MEC in 5G Networks},'' ETSI, 2018. [Online].
-  Available:
-  \url{https://www.etsi.org/images/files/ETSIWhitePapers/etsi_wp28_mec_in_5G_FINAL.pdf}
+``{ETSI GS MEC 011 V3.1.1, ``5G; System Architecture for the 5G System''},''
+  ETSI, 2022. [Online]. Available:
+  \url{https://www.etsi.org/deliver/etsi_gs/MEC/001_099/011/03.01.01_60/gs_mec011v030101p.pdf}
 \BIBentrySTDinterwordspacing
 
-\bibitem{ETSI:WP:24}
-\BIBentryALTinterwordspacing
-``{ETSI White Paper No. 24, MEC Deployments in 4G and Evolution Towards 5G},''
-  ETSI, 2018. [Online]. Available:
-  \url{https://www.etsi.org/images/files/ETSIWhitePapers/etsi_wp24_MEC_deployment_in_4G_5G_FINAL.pdf}
-\BIBentrySTDinterwordspacing
+\bibitem{ETSI:wp20}
+D.~Sabella, V.~Sukhomlinov, L.~Trang, S.~Kekki, P.~Paglierani, R.~Rossbach,
+  X.~Li, Y.~Fang, D.~Druta, F.~Giust \emph{et~al.}, ``Developing software for
+  multi-access edge computing,'' \emph{ETSI white paper}, vol.~20, pp. 1--38,
+  2019.
 
 \end{thebibliography}

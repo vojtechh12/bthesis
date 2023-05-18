@@ -82,3 +82,7 @@
 \glossaryentry{UDR?\glossentry{udr}|setentrycounter[]{page}"\glsignore}{v}
 \glossaryentry{FlexRIC?\glossentry{flexric}|setentrycounter[]{page}"\glsignore}{v}
 \glossaryentry{FlexCN?\glossentry{flexcn}|setentrycounter[]{page}"\glsignore}{v}
+\glossaryentry{OAI-CM?\glossentry{oai-cm}|setentrycounter[]{page}"\glsignore}{v}
+\glossaryentry{KPI?\glossentry{kpi}|setentrycounter[]{page}"\glsignore}{v}
+\glossaryentry{CLI?\glossentry{cli}|setentrycounter[]{page}"\glsignore}{v}
+\glossaryentry{GUI?\glossentry{gui}|setentrycounter[]{page}"\glsignore}{v}

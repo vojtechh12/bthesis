@@ -10,13 +10,13 @@
 \contentsline {subsection}{\numberline {3.1.1}Connected Vehicles Blueprint}{15}{subsection.3.1.1}%
 \contentsline {subsection}{\numberline {3.1.2}Enterprise Applications on Lightweight 5G Telco Edge}{16}{subsection.3.1.2}%
 \contentsline {section}{\numberline {3.2}Intel Edge Projects}{17}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}OpenNESS}{17}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.1}OpenNESS}{18}{subsection.3.2.1}%
 \contentsline {subsection}{\numberline {3.2.2}Smart Edge Open}{18}{subsection.3.2.2}%
 \contentsline {section}{\numberline {3.3}EURECOM and OpenAirInterface Projects}{19}{section.3.3}%
 \contentsline {subsection}{\numberline {3.3.1}LL-MEC}{19}{subsection.3.3.1}%
 \contentsline {subsection}{\numberline {3.3.2}MEC platform by EURECOM}{20}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Other MEC projects}{21}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}AdvantEDGE}{21}{subsection.3.4.1}%
+\contentsline {section}{\numberline {3.4}Other MEC projects}{20}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}AdvantEDGE}{20}{subsection.3.4.1}%
 \contentsline {chapter}{\numberline {4}Mobile network emulation: \\ \mbox {OpenAirInterface}}{23}{chapter.4}%
 \contentsline {section}{\numberline {4.1}OAI RAN}{23}{section.4.1}%
 \contentsline {section}{\numberline {4.2}OAI CN}{25}{section.4.2}%
@@ -27,5 +27,5 @@
 \contentsline {subsection}{\numberline {5.2.1}Service registration}{30}{subsection.5.2.1}%
 \contentsline {subsection}{\numberline {5.2.2}MEC app consuming services}{32}{subsection.5.2.2}%
 \contentsline {section}{\numberline {5.3}Evaluation of VEC testbed}{32}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Conclusion}{37}{chapter.6}%
-\contentsline {chapter}{References}{38}{chapter*.35}%
+\contentsline {chapter}{\numberline {6}Conclusion}{36}{chapter.6}%
+\contentsline {chapter}{References}{37}{chapter*.36}%
