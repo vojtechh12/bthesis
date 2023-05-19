@@ -11,6 +11,7 @@
 \usepackage{pdfpages}
 \usepackage{subfig}
 \usepackage{float}
+\usepackage{caption}
 
 % Math
 \usepackage{amsthm}
@@ -21,7 +22,7 @@
 \usepackage{enumerate}
 \usepackage{paralist}
 \usepackage{acronym}
-\usepackage[nonumberlist]{glossaries} % troubleshooting
+\usepackage[nonumberlist]{glossaries} 
 
 % Tables
 \usepackage{booktabs}
@@ -49,6 +50,7 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage[usestackEOL]{stackengine}
+\usepackage{rotating}
 
 %\usepackage[resetlabels,labeled]{multibib}
 %\usepackage[T1]{fontenc}
@@ -581,7 +583,7 @@ The deployment of EALTEdge is quite flexible, allowing to deploy everything cont
 Because EALTEdge provides a general MEC system, which closely follows ETSI MEC specifications and also offers a development environment for MEC apps, it seems like an ideal platform for the testbed development. However, upon testing in lab environment, it was discovered that EdgeGallery servers forbid requests of downloading the package containing the software for the user apps. Therefore, while EALTEdge or even EdgeGallery alone seem like very promising projects, they could not be leveraged in testbed development.
 
 \section{Intel Edge Projects}
-Beside the Akraino project, another primary mover within edge software development is Intel. Intel develops commercial end-to-end edge solutions for their customers, but they also offer open-source variants for developers to prototype on. The range of edge-oriented products currently offered by Intel and the licenses under which they are released are shown in Figure~\ref{F:intel-solu}. A successful open-source solution by Intel was Open Network Edge Services Software (OpenNESS) \cite{sabella-mec-sw-dev}, which at some point gained a lot of momentum within MEC open-source community. Moreover, several Akraino blueprints reference OpeNESS as a platform they were initially built on \cite{cvb-docu,akraino-mec-slice-docu}. However, the OpeNESS project was shut down and transitioned towards Smart Edge Open. Both platforms are introduced in the following two subsections.
+Beside the Akraino project, another primary mover within edge software development is Intel. Intel develops commercial end-to-end edge solutions for their customers, but they also offer open-source variants for developers to prototype on. The range of edge-oriented products currently offered by Intel and the licenses under which they are released are shown in Figure~\ref{F:intel-solu}. A successful open-source solution by Intel was Open Network Edge Services Software (OpenNESS) \cite{sabella-mec-sw-dev}, which at some point gained a lot of momentum within MEC open-source community. Moreover, several Akraino blueprints reference OpenNESS as a platform they were initially built on \cite{cvb-docu,akraino-mec-slice-docu}. However, the OpenNESS project was shut down and transitioned towards Smart Edge Open. Both platforms are introduced in the following two subsections.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=13cm]{./images/intel-solu.png} 
@@ -663,20 +665,22 @@ In total, seven open-source projects have been examined. CVB by Akraino has not 
 %-------------------------
 %  Ch4- OpenAirInterface
 %-------------------------
-\chapter{Mobile network emulation: \texorpdfstring{\\ \mbox{OpenAirInterface}}{OpenAirInterface}}
+\chapter{Mobile network emulation} % to include OAI in chapter title  \texorpdfstring{\\ \mbox{OpenAirInterface}}{OpenAirInterface}
 \label{Ch:OAI}
-The goal of this chapter is to provide an overview of an open-source mobile network emulation platform OpenAirInterface (OAI). OAI has the ambition to democratize the research and development of wireless access technologies through delivering a 3GPP compliant software stack for both RAN and CN. The OAI software offers different levels of mobile networks simulation or emulation in flexible deployment scenarios and is intended to run on general purpose hardware [z]. OAI was originally founded by EURECOM, and its development is overseen by OSA, which has the goal of promoting the adoption of OAI across both academia and industry. 
+This chapter provides an overview of an open-source mobile network emulation platform Open Air Interface (OAI). OAI has the ambition to democratize the research and development of wireless access technologies through delivering a 3GPP compliant software stack for both RAN and CN. The OAI software offers different levels of mobile networks simulation and emulation in flexible deployment scenarios and is intended to run on general purpose hardware \cite{kaltenberger-oai}. The development of the OAI has begun at EURECOM, before being passed to OAI Software Alliance (OSA), which has the goal of promoting the adoption of OAI across both academia and industry.
 
 OAI development is split into different projects. The two biggest ones are focused on developing the solutions for RAN and CN. While those are definitely the core of OAI, its focus spans further and exploits smart solutions regarding mobile networks’ orchestration and programmability under Mosaic5G project. The following sections offer a brief introduction to all of these projects and discuss how they are going to be leveraged in OAI based VEC testbed.
-
+%
 \section{OAI RAN}
-OAI RAN offers modems for the UE and base station (eNB in 4G and gNB in 5G). These modems are developed with respect to 3GPP specifications and therefore, OAI RAN implements the entire 5G New Radio (5G-NR) protocol stack [aa]. This thesis is focused primarily on the CN architecture, therefore, the individual protocols of 5G NR will not be exploited in great detail. Below is an example of 5G NR user plane protocol stack with brief introduction of individual layers based on [a].
-
+OAI RAN develops and implements code for running 4G and 5G base station (eNB in 4G and gNB in 5G) and User Equipment (UE). These implementations are developed with respect to 3GPP specifications and therefore, OAI RAN implements the entire 5G New Radio (5G-NR) protocol stack \cite{oai_doc}. This thesis is focused primarily on the CN architecture, therefore, the individual protocols of 5G-NR are provided in a detail needed for the purpose of this thesis. In Figure~\ref{F:5G-protstack} is an example of 5G-NR user plane protocol stack with brief introduction of individual layers based on \cite{dahlman-2020-5g}.
+%
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=13cm]{./images/5G-NR-protstack.png} 
-	\caption{My PNG image}
+	\caption{5G-NR user plane protocol stack \cite{dahlman-2020-5g}.}
+	\label{F:5G-protstack}
 \end{figure}
+%
 The three topmost layers are the application layer, the Transmission Control Protocol (TCP) and Internet Protocol (IP). This is common for any IP-based network, including 4G and 5G mobile networks.
 
 The 5G NR user plane protocol stack:
@@ -692,10 +696,9 @@ In control plane, the lower-level protocols are the same, but on top of PDCP the
 	\item Radio Resource Control (RRC): setup and release of radio bearers, mobility management, CP signaling.
 	\item Non-Access Stratum (NAS): signaling messages between UE and CN for management of UE mobility and network selection.
 \end{itemize}
-For a better understanding of current OAI 5G NR capabilities, some general features based on [aa] are listed below in Table \ref{T:OAI-featureset}
-% ---------------------
-% add a table with basic features for OAI NR
-% ---------------------
+%
+For a better understanding of current OAI 5G NR capabilities, some general features based on \cite{oai_doc} are listed below in Table~\ref{T:OAI-featureset}. Note that some of the values, such as downlink throughput, are achieved in an optimized deployment in OAI lab and in general deployment are lower.
+%
 \begin{table}[!ht]
     \centering
     \caption{OAI RAN features}
@@ -714,47 +717,55 @@ For a better understanding of current OAI 5G NR capabilities, some general featu
     \end{tabular}
     \label{T:OAI-featureset}
 \end{table}
+%
+OAI is designed to serve as a development tool for accurate mobile network simulations and emulations. For this purpose, OAI enables different simulation models: RFsimulator, L2 nFAPI simulator and running with true radio heads. RFsimulator replaces the radio heads, which in emulation run on Software Defined Radios (SDRs) by software implementation. This allows a complete 4G and 5G setup on a generic PC. In this case, virtual interfaces are created in the PC to enable sending real traffic. It is the optimal model to start testing OAI as it follows the same protocols as if running with the radio interface with SDR. If the SDR is exploited for emulation, the same code is run, which greatly decreases development time. The throughput achieved with RFsimulator depends on the host machine’s CPU power. L2 nFAPI simulator allows connecting the UEs directly to eNB or gNB by bypassing Physical layer (PHY) via nFAPI (Network Functional API), which extends split between PHY and MAC \cite{scf-nfapi}. The third option, mobile network emulation, is designed to operate with true radio interface, represented by a SDR such as USRP (Universal Software Radio Peripheral) to enable connecting Customer-Off-The-Shelf (COTS) UE, i.e., publicly available smarthpones \cite{oai_doc}. It should be noted that at the time of writing, only a limited number of UEs (smartphones) work with OAI 5G network and it requires a lot of configuring \cite{oai-maillist}.
 
-OAI is designed to serve as a development tool for accurate mobile networks simulations and emulations. For this purpose, OAI enables different simulation models: RFsimulator, L2 nFAPI simulator and running with true radio heads. RFsimulator replaces the radio heads and allows connecting the UE to eNB or gNB via network interfaces. It is the optimal model to start testing OAI as it significantly decreases the deployment overhead. L2 nFAPI simulator allows connecting the UEs and eNB or gNB via nFAPI (Network Functional API), thus shortcutting the PHY layer. Finally, OAI is designed to operate with true radio interface, using Customer-Off-The-Shelf (COTS) hardware, such as USRP (Universal Software Radio Peripheral) for the e/gNB and regular COTS UE. [aa] 
-
-The development of OAI 5G CN is an ongoing process, while evolution from LTE in 4G to NR in 5G seems to be complete with OAI enabling standalone 5G deployment, OSA defined the short-term goals of OAI as performance improvement or integration with smart RAN solutions developed within the Mosaic5G group. [dd]
+The development of OAI 5G CN is an ongoing process, while evolution from LTE in 4G to NR in 5G seems to be complete with OAI enabling standalone 5G deployment, OSA defined the short-term goals of OAI as performance improvement or integration with smart RAN solutions developed within the Mosaic5G group. \cite{oai-mosaic5g-web}
+%
 \section{OAI CN}
-OAI 5G CN project group develops open-source solution for standalone 3GPP compliant 5G CN that is capable of enabling various 5G use cases. The 5G CN components are continuously tested with open-source as well as commercial RAN solutions [bb]. The OAI 5G CN has been gradually developed from 4G EPC to the 5G CN architecture, extensively described in chapter 2. In fact, this work is still ongoing, with the current state-of-the-art shown in Figure 21.
+OAI 5G CN project group develops open-source solution for standalone 3GPP compliant 5G CN that is capable of enabling various 5G use cases. The 5G CN components are continuously tested with open-source as well as commercial RAN solutions \cite{oai-cn-web}. The OAI 5G CN has been gradually developed from 4G EPC to the 5G CN architecture, extensively described in Chapter~\ref{Ch:MECn5G}. In fact, this work is still ongoing, with the current state-of-the-art shown in Figure~\ref{F:oai-cn-soa}.
+%
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=13cm]{./images/OAI-CN-soa.png} 
-	\caption{My PNG image}
+	\caption{OAI 5G CN project state-of-the-art \cite{oai-cn-doc}}
+	\label{F:oai-cn-soa}
 \end{figure}
-According to [bb], OAI 5G CN currently supports many of the key workflows described in chapter 2, such as UE connection, registration and session management. Network slicing is already partially supported, but a key interface for opening the CN to third parties, the AF, is not yet available. This is important from the perspective of integrating an open-source MEC system solution with OAI CN because AF should play a key role in providing the means of accessing the CN’s SBA for MEC orchestrator or MEC platform. 
+%
+According to \cite{oai-cn-web}, OAI 5G CN currently supports many of the key workflows described in Chapter~\ref{Ch:MECn5G}, such as UE connection, registration and session management. Network slicing is already partially supported, but a key interface for opening the CN to third parties, the AF, is not yet available. This is important from the perspective of integrating an open-source MEC system solution with OAI CN, because AF should play a key role in providing the means of accessing the CN’s SBA for MEC orchestrator or MEC platform. 
 
-The flexibility of OAI 5G CN design allows for different deployment models based on deployed NFs. In the minimalist example supporting basic session management procedures, AMF, SMF, NRF and UPF comprise the whole CN. The basic deployment model consists of the minimalist model and AUSF, UDM and UDR [bb]. UDR (Unified Data Repository) was not described in chapter 2, it is a NF providing storage and retrieval of structured data for PCF, NEF and UDM [ee]. Finally, slicing deployment model utilizes the basic model with NSSF [bb]. 
+The flexibility of OAI 5G CN design allows for different deployment models based on deployed NFs. In the minimalist example supporting basic session management procedures, AMF, SMF, NRF and UPF comprise the whole CN. The basic deployment model consists of the minimalist model and AUSF, UDM and UDR \cite{oai-cn-web}. UDR (Unified Data Repository) was not described in Chapter~\ref{Ch:MECn5G}, it is a NF providing storage and retrieval of structured data for PCF, NEF and UDM \cite{ETSI:TS:udr}. Finally, the slicing deployment model utilizes the basic model with NSSF \cite{oai-cn-web}.
 
-As was the case with OAI 5G RAN project, OAI 5G CN is still being developed to offer new capabilities and enable new use cases. During 2022, OAI released PCF and currently works on integrating PCF induced traffic steering. This is a key part of the MEC integration described in chapter 2.
+As was the case with OAI 5G RAN project, OAI 5G CN is still being developed to offer new capabilities and enable new use cases. During 2022, OAI released PCF and currently works on integrating PCF induced traffic steering. This is a key part of the MEC integration described in Chapter~\ref{Ch:MECn5G}.
+%
 \section{Mosaic5G}
-Mosaic5G is a project group within OAI focused on transforming the underlying OAI RAN and CN into agile platforms providing ecosystem for use cases ranging from centralized network control to edge deployments [dd]. The primary focus of Mosaic5G project group can be dissected into four main projects as defined in [dd]:
+Mosaic5G is a project group within OAI focused on transforming the underlying OAI RAN and CN into agile platforms providing ecosystem for use cases ranging from centralized network control to edge deployments \cite{oai-mosaic5g-web}. The primary focus of Mosaic5G project group can be dissected into four main projects as defined in \cite{oai-mosaic5g-web}:
+%
 \begin{itemize}
 	\item The O-RAN E2 protocol – E2 agent
 	\item A Flexible RAN Intelligent Controller (FlexRIC)
 	\item A Flexible Core Controler (FlexCN)
 	\item Higher layer RAN and CN operator – Tirematics
 \end{itemize}
-Currently, most of the Mosaic5G project group’s work is centered around FlexRIC and its integration with the rest of the OAI software [dd]. In fact, the OAI MEP discussed in previous chapter also utilizes FlexRIC as a key component [x]. 
+Currently, most of the Mosaic5G project group’s work is centered around FlexRIC and its integration with the rest of the OAI software \cite{oai-mosaic5g-web}. In fact, the OAI MEP discussed in previous chapter also utilizes FlexRIC as a key component \cite{oai-mep-git}. 
 %-------------------------
 %   Ch5 - VEC testbed
 %-------------------------
 \chapter{VEC testbed}
 \label{Ch:VEC-tstbed}
-The final chapter describes the implementation of testbed for VEC as the primary goal of the thesis. The structure of the following text is as follows: below, the whole task is dissected into three key stages, then each stage is examined in individual subsequent sections.
+This chapter describes the implementation of testbed for VEC as the primary goal of the thesis. The structure of the following text is as follows: the whole task is dissected into three key stages, then each stage is examined in individual subsequent sections.
+%
 \begin{itemize}
 	\item[\textbf{Stage 1:}] VEC testbed design leveraging chosen open-source projects 
 	\item[\textbf{Stage 2:}] creating a blueprint for future VEC applications development
 	\item[\textbf{Stage 3:}]  evaluation of set up testbed against cloud deployment
 \end{itemize}
-
+%
 \section{VEC testbed design}
-The final testbed design leverages the OAI MEP, introduced in chapter \ref{ch:o-sMEC}. While there, the focus was primarily on evaluating it against other MEC projects in terms of network architecture, this section describes the individual components from developer’s perspective. OAI MEP does not comprise the whole MEC system, but it provides an ETSI compliant MEP with a service-based environment, fully compatible with the underlying OAI RAN and CN. Such setup is sufficient for experimentation with VEC applications, such as task offloading. 
+The final testbed design leverages the OAI MEP, introduced in Chapter~\ref{Ch:o-sMEC}. While there, the focus was primarily on evaluating it against other MEC projects in terms of network architecture, this section describes the individual components from developer’s perspective. OAI MEP does not comprise the whole MEC system, but it provides an ETSI compliant MEP with a service-based environment, fully compatible with the underlying OAI RAN and CN. Such setup is sufficient for experimentation with VEC applications, such as task offloading.
 
-The leveraged platform is a blueprint showcasing OAI MEP with RNIS and it integrates five key projects as shown in Figure 22 [gg]:
+The leveraged platform is a blueprint showcasing OAI MEP with RNIS and it integrates five key projects as shown in Figure~\ref{F:VEC-tstbed-arch} \cite{oai-blueprint-git}:
+%
 \begin{itemize}
 	\item OAI 5G RAN
 	\item OAI 5G CN
@@ -762,25 +773,32 @@ The leveraged platform is a blueprint showcasing OAI MEP with RNIS and it integr
 	\item OAI Configuration Manager (OAI-CM)
 	\item RNIS
 \end{itemize}
+%
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=13cm]{./images/OAI-MEP-parts.png} 
-	\caption{My PNG image}
+	\begin{sideways}
+		\includegraphics[width=20cm]{./images/OAI-MEP-parts.png} 	
+	\end{sideways}
+	\caption{VEC testbed design leveraging OAI MEP bluperint \cite{oai-blueprint-git}.}
+	\label{F:VEC-tstbed-arch}
 \end{figure}
-This blueprint showcases how MEC apps can consume services, such as RNIS, via the Mp1 interface [gg]. For RNIS to be able to consume mobile network Key Performance Indicators (KPIs) via Mp2 and then expose them via Mp1 to MEC apps, the OAI mobile network required new features to be implemented. The OAI 5G CN is run in a basic deployment, as shown in Figure 22, but the RAN leverages an O-RAN xApp and Mosaic5G FlexRIC on top of the modules for UE and gNB. The xApp provides a northbound interface for the RNIS to subscribe to radio related KPIs [ff]. The OAI configuration manager then provides the functionality to subscribe to AMF and SMF events [hh]. 
+%
+This blueprint showcases how MEC apps can consume services, such as RNIS, via the Mp1 interface \cite{oai-blueprint-git}. For RNIS to be able to consume mobile network Key Performance Indicators (KPIs) via Mp2 and then expose them via Mp1 to MEC apps, the OAI mobile network required new features to be implemented. The OAI 5G CN is run in a basic deployment, as shown in Figure 22, but the RAN leverages an O-RAN xApp and Mosaic5G FlexRIC on top of the modules for UE and gNB. The xApp provides a northbound interface for the RNIS to subscribe to radio related KPIs \cite{oai-rnis-git}. The OAI configuration manager then provides the functionality to subscribe to AMF and SMF events \cite{oai-cm-git}.
 
-A key component of the OAI MEP is the MEP Gateway, which acts as a reverse proxy, routing the Mp1 traffic to the right service [x]. The reverse proxy is implemented leveraging Kong. It hides the underlying service nodes from the clients and routes client’s requests to the right service nodes. This means that all registered services can be accessed via the MEP Gateway. 
+A key component of the OAI MEP is the MEP Gateway, which acts as a reverse proxy, routing the Mp1 traffic to the right service \cite{oai-mep-git}. The reverse proxy is implemented leveraging Kong \cite{kong-docu}. It hides the underlying service nodes from the clients and routes client’s requests to the right service nodes. This means that all registered services can be accessed via the MEP Gateway.
 
-The Discovery and Registry Service has the responsibility of exposing REST API for the Mp1 interface allowing the MEC apps to do the following, based on [x]:
+The Discovery and Registry Service has the responsibility of exposing REST API for the Mp1 interface allowing the MEC apps to do the following, based on \cite{oai-mep-git}:
+%
 \begin{itemize}
 	\item Discover existing services (GET)
 	\item Filter hosted MEC services based on service type (GET)
 	\item Register a new service (POST)
 	\item Delete a hosted MEC service (DELETE)
 \end{itemize}
-The OAI MEP blueprint delivers docker-compose scripts for the deployment of all the containers. Furthermore, the basic deployment uses rfsim, although [gg] claims that it is possible to run with USRP radio heads and that it was tested in their lab. 
+%
+The OAI MEP blueprint delivers docker-compose scripts for deployment of all the containers. Furthermore, the basic deployment uses RFsimulator, although \cite{oai-blueprint-git} claims that it is possible to run with USRP radio heads and that it was tested in the OAI lab. 
 
-After a successful deployment, it should be possible to ping the internet from the UE container via its \verb |oaitun_ue1| interface. In our setup, it looks like this:
+After a successful deployment, it should be possible to ping the internet from the UE container via its \verb|oaitun_ue1| interface. In our setup, it looks like this:
 \begin{verbatim}
 	root@9929963b00c2:/opt/oai-nr-ue# \
 	ping -c 3 -I oaitun_ue1 comtel.fel.cvut.cz \
@@ -820,8 +838,10 @@ To verify that the RNIS works properly, it should be possible to access its serv
 
 \section{VEC application blueprint}
 This stage aims to deliver a blueprint for development of VEC applications running on the OAI MEP and consuming its services. It is split into two subsections, with the first one covering the service registration and the second one demonstrating implementation of a MEC app consuming services offered by the OAI MEP.
+%
 \subsection{Service registration}
-The registration and discovery service of OAI MEP can be accessed via its Graphical User Interface (GUI) on the host 192.168.70.5 or via the MEP Gateway: \\ \verb |http://oai-mep.org/service_registry/v1/ui|. It should be noted that for the latter to work, the oai-mep.org domain needs to be added to the local machine DNS, which is documented in [gg]. The GUI offers the services mentioned in the previous section. After a successful deployment, the discovery of available services should yield the following results, as only the RNIS is registered:
+The registration and discovery service of OAI MEP can be accessed via its Graphical User Interface (GUI) on the host \verb |192.168.70.5| or via the MEP Gateway:\\\verb |http://oai-mep.org/service_registry/v1/ui|. It should be noted that for the latter to work, the oai-mep.org domain needs to be added to the local machine DNS, which is documented in \cite{oai-blueprint-git}. The GUI offers the services mentioned in the previous section. After a successful deployment, the discovery of available services should yield the following results, as only the RNIS is registered:
+%
 \begin{verbatim}
 	lab@lab-HP-Z4-G4-7-Workstation:~/blueprints/mep/examples$ curl /
 	http://oai-mep.org/service_registry/v1/discover 
@@ -844,9 +864,10 @@ The registration and discovery service of OAI MEP can be accessed via its Graphi
 		"sid": "6458bfb3aab751de1b2ba9f0",
 		"type": "RadioNetworkInformation"
   },
-
 \end{verbatim}
+
 To demonstrate the service registry and discovery function of OAI MEP, a sample hello-world flask application has been created. This application runs on the localhost interface of the host machine and displays a simple line of text, the goal is to be able to route this application via the MEP Gateway.
+%
 \begin{flask}[caption={Sample flask app in python}]
 	from flask import Flask
 
@@ -864,7 +885,8 @@ To demonstrate the service registry and discovery function of OAI MEP, a sample 
 		app.run(debug=True, host='0.0.0.0', port=5000, use_reloader=False)
 \end{flask}
 
-To register the flask application, the GUI of the registry and discovery service has been leveraged. While the GUI provides a sample input for the register service, it does not include any uid, which confuses the underlying database of OAI MEP and results in unsuccessful registration. For a successful registration, the input shown below has been used.
+To register the flask application, the GUI of the registry and discovery service has been leveraged. While the GUI provides a sample input for the register service, it does not include any \verb|uid|, which confuses the underlying database of OAI MEP and results in unsuccessful registration. For a successful registration, the following input for the register command has been used:
+%
 \begin{verbatim}
 {
 	"description": "testing registration with sample flask",
@@ -878,14 +900,17 @@ To register the flask application, the GUI of the registry and discovery service
 	"type": "Traffic"
 	}
 \end{verbatim}
-Successful registration is indicated by the code 201 and a response with json data about the newly registered service, then sample flask application can be routed via the MEP Gateway, as demonstrated below.
+Successful registration is indicated by the code \verb|201| and a response in \verb|json| format about the newly registered service, then sample flask application can be routed via the MEP Gateway, as demonstrated in Figure~\ref{F:flask-hello-demo} below.
+%
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=13cm]{./images/flask-demo.png} 
-	\caption{My PNG image}
+	\caption{Demonstration of successful app registration.}
+	\label{F:flask-hello-demo}
 \end{figure}
 \subsection{MEC app consuming services}
-This subsection demonstrates how to create an application that would consume the services offered by OAI MEP based on an example app provided in [gg]. The example app is a flask application that subscribes to RNIS and shows the received data. The core of the application with minor changes from the version in [gg] is shown in Listing 5.2.
+This subsection demonstrates how to create an application that would consume the services offered by OAI MEP based on an example app provided in \cite{oai-blueprint-git}. The example app is a flask application that subscribes to RNIS and shows the received data. The core of the application with minor changes from the version in \cite{oai-blueprint-git} is shown in Code~XYZ.
+%
 \begin{flask}[caption={example-app.py}]
 	...
 	# create a subscription for receiving l2 measurements
@@ -921,22 +946,26 @@ This subsection demonstrates how to create an application that would consume the
 		return "<h1> Network Monitoring Dashboard</h1> " + json.dumps(collected_data)
 	...
 \end{flask}
-
+%
 It is noteworthy that the example app uses the reverse proxy OAI MEP Gateway to subscribe to RNIS as shown on line 3:  \\\verb |sub_endpoint = http://oai-mep.org/rnis/v2/subscriptions|. Then in \verb|sub_body|, an endpoint for receiving the data from RNIS is provided, and finally, under that endpoint, the \verb|receive_notification()| function handles the received data and puts them into \verb|collected_data| dictionary.
-
-
+%
 \section{Evaluation of VEC testbed}
-To evaluate the VEC testbed, an experiment has been conducted, measuring the RTT between the UE and the OAI MEP host, against the RTT between the UE and a cloud. The diagram illustrating the experiment is shown in Figure 5.3. It does not account for the UE and gNB modules also being hosted on the edge server, although the experiment could be scaled with using radio heads and both UE and gNB modules in standalone machines. The deployment in our lab setup follows the deployment model collocating edge server (MEC host) with UPF [i].
+To evaluate the VEC testbed, an experiment has been conducted, measuring the RTT between the UE and the OAI MEP host, against the RTT between the UE and a cloud. The diagram illustrating the experiment is shown in Figure~\ref{F:experiment}. It does not account for the UE and gNB modules also being hosted on the edge server, although the experiment could be scaled with using radio heads and both UE and gNB modules in standalone machines. The deployment in our lab setup follows the deployment model collocating edge server (MEC host) with UPF [i]. The cloud was set up using cloud service provider Linode and it was deployed in Frankfurt, to simulate realistic cloud distance from the UE.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=\textwidth]{./images/experiment.png} 
-	\caption{My PNG image}
+	\caption{Design of experiment.}
+	\label{F:experiment}
 \end{figure}
+%
+The experiment consisted of running ping from UE’s \verb|oaitun_ue1| interface (available on the PC with RFsim) to both the edge and cloud. The measurement was issued every two hours throughout one day and the results are shown in Table~\ref{T:ping} and visualized in Graph~\ref{G:pings-scatt}. 
 
-The experiment consisted of running ping from UE’s \verb|oaitun_ue1| interface to both the edge and cloud. The measurement was issued every two hours throughout one day and the results are shown in Table 5.1 and visualized in Graph 5.1. 
+The data show that the average RTT difference between edge and cloud is $7.94 \mbox{ ms}$. This follows the expectation and demonstrates the feasibility of using OAI MEP setup for VEC testbed.
+%
 \begin{table}[!ht]
     \centering
 	\caption{RTT measurement}
+	\label{T:ping}
     \begin{tabular}{|l|c|c|}
     \hline
         & \textbf{Edge [ms]} & \textbf{Cloud [ms]} \\ \hline
@@ -954,31 +983,32 @@ The experiment consisted of running ping from UE’s \verb|oaitun_ue1| interface
         23:00 & 5.335 & 13.868 \\ \hline
     \end{tabular}
 \end{table}
-
+%
 \begin{figure}[ht]
 	\centering
+	\captionsetup{labelsep=colon,name=Graph}
 	\includegraphics[width=13cm]{./images/RTT-comparison.png} 
-	\caption{My PNG image}
+	\caption{RTT for edge and cloud.}
+	\label{G:pings-scatt}
 \end{figure}
 \begin{figure}[ht]
 	\centering
+	\captionsetup{labelsep=colon,name=Graph}
 	\includegraphics[width=13cm]{./images/RTT_comp_box.png} 
-	\caption{My PNG image}
+	\caption{RTT for edge and cloud.}
 \end{figure}
-
-The data show that the average RTT difference between edge and cloud is 7.94 ms. This follows the expectation and demonstrates the feasibility of using OAI MEP setup for VEC testbed.
-
-The second experiment evaluated the network performance and available bandwidth with iperf. This experiment deserves special notice. As mentioned in Chapter 4, the total achievable network throughput in RFsimulator mode depends on the underlying hardware, the actual numbers are, therefore irrelevant, as they scale with the hardware. The throughputs achieved for both edge and cloud showed no significant difference.
+%
+he second experiment evaluated the network performance and available bandwidth with iperf. This experiment deserves special notice. As mentioned in Chapter~\ref{Ch:OAI}, the total achievable network throughput in RFsimulator mode depends on the underlying hardware, the actual numbers are, therefore irrelevant, as they scale with the hardware. The throughputs achieved for both edge and cloud showed no significant difference, as highlihted in Table~\ref{T:throughput}.
 \begin{table}[!ht]
     \centering
     \caption{Throughput measurement}
+	\label{T:throughput}
     \begin{tabular}{|c|c|c|c|}
     \hline
         \multicolumn{2}{|c|}{Edge} & \multicolumn{2}{c|}{Cloud} \\ \hline
         Downlink [Mbps] & Uplink [Mbps] & Downlink [Mbps] & Uplink [Mbps] \\ \hline
         9,09 & 7,18 & 9,01 & 7,195 \\ \hline
     \end{tabular}
-    \label{T:throughput}
 \end{table}
 % -----------------------
 %     Conclusion
@@ -986,11 +1016,11 @@ The second experiment evaluated the network performance and available bandwidth 
 \chapter{Conclusion}
 The thesis’s objective was to set up a functional testbed for future research on VEC based on standards developed for MEC. To facilitate these objectives, the standards regarding MEC and 5G have been examined and a framework for their integration has been proposed. Then, existing open-source solutions for MEC or VEC have been evaluated with the purpose of selecting the most suitable platform for leveraging in VEC testbed. The selected platform has been thoroughly examined, tested and evaluated against realistic cloud deployment scenario. 
 
-The set up testbed leverages the OAI MEP project. It is built on OAI 5G RAN and CN with additional components that ensure exposing underlying mobile network information to implemented RNIS. The MEP itself acts as a gateway for MEC apps to consume MEP registered services. The 5G NFs and MEC FEs in OAI MEP run as Docker containers in RFsimulator simulation model with the possibility of extending the simulation to use COTS hardware for the radio interface. To enable seamless extension of the testbed and future work, the stable OAI MEP code has been forked to a new VEC testbed repository and a framework for registering new MEC service and consuming registered services has been provided. 
+The set-up testbed leverages the OAI MEP project. It is built on OAI 5G RAN and CN with additional components that ensure exposing underlying mobile network information to implemented RNIS. The MEP itself acts as a gateway for MEC apps to consume MEP registered services. The 5G NFs and MEC FEs in OAI MEP run as Docker containers in RFsimulator simulation model with the possibility of extending the simulation to use COTS hardware for the radio interface. To enable seamless extension of the testbed and future work, the stable OAI MEP code has been forked to a new VEC testbed repository and a framework for registering new MEC service and consuming registered services has been provided. 
 
 The testbed has been evaluated against cloud deployment to assess the achieved reduction in communication latency. The edge deployment model employed in our lab has the edge server collocated with UPF, emulating a common approach. The evaluation results clearly demonstrate a significant decrease in RTT, approximately 59 \% when utilizing an edge deployment compared to the cloud alternative. This establishes the testbed’s viability as a research tool to evaluate future VEC applications. 
 
-In future, the testbed should be updated with future releases of the underlying OAI MEP, which promises to further increase the mobile network programmability through MEP inflicted traffic control via PCF. Furthermore, the testbed could be expanded to work with real radio interface to provide even more accurate evaluations. The platform now enables development of VEC applications leveraging task offloading for various use cases such as remote image processing for AVs. [TOWARDS 6G] 
+In future, the testbed should be updated with future releases of the underlying OAI MEP, which promises to further increase the mobile network programmability through MEP inflicted traffic control via PCF. Furthermore, the testbed could be expanded to work with real radio interface to provide even more accurate evaluations. The platform now enables development of VEC applications leveraging task offloading for various use cases such as remote image processing for AVs. With research towards the 6G having already started, the VEC and in general edge computing is envisioned to be extended towards Non-Terrestrial Networks, i.e., providing edge computing services in the air (low and high-altitude platforms) or space (satellites). This is already a topic of 5G, but its primary deployment will be seen in the 6G, similar to MEC in 4G.
 
 % -----------------------
 %     BIBLIOGRAPHY

@@ -179,4 +179,81 @@ S.~Arora, ``Openairinterface mep documentation,'' 2023. [Online]. Available:
   \url{https://interdigitalinc.github.io/AdvantEDGE/docs/overview/overview-architecture/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{kaltenberger-oai}
+\BIBentryALTinterwordspacing
+F.~Kaltenberger, A.~P. Silva, A.~Gosain, L.~Wang, and T.-T. Nguyen,
+  ``Openairinterface: Democratizing innovation in the 5g era,'' \emph{Computer
+  Networks}, vol. 176, p. 107284, 2020. [Online]. Available:
+  \url{https://www.sciencedirect.com/science/article/pii/S1389128619314410}
+\BIBentrySTDinterwordspacing
+
+\bibitem{oai_doc}
+\BIBentryALTinterwordspacing
+R.~Schmidt, ``Openairinterface documentation,'' 2023. [Online]. Available:
+  \url{https://gitlab.eurecom.fr/oai/openairinterface5g/-/tree/develop/doc}
+\BIBentrySTDinterwordspacing
+
+\bibitem{scf-nfapi}
+\BIBentryALTinterwordspacing
+``5g nfapi specifications,'' Online, Small Cell Forum. [Online]. Available:
+  \url{https://www.smallcellforum.org/reports/5g-nfapi-specifications/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{oai-maillist}
+\BIBentryALTinterwordspacing
+``openair5g-user,'' Online, EURECOM. [Online]. Available:
+  \url{https://lists.eurecom.fr/sympa/arc/openair5g-user}
+\BIBentrySTDinterwordspacing
+
+\bibitem{oai-mosaic5g-web}
+\BIBentryALTinterwordspacing
+``Openairinterface mosaic5g project group,'' Online, OpenAirInterface.org.
+  [Online]. Available: \url{https://openairinterface.org/mosaic5g/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{oai-cn-web}
+\BIBentryALTinterwordspacing
+``Openairinterface 5g core network project,'' Online, OpenAirInterface.org.
+  [Online]. Available:
+  \url{https://openairinterface.org/oai-5g-core-network-project/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{oai-cn-doc}
+\BIBentryALTinterwordspacing
+``Openairinterface pcf wiki,'' 2023. [Online]. Available:
+  \url{https://gitlab.eurecom.fr/oai/cn5g/oai-cn5g-pcf/-/wikis/home}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ETSI:TS:udr}
+\BIBentryALTinterwordspacing
+``{ETSI TS 129 504 V17.10.0, ``5G; 5G System; Unified Data Repository
+  Services''},'' ETSI, 2018. [Online]. Available:
+  \url{https://www.etsi.org/deliver/etsi_ts/129500_129599/129504/17.10.00_60/ts_129504v171000p.pdf}
+\BIBentrySTDinterwordspacing
+
+\bibitem{oai-blueprint-git}
+\BIBentryALTinterwordspacing
+S.~Arora, ``Openairinterface mep blueprint documentation,'' 2023. [Online].
+  Available:
+  \url{https://gitlab.eurecom.fr/oai/orchestration/blueprints/-/tree/master/mep}
+\BIBentrySTDinterwordspacing
+
+\bibitem{oai-rnis-git}
+\BIBentryALTinterwordspacing
+------, ``Openairinterface rnis documentation,'' 2023. [Online]. Available:
+  \url{https://gitlab.eurecom.fr/oai/orchestration/oai-mec/oai-rnis}
+\BIBentrySTDinterwordspacing
+
+\bibitem{oai-cm-git}
+\BIBentryALTinterwordspacing
+------, ``Openairinterface configuration manager documentation,'' 2023.
+  [Online]. Available: \url{https://gitlab.eurecom.fr/oai/orchestration/oai-cm}
+\BIBentrySTDinterwordspacing
+
+\bibitem{kong-docu}
+\BIBentryALTinterwordspacing
+``Kong gateway documentation,'' Online, Kong. [Online]. Available:
+  \url{https://docs.konghq.com/gateway/latest/}
+\BIBentrySTDinterwordspacing
+
 \end{thebibliography}
