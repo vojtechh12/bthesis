@@ -21,6 +21,12 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{o-ran-web}
+\BIBentryALTinterwordspacing
+``O-ran alliance,'' Online, O-RAN Alliance. [Online]. Available:
+  \url{https://www.o-ran.org/}
+\BIBentrySTDinterwordspacing
+
 \bibitem{sauter2017history}
 M.~Sauter, \emph{From GSM to LTE-Advanced Pro and 5G: An Introduction to Mobile
   Networks and Mobile Broadband}.\hskip 1em plus 0.5em minus 0.4em\relax John
@@ -44,11 +50,10 @@ P.~Mell, T.~Grance \emph{et~al.}, ``The nist definition of cloud
   https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf},
   2011.
 
-\bibitem{etsi-web}
+\bibitem{mec-etsi-web}
 \BIBentryALTinterwordspacing
-S.~Dahmen-Lhuissier, ``Multi-access edge computing (mec).'' [Online].
-  Available:
-  \url{https://www.etsi.org/technologies/multi-access-edge-computing}
+``Mec ecosystem,'' Online, ETSI. [Online]. Available:
+  \url{https://mecwiki.etsi.org/index.php?title=MEC_Ecosystem}
 \BIBentrySTDinterwordspacing
 
 \bibitem{zhao2019towards}
@@ -108,5 +113,70 @@ D.~Sabella, V.~Sukhomlinov, L.~Trang, S.~Kekki, P.~Paglierani, R.~Rossbach,
   X.~Li, Y.~Fang, D.~Druta, F.~Giust \emph{et~al.}, ``Developing software for
   multi-access edge computing,'' \emph{ETSI white paper}, vol.~20, pp. 1--38,
   2019.
+
+\bibitem{lf-edge-web}
+\BIBentryALTinterwordspacing
+``Projects - lf edge,'' Online, The Linux Foundation. [Online]. Available:
+  \url{https://www.lfedge.org/projects/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{cvb-docu}
+\BIBentryALTinterwordspacing
+Q.~Xin and W.~Tao, ``Connected vehicles blueprint,'' Online, Akraino. [Online].
+  Available:
+  \url{https://wiki.akraino.org/pages/viewpage.action?pageId=9601601}
+\BIBentrySTDinterwordspacing
+
+\bibitem{ealtedge-docu}
+\BIBentryALTinterwordspacing
+S.~Verma and K.~Kumar, ``R6 - architecture documentation of enterprise
+  applications on lightweight 5g telco edge,'' Online, Akraino. [Online].
+  Available:
+  \url{https://wiki.akraino.org/display/AK/R6+-+Architecture+Documentation+of+Enterprise+Applications+on+Lightweight+5G+Telco+Edge}
+\BIBentrySTDinterwordspacing
+
+\bibitem{akraino-mec-slice-docu}
+\BIBentryALTinterwordspacing
+L.~Buyuan and L.~Bruce, ``5g mec/slice system to support cloud gaming, hd video
+  and live broadcasting blueprint,'' Online, Akraino. [Online]. Available:
+  \url{https://wiki.akraino.org/display/AK/R6+-+Architecture+Documentation+of+Enterprise+Applications+on+Lightweight+5G+Telco+Edge}
+\BIBentrySTDinterwordspacing
+
+\bibitem{seo-overview}
+\BIBentryALTinterwordspacing
+``Intel smart edge open.'' [Online]. Available:
+  \url{https://www.intel.com/content/www/us/en/developer/tools/smart-edge-open/overview.html}
+\BIBentrySTDinterwordspacing
+
+\bibitem{openness-git}
+\BIBentryALTinterwordspacing
+``Smart edge open architecture and solution overview,'' 2021. [Online].
+  Available:
+  \url{https://github.com/smart-edge-open/specs/blob/master/doc/architecture.md}
+\BIBentrySTDinterwordspacing
+
+\bibitem{seo-doc}
+\BIBentryALTinterwordspacing
+``Intel smart edge open developer experience kit.'' [Online]. Available:
+  \url{https://intelsmartedge.github.io/docs/experience-kits/developer-experience-kit-default-install/#overview}
+\BIBentrySTDinterwordspacing
+
+\bibitem{nikaein2018llmec}
+N.~Nikaein, X.~Vasilakos, and A.~Huang, ``Ll-mec: Enabling low latency edge
+  applications,'' in \emph{2018 IEEE 7th International Conference on Cloud
+  Networking (CloudNet)}.\hskip 1em plus 0.5em minus 0.4em\relax IEEE, 2018,
+  pp. 1--7.
+
+\bibitem{oai-mep-git}
+\BIBentryALTinterwordspacing
+S.~Arora, ``Openairinterface mep documentation,'' 2023. [Online]. Available:
+  \url{https://gitlab.eurecom.fr/oai/orchestration/oai-mec/oai-mep}
+\BIBentrySTDinterwordspacing
+
+\bibitem{advantedge-docu}
+\BIBentryALTinterwordspacing
+``Advantedge architecture,'' Online, InterDigital. [Online]. Available:
+  \url{https://interdigitalinc.github.io/AdvantEDGE/docs/overview/overview-architecture/}
+\BIBentrySTDinterwordspacing
 
 \end{thebibliography}

@@ -5,27 +5,27 @@
 \contentsline {section}{\numberline {2.2}5G system architecture}{5}{section.2.2}%
 \contentsline {section}{\numberline {2.3}MEC system concept and architecture}{8}{section.2.3}%
 \contentsline {section}{\numberline {2.4}Integration of MEC into 5G system}{11}{section.2.4}%
-\contentsline {chapter}{\numberline {3}Open-source MEC Solutions}{14}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Akraino projects}{15}{section.3.1}%
-\contentsline {subsection}{\numberline {3.1.1}Connected Vehicles Blueprint}{15}{subsection.3.1.1}%
-\contentsline {subsection}{\numberline {3.1.2}Enterprise Applications on Lightweight 5G Telco Edge}{16}{subsection.3.1.2}%
-\contentsline {section}{\numberline {3.2}Intel Edge Projects}{17}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}OpenNESS}{18}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Smart Edge Open}{18}{subsection.3.2.2}%
-\contentsline {section}{\numberline {3.3}EURECOM and OpenAirInterface Projects}{19}{section.3.3}%
-\contentsline {subsection}{\numberline {3.3.1}LL-MEC}{19}{subsection.3.3.1}%
-\contentsline {subsection}{\numberline {3.3.2}MEC platform by EURECOM}{20}{subsection.3.3.2}%
-\contentsline {section}{\numberline {3.4}Other MEC projects}{20}{section.3.4}%
-\contentsline {subsection}{\numberline {3.4.1}AdvantEDGE}{20}{subsection.3.4.1}%
-\contentsline {chapter}{\numberline {4}Mobile network emulation: \\ \mbox {OpenAirInterface}}{23}{chapter.4}%
-\contentsline {section}{\numberline {4.1}OAI RAN}{23}{section.4.1}%
-\contentsline {section}{\numberline {4.2}OAI CN}{25}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Mosaic5G}{26}{section.4.3}%
-\contentsline {chapter}{\numberline {5}VEC testbed}{27}{chapter.5}%
-\contentsline {section}{\numberline {5.1}VEC testbed design}{27}{section.5.1}%
-\contentsline {section}{\numberline {5.2}VEC application blueprint}{30}{section.5.2}%
-\contentsline {subsection}{\numberline {5.2.1}Service registration}{30}{subsection.5.2.1}%
-\contentsline {subsection}{\numberline {5.2.2}MEC app consuming services}{32}{subsection.5.2.2}%
-\contentsline {section}{\numberline {5.3}Evaluation of VEC testbed}{32}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Conclusion}{36}{chapter.6}%
-\contentsline {chapter}{References}{37}{chapter*.36}%
+\contentsline {chapter}{\numberline {3}Open-source MEC Solutions}{13}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Akraino projects}{14}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Connected Vehicles Blueprint}{14}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}Enterprise Applications on Lightweight 5G Telco Edge}{15}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Intel Edge Projects}{16}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}OpenNESS}{16}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Smart Edge Open}{17}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.3}EURECOM and OpenAirInterface Projects}{18}{section.3.3}%
+\contentsline {subsection}{\numberline {3.3.1}LL-MEC}{18}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.3.2}MEC platform by EURECOM}{19}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.4}Other MEC projects}{19}{section.3.4}%
+\contentsline {subsection}{\numberline {3.4.1}AdvantEDGE}{19}{subsection.3.4.1}%
+\contentsline {chapter}{\numberline {4}Mobile network emulation: \\ \mbox {OpenAirInterface}}{22}{chapter.4}%
+\contentsline {section}{\numberline {4.1}OAI RAN}{22}{section.4.1}%
+\contentsline {section}{\numberline {4.2}OAI CN}{24}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Mosaic5G}{25}{section.4.3}%
+\contentsline {chapter}{\numberline {5}VEC testbed}{26}{chapter.5}%
+\contentsline {section}{\numberline {5.1}VEC testbed design}{26}{section.5.1}%
+\contentsline {section}{\numberline {5.2}VEC application blueprint}{29}{section.5.2}%
+\contentsline {subsection}{\numberline {5.2.1}Service registration}{29}{subsection.5.2.1}%
+\contentsline {subsection}{\numberline {5.2.2}MEC app consuming services}{31}{subsection.5.2.2}%
+\contentsline {section}{\numberline {5.3}Evaluation of VEC testbed}{31}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Conclusion}{35}{chapter.6}%
+\contentsline {chapter}{References}{36}{chapter*.36}%
