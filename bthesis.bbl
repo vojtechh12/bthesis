@@ -57,25 +57,23 @@ P.~Mell, T.~Grance \emph{et~al.}, ``The nist definition of cloud
 \BIBentrySTDinterwordspacing
 
 \bibitem{zhao2019towards}
-H.~Zhao, Y.~Zhang, P.~Meng, H.~Shi, L.~E. Li, T.~Lou, and J.~Zhao, ``Towards
-  safety-aware computing system design in autonomous vehicles,'' \emph{arXiv
-  preprint arXiv:1905.08453}, 2019.
+H.~Zhao, Y.~Zhang, P.~Meng, H.~Shi \emph{et~al.}, ``Towards safety-aware
+  computing system design in autonomous vehicles,'' \emph{arXiv preprint
+  arXiv:1905.08453}, 2019.
 
 \bibitem{ETSI:wp24}
-F.~Giust, G.~Verin, K.~Antevski, J.~Chou, Y.~Fang, W.~Featherstone, F.~Fontes,
-  D.~Frydman, A.~Li, A.~Manzalini \emph{et~al.}, ``Mec deployments in 4g and
-  evolution towards 5g,'' \emph{ETSI White paper}, vol.~24, no. 2018, pp.
+F.~Giust, G.~Verin, K.~Antevski, J.~Chou \emph{et~al.}, ``Mec deployments in 4g
+  and evolution towards 5g,'' \emph{ETSI White paper}, vol.~24, no. 2018, pp.
   1--24, 2018.
 
 \bibitem{ETSI:wp28}
-S.~Kekki, W.~Featherstone, Y.~Fang, P.~Kuure, A.~Li, A.~Ranjan, D.~Purkayastha,
-  F.~Jiangping, D.~Frydman, G.~Verin \emph{et~al.}, ``Mec in 5g networks,''
-  \emph{ETSI white paper}, vol.~28, no. 2018, pp. 1--28, 2018.
+S.~Kekki, W.~Featherstone, Y.~Fang, P.~Kuure \emph{et~al.}, ``Mec in 5g
+  networks,'' \emph{ETSI white paper}, vol.~28, no. 2018, pp. 1--28, 2018.
 
 \bibitem{rommer20195g}
-S.~Rommer, P.~Hedman, M.~Olsson, L.~Frid, S.~Sultana, and C.~Mulligan, \emph{5G
-  Core Networks: Powering Digitalization}.\hskip 1em plus 0.5em minus
-  0.4em\relax Academic Press, 2019.
+S.~Rommer, P.~Hedman, M.~Olsson, L.~Frid \emph{et~al.}, \emph{5G Core Networks:
+  Powering Digitalization}.\hskip 1em plus 0.5em minus 0.4em\relax Academic
+  Press, 2019.
 
 \bibitem{yousaf2017nfv}
 F.~Z. Yousaf, M.~Bredel, S.~Schaller, and F.~Schneider, ``Nfv and sdn—key
@@ -109,10 +107,9 @@ N.~Sprecher \emph{et~al.}, ``Harmonizing standards for edge computing-a
 \BIBentrySTDinterwordspacing
 
 \bibitem{ETSI:wp20}
-D.~Sabella, V.~Sukhomlinov, L.~Trang, S.~Kekki, P.~Paglierani, R.~Rossbach,
-  X.~Li, Y.~Fang, D.~Druta, F.~Giust \emph{et~al.}, ``Developing software for
-  multi-access edge computing,'' \emph{ETSI white paper}, vol.~20, pp. 1--38,
-  2019.
+D.~Sabella, V.~Sukhomlinov, L.~Trang, S.~Kekki \emph{et~al.}, ``Developing
+  software for multi-access edge computing,'' \emph{ETSI white paper}, vol.~20,
+  pp. 1--38, 2019.
 
 \bibitem{lf-edge-web}
 \BIBentryALTinterwordspacing
@@ -181,7 +178,7 @@ S.~Arora, ``Openairinterface mep documentation,'' 2023. [Online]. Available:
 
 \bibitem{kaltenberger-oai}
 \BIBentryALTinterwordspacing
-F.~Kaltenberger, A.~P. Silva, A.~Gosain, L.~Wang, and T.-T. Nguyen,
+F.~Kaltenberger, A.~P. Silva, A.~Gosain, L.~Wang \emph{et~al.},
   ``Openairinterface: Democratizing innovation in the 5g era,'' \emph{Computer
   Networks}, vol. 176, p. 107284, 2020. [Online]. Available:
   \url{https://www.sciencedirect.com/science/article/pii/S1389128619314410}

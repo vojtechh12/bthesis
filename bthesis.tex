@@ -95,17 +95,17 @@
  	\providecommand{\keywords}[1]{\vspace{4pt}\textbf{\textit{Keywords: }} #1}
  	\providecommand{\keywordscz}[1]{\vspace{4pt}\textbf{\textit{Klíčová slova: }} #1}
  	
-\pdfminorversion=7
-\makeatletter
-\def\bstctlcite{\@ifnextchar[{\@bstctlcite}{\@bstctlcite[@auxout]}}
-\def\@bstctlcite[#1]#2{\@bsphack
+% \pdfminorversion=7
+% \makeatletter
+% \def\bstctlcite{\@ifnextchar[{\@bstctlcite}{\@bstctlcite[@auxout]}}
+% \def\@bstctlcite[#1]#2{\@bsphack
 	
-	\@for\@citeb:=#2\do{%
-		\edef\@citeb{\expandafter\@firstofone\@citeb}%
-		\if@filesw\immediate\write\csname
-		#1\endcsname{\string\citation{\@citeb}}\fi}%
-	\@esphack}
-\makeatother
+% 	\@for\@citeb:=#2\do{%
+% 		\edef\@citeb{\expandafter\@firstofone\@citeb}%
+% 		\if@filesw\immediate\write\csname
+% 		#1\endcsname{\string\citation{\@citeb}}\fi}%
+% 	\@esphack}
+% \makeatother
 
 \DeclareRobustCommand{\ttfamily}{\fontencoding{T1}\fontfamily{lmtt}\selectfont}
 
@@ -212,7 +212,7 @@
 }{}
 
 % 	
-\bibliographystyle{IEEEtran}
+%\bibliographystyle{IEEEtran}
 %\bibliography{IEEEabrv,minimum}
 %\bibliographystyle{ieeetr}	
 %\makenoidxglossaries
@@ -1025,7 +1025,7 @@ In future, the testbed should be updated with future releases of the underlying 
 % -----------------------
 %     BIBLIOGRAPHY
 % -----------------------
-%\bibliographystyle{IEEEtran}
+\bibliographystyle{IEEEtran}
 %\addcontentsline{toc}{chapter}{References}
 \bibliography{thesis}
 
