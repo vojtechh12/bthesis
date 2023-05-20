@@ -11,7 +11,6 @@
 \usepackage{pdfpages}
 \usepackage{subfig}
 \usepackage{float}
-\usepackage{caption}
 
 % Math
 \usepackage{amsthm}
@@ -23,6 +22,7 @@
 \usepackage{paralist}
 \usepackage{acronym}
 \usepackage[nonumberlist]{glossaries} 
+\usepackage{enumitem}
 
 % Tables
 \usepackage{booktabs}
@@ -346,14 +346,14 @@
 % -----------------------
 \chapter*{Acknowledgements}
 	% \addcontentsline{toc}{chapter}{Acknowledgments}
-	Thank you
+First and foremost, I would like to express my immense gratitude towards my thesis supervisor Ing. Jan Plachý, Ph.D. for his kind leadership and guidance that knows no lengths. Then, my thanks go to my family, for providing me with a great studying, working and living environment and for their never-ending support. And finally, I thank my friends for always keeping me grounded. 
 
 
 % -----------------------
 %        Abstracts
 % -----------------------
 \chapter*{Abstract}
-Recent research advancements in Autonomous Vehicles (AVs) are bringing AVs closer to widespread adoption. However, the computational requirements of AVs demand robust hardware resources, resulting in substantial power consumption of the vehicles. The energy demand has led to the emergence of Vehicular Edge Computing (VEC). VEC is a type of edge computing, i.e., cloud computing provided at the edge of a mobile network, enabling offloading computationally demanding tasks from vehicles to the edge serves with low communication latency. To facilitate VEC research, a framework for testing novel algorithms is desirable, therefore, a VEC testbed is designed and implemented in this thesis. Several open-source platforms for Multi-Access Edge Computing (MEC) (similar to VEC, with general focus on mobile users) have been examined in order to select the most suitable solution to leverage in VEC testbed. The selected MEC platform is developed by OpenAirInterface (OAI) Software Alliance (OSA). The OAI consists of 5G-NR RAN and 5G core network that run on generic computers, where Software Defined Radio (SDR) acts as a front end for connecting a communication device (samrtphone, modem, vehicle). The implemented testbed has been evaluated and compared to a cloud computing deployment with  server deployed 400 kilometeres away. From the performance evaluation, the VEC testbed achieves approximately 59 \% lower Round Trip Time (RTT), validating its performance for VEC algorithm testing.
+Recent research advancements in Autonomous Vehicles (AVs) are bringing AVs closer to widespread adoption. However, the computational requirements of AVs demand robust hardware resources, resulting in substantial power consumption of the vehicles. The energy demand has led to the emergence of Vehicular Edge Computing (VEC). VEC is a type of edge computing, i.e., cloud computing provided at the edge of a mobile network, enabling offloading computationally demanding tasks from vehicles to the edge serves with low communication latency. To facilitate VEC research, a framework for testing novel algorithms is desirable, therefore, a VEC testbed is designed and implemented in this thesis. In order to select the most suitable platform to leverage in VEC testbed development, several open-source platforms for Multi-Access Edge Computing (MEC) have been examined. MEC is similar to VEC, but with a general focus on mobile users. The selected MEC platform is developed by OpenAirInterface (OAI) Software Alliance (OSA). The OAI consists of 5G-NR RAN and 5G core network that run on generic computers, where Software Defined Radio (SDR) acts as a front end for connecting a communication device (samrtphone, modem, vehicle). The implemented testbed has been evaluated and compared to a cloud computing deployment with  server deployed 400 kilometeres away. From the performance evaluation, the VEC testbed achieves approximately 59 \% lower Round Trip Time (RTT), validating its performance for VEC algorithm testing.
 	
 \keywords{vehicular edge computing, multi-access edge computing, mobile networks, 5G, task offloading, autonomous vehicles}
 %
@@ -363,6 +363,8 @@ Recent research advancements in Autonomous Vehicles (AVs) are bringing AVs close
 
 \chapter*{Abstrakt}
 	% \addcontentsline{toc}{chapter}{Abstrakt}	% comment to omit abstract from toc
+Nedávné pokroky ve výzkumu Autonomních Vozidel (AV) přibližují tuto technologii k široké adopci. Nicméně, výpočetní nároky AV vyžadují robustní hardwarové prostředky, což vede k vysoké spotřebě AV. Tyto nároky na energii vedly ke vzniku Vehicular Edge Computingu (VEC). VEC je druh edge computingu, tedy cloud computing poskytovaný na hraně mobilní sítě, umožňující přesouvání výpočetně náročných úloh z vozidel do serverů na hranu mobilní sítě s nízkou latencí komunikace. Výzkum v oblasti VEC si žádá vytvoření frameworku pro testování nových algoritmů. Proto je v této práci navržen a implementován testbed pro VEC. S cílem vybrání vhodného projektu pro využití k vývoji testbedu pro VEC bylo zkoumáno několik platforem pro Multi-Access Edge Computing (MEC). MEC je podobná technologie jako VEC, ale s obecným zaměřením na mobilní uživatele. Zvolená platforma byla vytvořena institucí OpenAirInterfce (OAI) Software Alliance (OSA). OAI poskytuje open-source řešení pro 5G-NR a jádro 5G mobilní sítě, které běží na obecném hardwaru a využívají Softwarově Definované Radio (SDR) jako front end pro připojení komunikujících zařízení (chytrý telefon, modem, vozidlo). Implementovaný testbed byl porovnán s cloudem nasazeným 400 kilometrů daleko. Z výsledků měření vyplývá, že vytvořený testbed dosahuje zhruba o 59 \% nižší Round Trip Time (RTT), čímž byl validován pro testování algoritmů pro VEC.
+
 \keywordscz{vehicular edge computing, multi-access edge computing, mobilní sítě, 5G, přesun výpočtů, autonomn\'i vozidla}
 %
 %fill in abstract
@@ -755,7 +757,7 @@ Currently, most of the Mosaic5G project group’s work is centered around FlexRI
 \label{Ch:VEC-tstbed}
 This chapter describes the implementation of testbed for VEC as the primary goal of the thesis. The structure of the following text is as follows: the whole task is dissected into three key stages, then each stage is examined in individual subsequent sections.
 %
-\begin{itemize}
+\begin{itemize}[leftmargin=6em]
 	\item[\textbf{Stage 1:}] VEC testbed design leveraging chosen open-source projects 
 	\item[\textbf{Stage 2:}] creating a blueprint for future VEC applications development
 	\item[\textbf{Stage 3:}]  evaluation of set up testbed against cloud deployment
@@ -766,7 +768,7 @@ The final testbed design leverages the OAI MEP, introduced in Chapter~\ref{Ch:o-
 
 The leveraged platform is a blueprint showcasing OAI MEP with RNIS and it integrates five key projects as shown in Figure~\ref{F:VEC-tstbed-arch} \cite{oai-blueprint-git}:
 %
-\begin{itemize}
+\begin{itemize}[itemsep=2pt]
 	\item OAI 5G RAN
 	\item OAI 5G CN
 	\item OAI MEP
@@ -790,7 +792,7 @@ A key component of the OAI MEP is the MEP Gateway, which acts as a reverse proxy
 
 The Discovery and Registry Service has the responsibility of exposing REST API for the Mp1 interface allowing the MEC apps to do the following, based on \cite{oai-mep-git}:
 %
-\begin{itemize}
+\begin{itemize}[itemsep=2pt]
 	\item Discover existing services (GET)
 	\item Filter hosted MEC services based on service type (GET)
 	\item Register a new service (POST)
@@ -801,46 +803,51 @@ The OAI MEP blueprint delivers docker-compose scripts for deployment of all the 
 
 After a successful deployment, it should be possible to ping the internet from the UE container via its \verb|oaitun_ue1| interface. In our setup, it looks like this:
 
-\begin{verbatim}
-	root@9929963b00c2:/opt/oai-nr-ue# \
-	ping -c 3 -I oaitun_ue1 comtel.fel.cvut.cz \
-	PING glumhosting.fel.cvut.cz (147.32.210.146) from 12.1.1.2 oaitun_ue1:
-	56(84) bytes of data.
-	64 bytes from glum-146.feld.cvut.cz (147.32.210.146):
-	icmp_seq=1 ttl=59 time=8.64 ms
-	64 bytes from glum-146.feld.cvut.cz (147.32.210.146):
-	icmp_seq=2 ttl=59 time=5.43 ms
-	64 bytes from glum-146.feld.cvut.cz (147.32.210.146):
-	icmp_seq=3 ttl=59 time=5.06 ms
-
-	--- glumhosting.fel.cvut.cz ping statistics ---
-	3 packets transmitted, 3 received, 0% packet loss, time 2003ms
-	rtt min/avg/max/mdev = 5.062/6.382/8.649/1.610 ms
-\end{verbatim}
+\begin{figure}[H]
+	\begin{verbatim}
+		root@9929963b00c2:/opt/oai-nr-ue# \
+		ping -c 3 -I oaitun_ue1 comtel.fel.cvut.cz \
+		PING glumhosting.fel.cvut.cz (147.32.210.146) from 12.1.1.2 oaitun_ue1:
+		56(84) bytes of data.
+		64 bytes from glum-146.feld.cvut.cz (147.32.210.146):
+		icmp_seq=1 ttl=59 time=8.64 ms
+		64 bytes from glum-146.feld.cvut.cz (147.32.210.146):
+		icmp_seq=2 ttl=59 time=5.43 ms
+		64 bytes from glum-146.feld.cvut.cz (147.32.210.146):
+		icmp_seq=3 ttl=59 time=5.06 ms
+	
+		--- glumhosting.fel.cvut.cz ping statistics ---
+		3 packets transmitted, 3 received, 0% packet loss, time 2003ms
+		rtt min/avg/max/mdev = 5.062/6.382/8.649/1.610 ms
+	\end{verbatim}	
+\end{figure}
 
 To verify that the RNIS works properly, it should be possible to access its service with the HTTP GET method from the Command Line Interface (CLI). This is the result achieved in our setup:
 
-\begin{verbatim}
-	lab@lab-HP-Z4-G4-7-Workstation:~/blueprints/mep/examples$ curl -X \
-	'GET' 'http://oai-mep.org/rnis/v2/queries/layer2_meas' -H \
-	'accept: application/json'
-	[
-	{
-		"KPIs": {
-		"bler_dl": {
-			"kpi": "bler_dl",
-			"labels": {
-			"amf_ue_ngap_id": 1
-			},
-			"source": "RAN",
-			"timestamp": 1683903896587163,
-			"unit": null,
-			"value": 5.605193857299268e-45
+\begin{figure}[H]
+	\begin{verbatim}
+		lab@lab-HP-Z4-G4-7-Workstation:~/blueprints/mep/examples$ curl -X \
+		'GET' 'http://oai-mep.org/rnis/v2/queries/layer2_meas' -H \
+		'accept: application/json'
+		[
+		{
+			"KPIs": {
+			"bler_dl": {
+				"kpi": "bler_dl",
+				"labels": {
+				"amf_ue_ngap_id": 1
+				},
+				"source": "RAN",
+				"timestamp": 1683903896587163,
+				"unit": null,
+				"value": 5.605193857299268e-45
+			}
+			}
 		}
-		}
-	}
-	...
-\end{verbatim}
+		...
+	\end{verbatim}
+\end{figure}
+
 
 \section{VEC application blueprint}
 This stage aims to deliver a blueprint for development of VEC applications running on the OAI MEP and consuming its services. It is split into two subsections, with the first one covering the service registration and the second one demonstrating implementation of a MEC app consuming services offered by the OAI MEP.
@@ -848,33 +855,34 @@ This stage aims to deliver a blueprint for development of VEC applications runni
 \subsection{Service registration}
 The registration and discovery service of OAI MEP can be accessed via its Graphical User Interface (GUI) on the host \verb |192.168.70.5| or via the MEP Gateway:\\\verb |http://oai-mep.org/service_registry/v1/ui|. It should be noted that for the latter to work, the oai-mep.org domain needs to be added to the local machine DNS, which is documented in \cite{oai-blueprint-git}. The GUI offers the services mentioned in the previous section. After a successful deployment, the discovery of available services should yield the following results, as only the RNIS is registered:
 %
-
-\begin{verbatim}
-	lab@lab-HP-Z4-G4-7-Workstation:~/blueprints/mep/examples$ curl /
-	http://oai-mep.org/service_registry/v1/discover 
-	[
-	{
-		"description": "The service allows other app or services to consume
-						network and radio information",
-		"endpoints": [
+\begin{figure}[ht]
+	\begin{verbatim}
+		lab@lab-HP-Z4-G4-7-Workstation:~/blueprints/mep/examples$ curl /
+		http://oai-mep.org/service_registry/v1/discover 
+		[
 		{
-			"method": "GET",
-			"name": "rab_info",
-			"path": "/queries/rab_info"
-		},
-		...
-		],
-		"host": "oai-mep.org",
-		"name": "rnis",
-		"path": "/rnis/v2",
-		"port": "80",
-		"sid": "6458bfb3aab751de1b2ba9f0",
-		"type": "RadioNetworkInformation"
-  },
-\end{verbatim}
+			"description": "The service allows other app or services to consume
+							network and radio information",
+			"endpoints": [
+			{
+				"method": "GET",
+				"name": "rab_info",
+				"path": "/queries/rab_info"
+			},
+			...
+			],
+			"host": "oai-mep.org",
+			"name": "rnis",
+			"path": "/rnis/v2",
+			"port": "80",
+			"sid": "6458bfb3aab751de1b2ba9f0",
+			"type": "RadioNetworkInformation"
+	  },
+	\end{verbatim}
+\end{figure}
 
 To demonstrate the service registry and discovery function of OAI MEP, a sample hello-world flask application has been created. This application runs on the localhost interface of the host machine and displays a simple line of text. The code of the application is shown in Listing~\ref{C:flask}. The goal is to be able to route this application via the MEP Gateway.
-%
+
 \begin{flask}[caption={Sample flask app in python}, label={C:flask}]
 	from flask import Flask
 
@@ -894,7 +902,7 @@ To demonstrate the service registry and discovery function of OAI MEP, a sample 
 
 To register the flask application, the GUI of the registry and discovery service has been leveraged. While the GUI provides a sample input for the register service, it does not include any \verb|uid|, which confuses the underlying database of OAI MEP and results in unsuccessful registration. For a successful registration, the following input for the register command has been used:
 %
-\pagebreak
+
 \begin{verbatim}
 {
 	"description": "testing registration with sample flask",
@@ -917,9 +925,9 @@ Successful registration is indicated by the code \verb|201| and a response in \v
 	\label{F:flask-hello-demo}
 \end{figure}
 \subsection{MEC app consuming services}
-This subsection demonstrates how to create an application that would consume the services offered by OAI MEP based on an example app provided in \cite{oai-blueprint-git}. The example app is a flask application that subscribes to RNIS and shows the received data. The core of the application with minor changes from the version in \cite{oai-blueprint-git} is shown in Code~XYZ.
-%
-\begin{flask}[caption={example-app.py}]
+This subsection demonstrates how to create an application that would consume the services offered by OAI MEP based on an example app provided in \cite{oai-blueprint-git}. The example app is a flask application that subscribes to RNIS and shows the received data. The core of the application with minor changes from the version in \cite{oai-blueprint-git} is shown in Listing~\ref{C:example.py}.
+
+\begin{flask}[caption={example-app.py}, label={C:example.py}]
 	...
 	# create a subscription for receiving l2 measurements
 	sub_endpoint = "http://oai-mep.org/rnis/v2/subscriptions"
@@ -954,11 +962,11 @@ This subsection demonstrates how to create an application that would consume the
 		return "<h1> Network Monitoring Dashboard</h1> " + json.dumps(collected_data)
 	...
 \end{flask}
-%
+
 It is noteworthy that the example app uses the reverse proxy OAI MEP Gateway to subscribe to RNIS as shown on line 3:  \\\verb |sub_endpoint = http://oai-mep.org/rnis/v2/subscriptions|. Then in \verb|sub_body|, an endpoint for receiving the data from RNIS is provided, and finally, under that endpoint, the \verb|receive_notification()| function handles the received data and puts them into \verb|collected_data| dictionary.
 %
 \section{Evaluation of VEC testbed}
-To evaluate the VEC testbed, an experiment has been conducted, measuring the RTT between the UE and the OAI MEP host, against the RTT between the UE and a cloud. The diagram illustrating the experiment is shown in Figure~\ref{F:experiment}. It does not account for the UE and gNB modules also being hosted on the edge server, although the experiment could be scaled with using radio heads and both UE and gNB modules in standalone machines. The deployment in our lab setup follows the deployment model collocating edge server (MEC host) with UPF [i]. The cloud was set up using cloud service provider Linode and it was deployed in Frankfurt, to simulate realistic cloud distance from the UE.
+To evaluate the VEC testbed, an experiment has been conducted, measuring the RTT between the UE and the OAI MEP host, against the RTT between the UE and a cloud. The diagram illustrating the experiment is shown in Figure~\ref{F:experiment}. It does not account for the UE and gNB modules also being hosted on the edge server, although the experiment could be scaled with using radio heads and both UE and gNB modules in standalone machines. The deployment in our lab setup follows the deployment model collocating edge server (MEC host) with UPF \cite{ETSI:wp28}. The cloud was set up using cloud service provider Linode and it was deployed in Frankfurt, to simulate realistic cloud distance from the UE.
 \begin{figure}[!ht]
 	\centering
 	\includegraphics[width=\textwidth]{./images/experiment.png} 
@@ -966,10 +974,10 @@ To evaluate the VEC testbed, an experiment has been conducted, measuring the RTT
 	\label{F:experiment}
 \end{figure}
 %
-The experiment consisted of running ping from UE’s \verb|oaitun_ue1| interface (available on the PC with RFsim) to both the edge and cloud. The measurement was issued every two hours throughout one day and the results are shown in Table~\ref{T:ping} and visualized in Graph~\ref{G:pings-scatt}. 
+The experiment consisted of running ping from UE’s \verb|oaitun_ue1| interface (available on the PC with RFsim) to both the edge and cloud. The measurement was issued every two hours throughout one day and the results are shown in Table~\ref{T:ping} and visualized in Graph~\ref{G:pings-box}. 
 
 The data show that the average RTT difference between edge and cloud is $7.94 \mbox{ ms}$. This follows the expectation and demonstrates the feasibility of using OAI MEP setup for VEC testbed.
-%
+
 \begin{table}[!ht]
     \centering
 	\caption{RTT measurement}
@@ -991,22 +999,23 @@ The data show that the average RTT difference between edge and cloud is $7.94 \m
         23:00 & 5.335 & 13.868 \\ \hline
     \end{tabular}
 \end{table}
-%
+
+% \begin{figure}[ht]
+% 	\centering
+% 	\captionsetup{labelsep=colon,name=Graph}
+% 	\includegraphics[width=13cm]{./images/RTT-comparison.png} 
+% 	\caption{RTT for edge and cloud.}
+% 	\label{G:pings-scatt}
+% \end{figure}
 \begin{figure}[ht]
 	\centering
-	\captionsetup{labelsep=colon,name=Graph}
-	\includegraphics[width=13cm]{./images/RTT-comparison.png} 
-	\caption{RTT for edge and cloud.}
-	\label{G:pings-scatt}
-\end{figure}
-\begin{figure}[ht]
-	\centering
-	\captionsetup{labelsep=colon,name=Graph}
+	\captionsetup{labelsep=period,name=Graph}
 	\includegraphics[width=13cm]{./images/RTT_comp_box.png} 
 	\caption{RTT for edge and cloud.}
+	\label{G:pings-box}
 \end{figure}
-%
-he second experiment evaluated the network performance and available bandwidth with iperf. This experiment deserves special notice. As mentioned in Chapter~\ref{Ch:OAI}, the total achievable network throughput in RFsimulator mode depends on the underlying hardware, the actual numbers are, therefore irrelevant, as they scale with the hardware. The throughputs achieved for both edge and cloud showed no significant difference, as highlihted in Table~\ref{T:throughput}.
+
+The second experiment evaluated the network performance and available bandwidth with iperf. This experiment deserves special notice. As mentioned in Chapter~\ref{Ch:OAI}, the total achievable network throughput in RFsimulator mode depends on the underlying hardware, the actual numbers are therefore irrelevant, as they scale with the hardware. The throughputs achieved for both edge and cloud showed no significant difference, as highlihted in Table~\ref{T:throughput}.
 \begin{table}[!ht]
     \centering
     \caption{Throughput measurement}
@@ -1015,7 +1024,7 @@ he second experiment evaluated the network performance and available bandwidth w
     \hline
         \multicolumn{2}{|c|}{Edge} & \multicolumn{2}{c|}{Cloud} \\ \hline
         Downlink [Mbps] & Uplink [Mbps] & Downlink [Mbps] & Uplink [Mbps] \\ \hline
-        9,09 & 7,18 & 9,01 & 7,195 \\ \hline
+        9,09 & 7,18 & 9,01 & 7,20 \\ \hline
     \end{tabular}
 \end{table}
 % -----------------------
@@ -1026,7 +1035,7 @@ The thesis’s objective was to set up a functional testbed for future research 
 
 The set-up testbed leverages the OAI MEP project. It is built on OAI 5G RAN and CN with additional components that ensure exposing underlying mobile network information to implemented RNIS. The MEP itself acts as a gateway for MEC apps to consume MEP registered services. The 5G NFs and MEC FEs in OAI MEP run as Docker containers in RFsimulator simulation model with the possibility of extending the simulation to use COTS hardware for the radio interface. To enable seamless extension of the testbed and future work, the stable OAI MEP code has been forked to a new VEC testbed repository and a framework for registering new MEC service and consuming registered services has been provided. 
 
-The testbed has been evaluated against cloud deployment to assess the achieved reduction in communication latency. The edge deployment model employed in our lab has the edge server collocated with UPF, emulating a common approach. The evaluation results clearly demonstrate a significant decrease in RTT, approximately 59 \% when utilizing an edge deployment compared to the cloud alternative. This establishes the testbed’s viability as a research tool to evaluate future VEC applications. 
+The testbed has been evaluated against cloud deployment to assess the achieved reduction in communication latency. The edge deployment model employed in our lab has the edge server collocated with UPF, emulating a common approach. The evaluation results clearly demonstrate a significant decrease in RTT, approximately 59 \%, when utilizing an edge deployment compared to the cloud alternative. This establishes the testbed’s viability as a research tool to evaluate future VEC applications. 
 
 In future, the testbed should be updated with future releases of the underlying OAI MEP, which promises to further increase the mobile network programmability through MEP inflicted traffic control via PCF. Furthermore, the testbed could be expanded to work with real radio interface to provide even more accurate evaluations. The platform now enables development of VEC applications leveraging task offloading for various use cases such as remote image processing for AVs. With research towards the 6G having already started, the VEC and in general edge computing is envisioned to be extended towards Non-Terrestrial Networks, i.e., providing edge computing services in the air (low and high-altitude platforms) or space (satellites) \cite{araniti2021toward6G}. This is already a topic of 5G, but its primary deployment will be seen in the 6G, similar to MEC in 4G.
 
