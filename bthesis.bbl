@@ -253,4 +253,8 @@ S.~Arora, ``Openairinterface mep blueprint documentation,'' 2023. [Online].
   \url{https://docs.konghq.com/gateway/latest/}
 \BIBentrySTDinterwordspacing
 
+\bibitem{araniti2021toward6G}
+G.~Araniti, A.~Iera, S.~Pizzi, and F.~Rinaldi, ``Toward 6g non-terrestrial
+  networks,'' \emph{IEEE Network}, vol.~36, no.~1, pp. 113--120, 2021.
+
 \end{thebibliography}

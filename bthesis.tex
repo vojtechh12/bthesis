@@ -50,8 +50,8 @@
 \usepackage{listings}
 \usepackage{xcolor}
 \usepackage[usestackEOL]{stackengine}
-\usepackage{rotating}
-
+\usepackage{rotating} 					% to enable sideways figures
+\usepackage{placeins}					% enables restricting float placement to current section
 %\usepackage[resetlabels,labeled]{multibib}
 %\usepackage[T1]{fontenc}
 %\usepackage{chngcntr}
@@ -211,12 +211,6 @@
     }
 }{}
 
-% 	
-%\bibliographystyle{IEEEtran}
-%\bibliography{IEEEabrv,minimum}
-%\bibliographystyle{ieeetr}	
-%\makenoidxglossaries
-
 % ---------------------
 %   Listing Acronyms
 % ---------------------
@@ -313,8 +307,11 @@
 
 \makeglossaries
 
-% capton setup
+% --------------------------
+%      capton setup
+%---------------------------
 %\captionsetup[figure]{name=Figure}
+\captionsetup[table]{justification=raggedright, singlelinecheck=false}
 
 \setstretch{1.15}
 
@@ -356,7 +353,7 @@
 %        Abstracts
 % -----------------------
 \chapter*{Abstract}
-Recent advancements in Autonomous Vehicles (AVs) research are bringing AVs closer to widespread adoption. However, the computational requirements of AVs demand robust hardware resources, resulting in substantial power consumption for the vehicles. This has led to the emergence of Vehicular Edge Computing (VEC), a research area focused on utilization of processing resources at mobile networks’ edge for offloading computationally demanding tasks from vehicles at low latency. To enable authentic simulation for evaluating VEC algorithms, a testbed leveraging Multi-Access Edge Computing (MEC) is proposed in this thesis. The set up testbed is based on MEC platform by OpenAirInterface (OAI) and the underlying OAI 5G mobile network, which facilitates accurate and scalable simulations. In evaluation against cloud deployed 400 kilometers away, the testbed achieves approximately 59 \% lower Round Trip Time (RTT) demonstrating its viability for realistic evaluation of VEC algorithms.
+Recent research advancements in Autonomous Vehicles (AVs) are bringing AVs closer to widespread adoption. However, the computational requirements of AVs demand robust hardware resources, resulting in substantial power consumption of the vehicles. The energy demand has led to the emergence of Vehicular Edge Computing (VEC). VEC is a type of edge computing, i.e., cloud computing provided at the edge of a mobile network, enabling offloading computationally demanding tasks from vehicles to the edge serves with low communication latency. To facilitate VEC research, a framework for testing novel algorithms is desirable, therefore, a VEC testbed is designed and implemented in this thesis. Several open-source platforms for Multi-Access Edge Computing (MEC) (similar to VEC, with general focus on mobile users) have been examined in order to select the most suitable solution to leverage in VEC testbed. The selected MEC platform is developed by OpenAirInterface (OAI) Software Alliance (OSA). The OAI consists of 5G-NR RAN and 5G core network that run on generic computers, where Software Defined Radio (SDR) acts as a front end for connecting a communication device (samrtphone, modem, vehicle). The implemented testbed has been evaluated and compared to a cloud computing deployment with  server deployed 400 kilometeres away. From the performance evaluation, the VEC testbed achieves approximately 59 \% lower Round Trip Time (RTT), validating its performance for VEC algorithm testing.
 	
 \keywords{vehicular edge computing, multi-access edge computing, mobile networks, 5G, task offloading, autonomous vehicles}
 %
@@ -517,10 +514,10 @@ The previous sections of this chapter provided a brief overview of both 5G syste
 
 The lifecycle of a MEC app can be divided into four stages, as done in: \cite{ETSI:wp20}:
 \begin{enumerate}
-	\item MEC app packaging and onboarding
-	\item MEC app instantiation 
-	\item Client-side app and MEC app communication 
-	\item Usage of the MEC platform and services 
+	\item MEC app packaging and onboarding.
+	\item MEC app instantiation. 
+	\item Client-side app and MEC app communication. 
+	\item Usage of the MEC platform and services. 
 \end{enumerate}
 MEC apps are expected to be run within a virtualized environment of the MEC hosts, i.e., Virtual Machines (VMs) or containers. The onboarding of MEC apps is left as an implementation choice for the MEC operator \cite{ETSI:wp20}. The second stage of a MEC app lifecycle describes its instantiation on MEC system and its exposure to clients. There are two options for MEC app initialization and of communication establishment between the client-side app and the MEC app. One option is through UALCMP, and the other one is via the OSS without the need for any client-side action. The first option is related to edge-aware discovery (described in the previous section). In UALCMP option, the device application contacts the UALCMP via the Mx2 interface and informs it which MEC app it would like to instantiate, the UALCMP then informs the MEO, which is responsible for choosing the appropriate MEC host and configuring the MEPM to initialize the given application. In response to successful instantiation, the device app receives the IP address of the running MEC app instance \cite{ETSI:wp20}. In the other option, the initialization is done without the client-side being required to participate in the process. For the client app, to leverage MEC, it accesses the required application via its domain name and the 5G system DNS is responsible for connecting the client to the nearest running MEC app instance \cite{ETSI:wp20,ETSI:wp36}. Once instantiated, the MEC apps can leverage SBA of the MEC system, consuming services provided by the MEC platform or other applications and also offering their services to other applications.
 
@@ -530,19 +527,21 @@ Furthermore, MEC offers a framework for MEC apps, through which they can feed tr
 
 The framework, utilizing edge aware app initialization and dedicated PDU session establishment is described below and illustrated in Figure~\ref{F:MEC-5G-integration}.
 \begin{enumerate}
-	\item Device app requests initialization of a MEC app from UALCMP
-	\item MEO chooses the optimal MEC host and sends traffic rules to the selected MEC platform
-	\item MEC platform, acting as an AF, requests traffic rules control from SMF, via NEF and then PCF 
-	\item SMF configures the UPF with UL CL to steer desired traffic to MEC host
+	\item Device app requests initialization of a MEC app from UALCMP.
+	\item MEO chooses the optimal MEC host and sends traffic rules to the selected MEC platform.
+	\item MEC platform, acting as an AF, requests traffic rules control from SMF, via NEF and then PCF .
+	\item SMF configures the UPF with UL CL to steer desired traffic to MEC host.
 \end{enumerate}
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=\textwidth]{./images/MEC-5G-integration-flowchart.png}
+	\begin{sideways}
+		\includegraphics[width=20cm]{./images/MEC-5G-integration-flowchart.png}
+	\end{sideways}
 	\caption{MEC integration in 5G.}
 	\label{F:MEC-5G-integration}
 \end{figure}
-
+\FloatBarrier
 %-----------------------
 %  Ch3- OS MEC projects
 %-----------------------
@@ -628,10 +627,11 @@ Low latency MEC (LL-MEC) was introduced in 2018 as the first open-source low lat
 This MEC Platform (MEP) has been only recently developed by EURECOM and is closely integrated with OAI emulated 5G network, therefore, the rest of the text refers to it as OAI MEP. At the time of writing, the OAI MEP is very much a work in progress as it only implements a MEP environment for registry and discovery of MEC services and offers its own implementation of Radio Network Information Service (RNIS) \cite{oai-mep-git}. However, it has several traits that make it a very viable candidate for VEC testbed development. Its integration with the OAI ecosystem would significantly reduce the integration implementation overhead. Moreover, it promises to follow ETSI MEC as well as O-RAN specifications. And finally, the developers have already outlined that it is intended to implement traffic rules control via communicating with PCF in 5G CN. This would mean that OAI MEP is aiming for a MEC implementation very close to the standardized approach extensively described in Chapter~\ref{Ch:MECn5G}. The components thus far developed are shown in Figure~\ref{F:oai-mep}.
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=13cm]{./images/OAI-MEP.png}
+	\includegraphics[width=\textwidth]{./images/OAI-MEP.png}
 	\caption{Technical overview of OAI-MEP \cite{oai-mep-git}.}
 	\label{F:oai-mep}
 \end{figure}
+\FloatBarrier
 
 \section{Other MEC projects}
 \subsection{AdvantEDGE}
@@ -783,7 +783,8 @@ The leveraged platform is a blueprint showcasing OAI MEP with RNIS and it integr
 	\label{F:VEC-tstbed-arch}
 \end{figure}
 %
-This blueprint showcases how MEC apps can consume services, such as RNIS, via the Mp1 interface \cite{oai-blueprint-git}. For RNIS to be able to consume mobile network Key Performance Indicators (KPIs) via Mp2 and then expose them via Mp1 to MEC apps, the OAI mobile network required new features to be implemented. The OAI 5G CN is run in a basic deployment, as shown in Figure 22, but the RAN leverages an O-RAN xApp and Mosaic5G FlexRIC on top of the modules for UE and gNB. The xApp provides a northbound interface for the RNIS to subscribe to radio related KPIs \cite{oai-rnis-git}. The OAI configuration manager then provides the functionality to subscribe to AMF and SMF events \cite{oai-cm-git}.
+\FloatBarrier
+This blueprint showcases how MEC apps can consume services, such as RNIS, via the Mp1 interface \cite{oai-blueprint-git}. For RNIS to be able to consume mobile network Key Performance Indicators (KPIs) via Mp2 and then expose them via Mp1 to MEC apps, the OAI mobile network required new features to be implemented. The OAI 5G CN is run in a basic deployment, as shown in Figure~\ref{F:VEC-tstbed-arch}, but the RAN leverages an O-RAN xApp and Mosaic5G FlexRIC on top of the modules for UE and gNB. The xApp provides a northbound interface for the RNIS to subscribe to radio related KPIs \cite{oai-rnis-git}. The OAI configuration manager then provides the functionality to subscribe to AMF and SMF events \cite{oai-cm-git}.
 
 A key component of the OAI MEP is the MEP Gateway, which acts as a reverse proxy, routing the Mp1 traffic to the right service \cite{oai-mep-git}. The reverse proxy is implemented leveraging Kong \cite{kong-docu}. It hides the underlying service nodes from the clients and routes client’s requests to the right service nodes. This means that all registered services can be accessed via the MEP Gateway.
 
@@ -799,6 +800,7 @@ The Discovery and Registry Service has the responsibility of exposing REST API f
 The OAI MEP blueprint delivers docker-compose scripts for deployment of all the containers. Furthermore, the basic deployment uses RFsimulator, although \cite{oai-blueprint-git} claims that it is possible to run with USRP radio heads and that it was tested in the OAI lab. 
 
 After a successful deployment, it should be possible to ping the internet from the UE container via its \verb|oaitun_ue1| interface. In our setup, it looks like this:
+
 \begin{verbatim}
 	root@9929963b00c2:/opt/oai-nr-ue# \
 	ping -c 3 -I oaitun_ue1 comtel.fel.cvut.cz \
@@ -817,6 +819,7 @@ After a successful deployment, it should be possible to ping the internet from t
 \end{verbatim}
 
 To verify that the RNIS works properly, it should be possible to access its service with the HTTP GET method from the Command Line Interface (CLI). This is the result achieved in our setup:
+
 \begin{verbatim}
 	lab@lab-HP-Z4-G4-7-Workstation:~/blueprints/mep/examples$ curl -X \
 	'GET' 'http://oai-mep.org/rnis/v2/queries/layer2_meas' -H \
@@ -833,6 +836,9 @@ To verify that the RNIS works properly, it should be possible to access its serv
 			"timestamp": 1683903896587163,
 			"unit": null,
 			"value": 5.605193857299268e-45
+		}
+		}
+	}
 	...
 \end{verbatim}
 
@@ -842,6 +848,7 @@ This stage aims to deliver a blueprint for development of VEC applications runni
 \subsection{Service registration}
 The registration and discovery service of OAI MEP can be accessed via its Graphical User Interface (GUI) on the host \verb |192.168.70.5| or via the MEP Gateway:\\\verb |http://oai-mep.org/service_registry/v1/ui|. It should be noted that for the latter to work, the oai-mep.org domain needs to be added to the local machine DNS, which is documented in \cite{oai-blueprint-git}. The GUI offers the services mentioned in the previous section. After a successful deployment, the discovery of available services should yield the following results, as only the RNIS is registered:
 %
+
 \begin{verbatim}
 	lab@lab-HP-Z4-G4-7-Workstation:~/blueprints/mep/examples$ curl /
 	http://oai-mep.org/service_registry/v1/discover 
@@ -866,9 +873,9 @@ The registration and discovery service of OAI MEP can be accessed via its Graphi
   },
 \end{verbatim}
 
-To demonstrate the service registry and discovery function of OAI MEP, a sample hello-world flask application has been created. This application runs on the localhost interface of the host machine and displays a simple line of text, the goal is to be able to route this application via the MEP Gateway.
+To demonstrate the service registry and discovery function of OAI MEP, a sample hello-world flask application has been created. This application runs on the localhost interface of the host machine and displays a simple line of text. The code of the application is shown in Listing~\ref{C:flask}. The goal is to be able to route this application via the MEP Gateway.
 %
-\begin{flask}[caption={Sample flask app in python}]
+\begin{flask}[caption={Sample flask app in python}, label={C:flask}]
 	from flask import Flask
 
 	app = Flask(__name__)
@@ -887,6 +894,7 @@ To demonstrate the service registry and discovery function of OAI MEP, a sample 
 
 To register the flask application, the GUI of the registry and discovery service has been leveraged. While the GUI provides a sample input for the register service, it does not include any \verb|uid|, which confuses the underlying database of OAI MEP and results in unsuccessful registration. For a successful registration, the following input for the register command has been used:
 %
+\pagebreak
 \begin{verbatim}
 {
 	"description": "testing registration with sample flask",
@@ -1020,7 +1028,7 @@ The set-up testbed leverages the OAI MEP project. It is built on OAI 5G RAN and 
 
 The testbed has been evaluated against cloud deployment to assess the achieved reduction in communication latency. The edge deployment model employed in our lab has the edge server collocated with UPF, emulating a common approach. The evaluation results clearly demonstrate a significant decrease in RTT, approximately 59 \% when utilizing an edge deployment compared to the cloud alternative. This establishes the testbed’s viability as a research tool to evaluate future VEC applications. 
 
-In future, the testbed should be updated with future releases of the underlying OAI MEP, which promises to further increase the mobile network programmability through MEP inflicted traffic control via PCF. Furthermore, the testbed could be expanded to work with real radio interface to provide even more accurate evaluations. The platform now enables development of VEC applications leveraging task offloading for various use cases such as remote image processing for AVs. With research towards the 6G having already started, the VEC and in general edge computing is envisioned to be extended towards Non-Terrestrial Networks, i.e., providing edge computing services in the air (low and high-altitude platforms) or space (satellites). This is already a topic of 5G, but its primary deployment will be seen in the 6G, similar to MEC in 4G.
+In future, the testbed should be updated with future releases of the underlying OAI MEP, which promises to further increase the mobile network programmability through MEP inflicted traffic control via PCF. Furthermore, the testbed could be expanded to work with real radio interface to provide even more accurate evaluations. The platform now enables development of VEC applications leveraging task offloading for various use cases such as remote image processing for AVs. With research towards the 6G having already started, the VEC and in general edge computing is envisioned to be extended towards Non-Terrestrial Networks, i.e., providing edge computing services in the air (low and high-altitude platforms) or space (satellites) \cite{araniti2021toward6G}. This is already a topic of 5G, but its primary deployment will be seen in the 6G, similar to MEC in 4G.
 
 % -----------------------
 %     BIBLIOGRAPHY
